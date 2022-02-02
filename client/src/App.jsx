@@ -8,6 +8,7 @@ import SignIn from './components/SignIn';
 import Landing from './components/Landing';
 import {createTheme} from '@mui/material/styles';
 import { ThemeProvider} from '@mui/material/styles';
+import Header from './components/Header'
 
 
 
@@ -36,6 +37,10 @@ function App() {
     <ThemeProvider theme={siteTheme}>
     <div className="App">
       <BrowserRouter>
+          <Route>
+            {/* Header will be visible on all routes */}
+            <Header></Header>
+          </Route>
         <Route exact path ='/'>
           <Landing></Landing>
         </Route>

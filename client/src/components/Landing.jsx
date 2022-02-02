@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+
 
 const Landing = (props) => {
 
@@ -7,7 +7,7 @@ const Landing = (props) => {
 
 
     <div>
-        <Header></Header>
+ 
 
 
     </div>
