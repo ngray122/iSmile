@@ -4,67 +4,119 @@ import { useHistory } from "react-router-dom";
 import {
     Link
 } from "react-router-dom";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import { FormGroup, TextField } from "@mui/material";
 
 
-const Login = (props) => {
+//********************* TODO ######## validation error fonts.  Only validation is <p> tag
+// ********* Can't get borders to work 
+
+
+// Do I need to make a new copy of NavBar for ever route with different buttons??
+
+
+
+
+const Login = () => {
 
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
 
-    let [formInputError, setFormInputError] = useState({});
+    let [formInputError, setFormInputError] = useState('');
 
     const history = useHistory();
 
-    const submitHandler = (e) => {
+    const login = (e) => {
         e.preventDefault();
-        // let formInputObj = { email, password }
-        // axios.post("http://localhost:8000/api/user/register", formInputObj)
-        //     .then(res => {
-        //         console.log("SUCCESS submit postRequest createOne res ==>", res)
-        //         if (res.data.error) {
-        //             setFormInputError(res.data.error.errors)
-        //         } else {
-
-        //             history.push('/')
-        //         }
-        //     })
-        //     .catch(err => console.log("error in submitting post request", err))
-        }
-
-
-        return (
-
-            <div className="col-6">
-                <h3 className="m-4">Login</h3>
-
-                <form onSubmit={submitHandler} className="w-50 mx-auto">
-
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Email:</span>
-                        <input type="text" value={email} className="form-control" placeholder="bsmith@mail.com" aria-label="" aria-describedby="basic-addon1" onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <p>{formInputError.email?.message}</p>
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="basic-addon1">Password:</span>
-                        <input type="password" value={password} className="form-control" placeholder="At least 8 characters" aria-label="" aria-describedby="basic-addon1" onChange={(e) => setPassword(e.target.value)} />
-                        <p>{formInputError.password?.message}</p>
-                    </div>
+        // info taken in from form
+        let formInputObj = { email, password };
+        axios.post("http://localhost:8000/api/user/login", formInputObj, { withCredentials: true })
+            .then(res => {
+                console.log("SUCCESS logging in res ==>", res)
+                if (res.data.error) {
+                    setFormInputError(res.data.error)
+                } else {
+                    history.push('/dashboard')
+                }
+            })
+            .catch(err => console.log("ERROR WHEN LOGGING IN ===> ", err))
+    }
 
 
-                    <div>
-                        <input className="btn btn-primary m-4" type="submit" value="Log In" />
-                    </div>
-            
+    return (
 
-                </form>
-            </div>
+        <form autoComplete="off" onSubmit={login}>
+            <Container
+                align="center"
+                // justifyContent="center"
+                variant="outlined"
+                // elevation=''
+                mx='auto'
+                sx={{ p: '10px' }}
+            >
+                <FormLabel
+                    component='legend'
+                >Sign In
+                </FormLabel>
+
+                <FormControl>
+                    <FormGroup
+                        row={false}
+                        sx={{ p: '2px' }}
+                    >
+                        <TextField
+                        variant="standard"
+                            // type='email'
+                            id="standard-basic"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            label="Email"
+                            input='email'
+                            // required
+                            errorText={formInputError.email?.message}
+                        />
+                    </FormGroup>
+                    <FormGroup
+                        row={false}
+                        sx={{ p: '2px' }}
+                    >
+                        <TextField
+                        variant="standard"
+                            type='password'
+                            id="standard-basic"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            label="Password"
+                            input='password'
+                            // required
+                            errorText={formInputError.password?.message}
+                            
+                        />
+                        <p>{formInputError}</p>
+                    </FormGroup>
+                    <Button
+                        // onClick={()=>console.log("Button clicked")}
+                        type="submit"
+                        // component={} to="/"
+                        variant="contained"
+                       
+                    >Login
+                    </Button>
+                </FormControl>
+
+            </Container>
+        </form>
 
 
 
-
-        )
-    };
+    )
+};
 
 
 
