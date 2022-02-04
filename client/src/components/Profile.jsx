@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
 
 
 
@@ -39,7 +40,7 @@ const Profile = () => {
 
 
     return (
-        <Container>
+        <Paper elevation={3}>
             <Grid>
             <Avatar
             
@@ -57,7 +58,7 @@ const Profile = () => {
             </Grid>
       
 
-        </Container>
+        </Paper>
 
 
 

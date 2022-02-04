@@ -65,7 +65,7 @@ const RegisteredNavBar = () => {
 
 
             <Button
-                component={Link} to="/user/addpost"
+                component={Link} to="/posts/create"
                 variant="text"
                 sx={{ fontSize: "23px" }}
                 disableRipple

@@ -7,6 +7,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import Profile from './Profile';
+import PostWall from './PostWall';
+
 
 
 
@@ -17,6 +19,7 @@ import Profile from './Profile';
 
 const Dashboard = () => {
 
+ 
     let history = useHistory();
 
     let [registeredUser, setRegisteredUSer] = useState({});
@@ -33,20 +36,7 @@ const Dashboard = () => {
                 history.push('/')
                 console.log("ERR WHEN GETTING LOGGED IN USER", err)
             })
-
     }, [])
-
-
-
-    const logout = () => {
-        axios.get('http://localhost:8000/api/user/logout', { withCredentials: true })
-            .then(res => {
-                history.push('/')
-            })
-            .catch(err => {
-                console.log("ERROR LOGGING OUT => ,", err)
-            })
-    };
 
 
     return (
@@ -58,7 +48,7 @@ const Dashboard = () => {
                   <Paper><Profile></Profile></Paper>
               </Grid>
               <Grid item xs={12} sm={6} md={5}>
-                  <Paper>POST  5 col</Paper>
+                  <Paper>      <PostWall/></Paper>
               </Grid>
               <Grid item xs={12} sm={6} md={3}>
                   <Paper>PINNED  3 col</Paper>

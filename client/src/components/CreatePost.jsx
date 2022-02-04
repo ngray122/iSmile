@@ -55,7 +55,7 @@ const CreatePost = () => {
     useEffect(() => {
         axios.get('http://localhost:8000/api/user/getone', { withCredentials: true })
             .then(res => {
-                console.log("RESULT on load, CREATE POST => ", res)
+                console.log("RESULT on load, GETONE => ", res)
                 if (res.data) {
                     setRegisteredUSer(res.data)
                 }

@@ -19,6 +19,7 @@ import CreatePost from './components/CreatePost';
 
 
 
+
 function App() {
 
   const siteTheme = createTheme({
@@ -40,27 +41,25 @@ function App() {
 
   })
 
+         {/* ????????????????  Navbar will be visible on all routes, but different nav buttons depending on page user is currently on */}
+
 
 
   return (
-    <ThemeProvider
-      theme={siteTheme}
-     
-    >
+    <ThemeProvider theme={siteTheme}>
       <Box className="App"
-        sx={{ bgcolor: 'primary.light' }}
-      >
+        sx={{ bgcolor: 'primary.light' }}>
         <BrowserRouter>
 
+          {/* Landing Page */}
           <Route exact path='/'>
-            {/* Navbar will be visible on all routes, but different nav buttons */}
-
-            <NavBar></NavBar>
-            <Landing></Landing>
+            <NavBar/>
+            <Landing/>
           </Route>
 
+          {/* Login and Register */}
           <Route exact path='/signin'>
-            <NavBar></NavBar>
+            <NavBar/>
             <SignIn />
           </Route>
 
@@ -70,14 +69,14 @@ function App() {
             <RegisteredNavBar />
             <Dashboard />
           </Route>
-          <Route exact path='/user/addpost'>
+
+          {/* Create a New Post */}
+          <Route exact path='/posts/create'>
             <RegisteredNavBar />
             <CreatePost />
-
           </Route>
 
         </BrowserRouter>
-
       </Box>
     </ThemeProvider>
   );
