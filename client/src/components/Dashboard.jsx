@@ -10,7 +10,10 @@ import Profile from './Profile';
 
 
 
-// When registered user logs into dashboard, nav buttons change to
+// ???????????????????????As User navigates to different component views, the buttons should change to fit content.  A New Nav Component seems to violate dry code
+
+
+
 
 const Dashboard = () => {
 

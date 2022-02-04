@@ -13,7 +13,7 @@ import Dashboard from './components/Dashboard';
 import RegisteredNavBar from './components/RegisteredNavBar';
 import { Container } from '@mui/material';
 import { Box } from '@mui/material';
-import CreatePost from './CreatePost';
+import CreatePost from './components/CreatePost';
 
 
 
@@ -45,7 +45,7 @@ function App() {
   return (
     <ThemeProvider
       theme={siteTheme}
-      sx={{ bgcolor: 'primary.light' }}
+     
     >
       <Box className="App"
         sx={{ bgcolor: 'primary.light' }}

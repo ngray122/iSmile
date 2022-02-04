@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }));const
 cookies= require('cookie-parser');
 app.use(cookieParser())
 
-
-
+// tells the server where to upload images
+app.use(express.static('images'))
 app.use(cors( 
     // accept information from =>
     {credentials: true, origin: 'http://localhost:3000'}
@@ -31,6 +31,7 @@ require('./server/config/config');
 
 // routes for <==(app)
 require('./server/routes/user.route')(app);
+require('./server/routes/post.route')(app)
 
 
 

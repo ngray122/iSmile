@@ -92,7 +92,7 @@ const User = (props) => {
                             label="First Name"
                             input='text'
                             // required
-                            errorText={formInputError.firstName?.message}
+                            helperText={formInputError.firstName?.message}
                         />
                     </FormGroup>
 
@@ -109,7 +109,7 @@ const User = (props) => {
                             label="Last Name"
                             input='text'
                             // required
-                            errorText={formInputError.lastName?.message}
+                            helperText={formInputError.lastName?.message}
                         />
                     </FormGroup>
 

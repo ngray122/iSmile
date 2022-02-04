@@ -48,9 +48,9 @@ const Profile = () => {
             sx={{ width: 75, height: 75 }}
         />
         <Typography
-        variant='h4'>
+        variant='h6'>
 
-            {registeredUser.firstName}
+           Welcome {registeredUser.firstName}!
         </Typography>
 
 

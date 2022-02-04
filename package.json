@@ -19,6 +19,8 @@
     "mongoose": "^6.1.8",
     "mongoose-type-email": "^1.1.2",
     "mongoose-unique-validator": "^3.0.0",
-    "react-router-dom": "^5.3.0"
+    "multer": "^1.4.4",
+    "react-router-dom": "^5.3.0",
+    "uuid": "^8.3.2"
   }
 }
