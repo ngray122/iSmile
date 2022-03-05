@@ -41,7 +41,10 @@ function App() {
 
   })
 
-         {/* ????????????????  Navbar will be visible on all routes, but different nav buttons depending on page user is currently on */}
+         {/* 
+          ????????????????  Navbar will be visible on all routes, but different nav buttons depending on page user is currently on.  Not just registered/not-resgistered
+        
+        ??????  Do API calls need to be on every component for the dashboard?    Yes becuase of the indivdual routes of each component*/}
 
 
 

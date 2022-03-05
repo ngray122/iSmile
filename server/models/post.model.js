@@ -32,7 +32,8 @@ const PostSchema = new mongoose.Schema({
     },
     // add mb upload requirement?
     photo: {
-        type: String
+        data: Buffer,
+        contentType: String
 
     },
     user_id: {

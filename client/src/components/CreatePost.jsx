@@ -12,16 +12,18 @@ import FormLabel from '@mui/material/FormLabel';
 import { FormGroup, Input, TextField } from "@mui/material";
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// - Add rows to text input for user experience       
+
+// - Add rows to text input, message can needs to have text area    
 //- Camera icon to acctpy onchange for file upload  
 // -Form input place holder covers user input text
+// - Capitalize first letter of user first name
 
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*
+- research url file upload
 
-
-
-
+ */
 
 
 
@@ -38,7 +40,7 @@ const CreatePost = () => {
     let[name, setName] = useState('');
     let [text, setText] = useState('');
     let [url, setUrl ] = useState('');
-    let [photo, setPhoto] = useState('');
+    let [photo, setPhoto] = useState(null);
 
     // let [userFormInput, setUserFormInput] = useState({
     //     name: '',
@@ -55,7 +57,7 @@ const CreatePost = () => {
     useEffect(() => {
         axios.get('http://localhost:8000/api/user/getone', { withCredentials: true })
             .then(res => {
-                console.log("RESULT on load, GETONE => ", res)
+                // console.log("RESULT on load, GETONE registered user => ", res)
                 if (res.data) {
                     setRegisteredUSer(res.data)
                 }
@@ -79,41 +81,41 @@ const CreatePost = () => {
     //     } else {
     //         console.log([e.target.name])
     //         setUserFormInput({
-                
     //             [e.target.name]: e.target.value,
-    //             [e.target.name]: e.target.value,
-    //             [e.target.name]: e.target.value
-
+    //             [e.target.text]: e.target.value,
+    //             [e.target.url]: e.target.value
     //         })
     //     }
     // }
 
 
-    const fileSelectHandler = (e) => {
+    // onchange will 
+    const onchangeFileSelectHandler = (e) => {
         e.preventDefault();
-        console.log("photo upload clicked")
+        // console.log("photo upload clicked" , e)
+        console.log(e.target.files[0])
         setPhoto({photo: e.target.files[0]})
+            // onFileChange(e) {
+    //     this.setState({ profileImg: e.target.files[0] })
+    // }
 
     }
 
-    // onFileChange(e) {
-    //     this.setState({ profileImg: e.target.files[0] })
-    // }
 
 
     // Creates new post for user
     const submitHandler = (e) => {
         e.preventDefault();
-
         const formData = new FormData();
         formData.append('name', name);
-        formData.append('text', url);
+        formData.append('text', text);
+        formData.append('url', url);
         formData.append('photo', photo);
 
         // let formInputObj = { name, text, url, photo}
         axios.post("http://localhost:8000/api/posts/create", formData)
             .then(res => {
-                console.log("CREATE POST post ==>", res)
+                console.log("CREATE POST ==>", res)
                 if (res.data.errors) {
                     setFormInputError(res.data.errors)
                 } else {
@@ -137,24 +139,6 @@ const CreatePost = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
 
 
@@ -164,13 +148,11 @@ const CreatePost = () => {
                 onSubmit={submitHandler}>
                 <Paper
                     align="center"
-                    // justifyContent="center"
                     variant="outlined"
                     // elevation=''
                     mx='auto'
                     sx={{ p: '20px' }}
                     border="2"
-                    borderColor="black"
                 // sx={{bgcolor:'primary.light'}}
                 >
                     {/* ********************* Can't change form label font OR Change the backgrounc coloe  */}
@@ -181,11 +163,13 @@ const CreatePost = () => {
 
                         >What made you smile today, {registeredUser.firstName}? Share it with the world
                         </Typography>
+
                         {/* Form Starts */}
                         <FormGroup
                             row={false}
                             sx={{ p: '5px' }}
                         >
+
                             {/* NAME INPUT */}
                             <TextField
                                 variant="standard"
@@ -200,7 +184,7 @@ const CreatePost = () => {
                             />
                         </FormGroup>
 
-                        {/* POST TEXT */}
+                        {/*  TEXT INPUT */}
                         <FormGroup
                             sx={{ p: '5px' }}
                         >
@@ -220,6 +204,8 @@ const CreatePost = () => {
                             // errorText={formInputError.text?.message}
                             />
                         </FormGroup>
+
+                        {/* URL INPUT */}
                         <FormGroup
                             row={false}
                             sx={{ p: '5px' }}
@@ -236,25 +222,30 @@ const CreatePost = () => {
                                 helperText={formInputError.url?.message}
                             />
                         </FormGroup>
+
+
+                        {/* IMAGE UPLOAD */}
                         <FormGroup
                             row={false}
                             sx={{ p: '5px' }}
                         >
 
                             <Input
+                                type='file'
+                                onChange={onchangeFileSelectHandler}
                                 variant="standard"
                                 id="component-outlined"
                                 value=''
-                                onChange={fileSelectHandler}
                                 label="Add photo"
                                 input='file'
                                 accept='.png, .jpg, .jpeg'
-                                type='file'
                                 // error
                                 helperText={formInputError.photo?.message}
                             />
                             {/* <PhotoCameraIcon></PhotoCameraIcon> */}
                         </FormGroup>
+
+
                         <Button
                             // onClick={() => console.log("Button clicked")}
                             type="submit"

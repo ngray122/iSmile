@@ -1,6 +1,7 @@
 const PostController = require('../controllers/post.contoller');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
+const PostModel = require('../models/post.model')
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -19,6 +20,9 @@ const fileFilter = (req, file, cb) => {
         cb(null, false);
     }
 }
+
+
+
 
 let upload = multer({ storage, fileFilter });
 

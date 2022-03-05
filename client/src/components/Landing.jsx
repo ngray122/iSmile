@@ -16,7 +16,7 @@ const Landing = (props) => {
   useEffect(() => {
     axios.get('http://localhost:8000/api/user/getone', { withCredentials: true })
         .then(res => {
-            console.log("RESULT ON DASH after login , => ", res)
+            // console.log("RESULT ON DASH after login , => ", res)
             if (res.data) {
                 setRegisteredUSer(res.data)
             }

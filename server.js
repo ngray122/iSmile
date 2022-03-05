@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: true }));const
 cookies= require('cookie-parser');
 app.use(cookieParser())
 
+var fs = require('fs');
+var path = require('path');
+require('dotenv/config');
+
 // tells the server where to upload images
 app.use(express.static('images'))
 app.use(cors( 

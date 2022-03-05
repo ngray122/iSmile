@@ -37,13 +37,15 @@ const User = (props) => {
 
     const history = useHistory();
 
-    // CREATE NEW
+    // CREATE NEW USER
     const register = (e) => {
+        // prevents page from reloading onEvent
         e.preventDefault();
+        // information collected from form inputs 
         let formInputObj = { firstName, lastName, email, password, verifyPassword }
         axios.post("http://localhost:8000/api/user/register", formInputObj, { withCredentials: true })
             .then(res => {
-                console.log("REGISTER RES ==>", res)
+                // console.log("REGISTER RES ==>", res)
                 if (res.data.errors) {
                     setFormInputError(res.data.errors)
                 } else {
@@ -55,6 +57,7 @@ const User = (props) => {
     }
 
     return (
+        // REGISTRATION FORM
         <form autoComplete="off" onSubmit={register}
         >
             <Container

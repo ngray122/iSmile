@@ -39,6 +39,10 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Password cannot be blank'],
         minlength: [6, "Password must have at least 6 characters"],
 
+    },
+    profilePic: {
+        type: String
+
     }
 }, { timestamps: true });
 

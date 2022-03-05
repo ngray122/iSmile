@@ -38,7 +38,7 @@ const Login = () => {
         let formInputObj = { email, password };
         axios.post("http://localhost:8000/api/user/login", formInputObj, { withCredentials: true })
             .then(res => {
-                console.log("SUCCESS logging in res ==>", res)
+                // console.log("SUCCESS logging in res ==>", res)
                 if (res.data.error) {
                     setFormInputError(res.data.error)
                 } else {

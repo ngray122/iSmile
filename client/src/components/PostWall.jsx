@@ -4,8 +4,13 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
+import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+
 
 
 
@@ -17,8 +22,8 @@ const PostWall = () => {
 
     let [registeredUser, setRegisteredUSer] = useState({});
 
-       // empty array to take in posts from db
-       let [allPosts, setAllPosts] = useState([]);
+    // empty array to take in posts from db
+    let [allPosts, setAllPosts] = useState([]);
 
 
 
@@ -43,13 +48,26 @@ const PostWall = () => {
         axios.get('http://localhost:8000/api/posts/getall')
             .then(res => {
                 console.log("RES getting all posts ===> ", res)
-                setAllPosts(res.data.results)
+                setAllPosts(res.data.result)
             })
             .catch(err => {
                 console.log("ERROR GET ALL ==> ", err)
             })
     }, [])
 
+
+
+    // app.get('/', (req, res) => {
+    //     imgModel.find({}, (err, items) => {
+    //         if (err) {
+    //             console.log(err);
+    //             res.status(500).send('An error occurred', err);
+    //         }
+    //         else {
+    //             res.render('imagesPage', { items: items });
+    //         }
+    //     });
+    // });
 
 
 
@@ -62,17 +80,46 @@ const PostWall = () => {
     return (
 
         <Box>
-            <Paper  elevation={3}
-            varient='outlined'> 
-                <h2>Hello from Post wall</h2>
+            <Paper elevation={3}
+                varient='outlined'>
+                <Card>
+                    {/* User Image */}
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image=""
+                        alt=""
+                    />
 
+                    <CardContent>
 
+                        {/* User Title */}
+                        <Typography gutterBottom component="div"
+                            variant="h5">
+                            {allPosts.map((postObj, i) => {
+                                //    ???????? Map through each post obj and 
 
+                                // { postObj.name }
+                            })}
+                        </Typography>
+
+                        {/* User Message */}
+                        <Typography variant="body2" color="text.secondary">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis id commodi officia! Velit a debitis quasi voluptates, obcaecati culpa, reprehenderit explicabo quam provident aperiam hic officia aliquam ipsa perferendis.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis id commodi officia! Velit a debitis quasi voluptates, obcaecati culpa, reprehenderit explicabo quam provident aperiam hic officia aliquam ipsa perferendis.
+                            lorem*10
+                        </Typography>
+
+                    </CardContent>
+
+                    {/* Buttons */}
+                    <CardActions>
+                        <Button size="small">Share</Button>
+                        <Button size="small">Pin</Button>
+                    </CardActions>
+                </Card>
 
             </Paper>
-
-
-
         </Box>
 
     )
