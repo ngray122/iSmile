@@ -14,7 +14,12 @@ module.exports = (app) => {
   });
 
   const fileFilter = (req, file, cb) => {
-    const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+    const allowedFileTypes = [
+      "image/jpeg",
+      "image/jpg",
+      "image/png",
+      "image/JPG",
+    ];
     if (allowedFileTypes.includes(file.mimetype)) {
       cb(null, true);
     } else {
@@ -22,7 +27,11 @@ module.exports = (app) => {
     }
   };
 
-  let upload = multer({ storage: storage, fileFilter: fileFilter });
+  let upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
+    limits: { fieldSize: 25 * 1024 * 1024 },
+  });
   // ========>> IF HAVING TROUBLE WITH ROUTES:
   //1. "/" at START of API call after the first  \\'// ,
   //2. verify http, https
@@ -31,7 +40,7 @@ module.exports = (app) => {
   //@route POST -- create new post
   app.post(
     "/api/posts/create",
-    // upload.single("photo"),
+    upload.single("photo"),
     PostController.createPost
   );
 

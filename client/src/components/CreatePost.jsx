@@ -59,15 +59,14 @@ const CreatePost = () => {
     e.preventDefault();
     const fileInput = e.target.files[0];
     const reader = new FileReader();
+    let base64String;
     reader.onloadend = () => {
-      const base64String = reader.result
-        .replace("data:", "")
-        .replace(/^.+,/, "");
+      base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+      // console.log("fileInput log -> " + fileInput);
+      setPhoto(base64String);
       console.log("base64log -> " + base64String);
-      console.log("fileInput log -> " + fileInput);
     };
     reader.readAsDataURL(fileInput);
-    setPhoto(fileInput);
   };
 
   // Creates new post for user
@@ -78,10 +77,6 @@ const CreatePost = () => {
     formData.append("text", text);
     formData.append("url", url);
     formData.append("photo", photo);
-
-    console.log("name log ->" + name);
-    console.log("text log ->" + text);
-    console.log("photo log ->" + photo);
     axios
       .post("http://localhost:8000/api/posts/create", formData)
       .then((res) => {

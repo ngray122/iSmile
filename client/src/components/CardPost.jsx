@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
   let [deleted, setDeleted] = useState(false);
+  let [baseImg, setBaseImg] = useState("");
 
   useEffect(() => {
     axios
@@ -26,19 +27,25 @@ const CardPost = () => {
 
   //   Delete post
   const deletePost = (postId) => {
-    console.log(postId);
+    // console.log(postId);
     axios
       .delete(`http://localhost:8000/api/posts/delete/${postId}`)
       .then((res) => setDeleted(!deleted))
       .catch((err) => console.log("error in submitting delete request"));
   };
 
+  //   const decodeBase64 = (imgString) => {
+  //     let base64ToString = Buffer.from(imgString, "base64").toString();
+  //     setBaseImg({ data: base64ToString });
+  //   };
+
   return (
     <>
       {allPosts.map((postObj, i) => {
-        console.log("post obj -> " + postObj);
+        console.log("post obj -> " + postObj.photo);
+        let imgString = postObj.photo;
         return (
-          <Card sx={{ maxWidth: 645 }}>
+          <Card key={i} sx={{ maxWidth: 645 }}>
             <CardActionArea>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -50,11 +57,13 @@ const CardPost = () => {
                 <Typography variant="body2" color="text.secondary">
                   {postObj.url}
                 </Typography>
+                {/* <img src={`data:image/png;base.64,${postObj.photo}`}></img> */}
                 <CardMedia
                   component="img"
                   height="194"
-                  image={postObj.photo}
+                  //   img={`data:image/png;base.64,${postObj.photo}`}
                   alt="posted image"
+                  src={`data:image/jpeg;base64,${postObj.photo}`}
                 ></CardMedia>
               </CardContent>
             </CardActionArea>
