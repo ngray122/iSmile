@@ -1,25 +1,21 @@
-const mongoose = require('mongoose'),
+const mongoose = require("mongoose");
 
 const jwt = require("jsonwebtoken");
-const secret = 'imasecret';
-bcrypt = require('bcrypt');
-const {User} = require('../models/user.model')
-
-
+const secret = "imasecret";
+bcrypt = require("bcrypt");
+const { User } = require("../models/user.model");
 
 module.exports.secret = secret;
 
-module.exports.authenticate =(req, res, next) => {
-    jwt.verify(req.cookies.usertoken, process.env.secret, (err, payload) => {
-      if (err) { 
-        res.status(401).json({verified: false});
-      } else {
-        next();
-      }
-    });
-  }
-
-
+module.exports.authenticate = (req, res, next) => {
+  jwt.verify(req.cookies.usertoken, process.env.secret, (err, payload) => {
+    if (err) {
+      res.status(401).json({ verified: false });
+    } else {
+      next();
+    }
+  });
+};
 
 // exports.register = function(req, res) {
 //   var newUser = new User(req.body);
@@ -60,20 +56,15 @@ module.exports.authenticate =(req, res, next) => {
 //   if (req.user) {
 //     res.send(req.user);
 //     next();
-//   } 
+//   }
 //   else {
 //    return res.status(401).json({ message: 'Invalid token' });
 //   }
 // };
 
-
-
-
-
-
 // const payload = {
 //     id: user._id
 //   };
-   
+
 //   // notice that we're using the SECRET_KEY from our .env file
 //   const userToken = jwt.sign(payload, process.env.SECRET_KEY);
