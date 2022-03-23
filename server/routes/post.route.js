@@ -31,7 +31,7 @@ module.exports = (app) => {
   //@route POST -- create new post
   app.post(
     "/api/posts/create",
-    upload.single("photo"),
+    // upload.single("photo"),
     PostController.createPost
   );
 
