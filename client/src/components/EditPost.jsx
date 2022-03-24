@@ -36,6 +36,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data);
+        console.log(res.data);
       })
       .catch((err) => {
         history.push("/");
