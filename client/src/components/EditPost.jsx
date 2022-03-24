@@ -12,29 +12,36 @@ const EditPost = (props) => {
 
   let [registeredUser, setRegisteredUSer] = useState({});
 
-  let [name, setName] = useState("");
-  let [text, setText] = useState("");
-  let [url, setUrl] = useState("");
-  let [photo, setPhoto] = useState("");
   let [onePost, setOnePost] = useState({});
 
   let { id } = useParams();
 
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+  //     .then((res) => {
+  //       // console.log("RESULT on load, GETONE registered user => ", res)
+  //       if (res.data) {
+  //         setRegisteredUSer(res.data);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       history.push("/");
+  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
+  //     });
+  // }, []);
+
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+      .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
-        // console.log("RESULT on load, GETONE registered user => ", res)
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
+        setOnePost(res.data);
       })
       .catch((err) => {
         history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
+        console.log("err with get one post in Edit", err);
       });
   }, []);
-
   //   const onchangeFileSelectHandler = (e) => {
   //     e.preventDefault();
   //     const fileInput = e.target.files[0];
@@ -73,15 +80,15 @@ const EditPost = (props) => {
   return (
     <div>
       <PostForm
-        // onchangeFileSelectHandler={onchangeFileSelectHandler}
-        // submitHandler={submitHandler}
-        // formInputError={formInputError}
-        // setName.value={onePost.name}
-        setText={setText}
-        name={name}
-        text={text}
-        url={url}
-        setUrl={setUrl}
+      // onchangeFileSelectHandler={onchangeFileSelectHandler}
+      // submitHandler={submitHandler}
+      // formInputError={formInputError}
+      // setName.value={onePost.name}
+      // setText={setText}
+      // name={name}
+      // text={text}
+      // url={url}
+      // setUrl={setUrl}
       ></PostForm>
     </div>
   );

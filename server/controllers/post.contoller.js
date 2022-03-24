@@ -32,7 +32,7 @@ class PostController {
 
   findOnePost = (req, res) => {
     // id in API is _id
-    Post.findOne({ _id: req.params.id })
+    Post.findOne({ id: req.params.id })
       .then((onePost) => res.json({ result: onePost }))
       .catch((err) =>
         res.json({ message: "ERROR with find one ===> ", error: err })
