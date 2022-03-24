@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import FormLabel from "@mui/material/FormLabel";
 import { FormGroup, Input, TextField } from "@mui/material";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CreatePost = () => {
   let history = useHistory();
@@ -183,6 +184,9 @@ const CreatePost = () => {
             >
               Submit
             </Button>
+            <Link to={"/dashboard"} className="btn">
+              Cancel
+            </Link>
           </FormControl>
         </Paper>
       </form>

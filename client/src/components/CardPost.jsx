@@ -1,12 +1,14 @@
 import Card from "@mui/material/Card";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CardActionArea } from "@mui/material";
+import { Avatar, CardActionArea, CardHeader } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
+import { spacing } from "@mui/system";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
@@ -42,29 +44,35 @@ const CardPost = () => {
   return (
     <>
       {allPosts.map((postObj, i) => {
-        console.log("post obj -> " + postObj.photo);
+        {
+          /* console.log("post obj -> " + postObj.photo); */
+        }
         let imgString = postObj.photo;
         return (
-          <Card key={i} sx={{ maxWidth: 645 }}>
+          <Card key={i} sx={{ maxWidth: 645, p: 2, m: 2 }}>
+            <CardHeader>
+              <Avatar></Avatar>
+              <CardTitle tag="h5">User's Name</CardTitle>
+              <subheader>Date/Time</subheader>
+            </CardHeader>
             <CardActionArea>
+              <CardImg
+                component="img"
+                height="400"
+                width="100%"
+                alt="posted image"
+                src={`data:image/jpeg;base64,${postObj.photo}`}
+              ></CardImg>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {postObj.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <CardText variant="body2" color="text.secondary">
                   {postObj.text}
-                </Typography>
+                </CardText>
                 <Typography variant="body2" color="text.secondary">
                   {postObj.url}
                 </Typography>
-                {/* <img src={`data:image/png;base.64,${postObj.photo}`}></img> */}
-                <CardMedia
-                  component="img"
-                  height="194"
-                  //   img={`data:image/png;base.64,${postObj.photo}`}
-                  alt="posted image"
-                  src={`data:image/jpeg;base64,${postObj.photo}`}
-                ></CardMedia>
               </CardContent>
             </CardActionArea>
             <CardActions>

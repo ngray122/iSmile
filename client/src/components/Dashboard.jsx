@@ -43,7 +43,7 @@ const Dashboard = () => {
         </Paper>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-        <Paper>
+        <Paper sx={{ mx: "auto", minWidth: 600 }}>
           {" "}
           <PostWall />
         </Paper>
