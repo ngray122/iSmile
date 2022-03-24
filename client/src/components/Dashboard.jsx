@@ -10,7 +10,7 @@ import PostWall from "./PostWall";
 const Dashboard = () => {
   let history = useHistory();
 
-  let [setRegisteredUSer] = useState({});
+  let [registeredUser, setRegisteredUSer] = useState({});
 
   useEffect(() => {
     axios
@@ -23,7 +23,7 @@ const Dashboard = () => {
       })
       .catch((err) => {
         history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
+        console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
       });
   }, []);
 

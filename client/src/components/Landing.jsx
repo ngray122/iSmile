@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const Landing = (props) => {
   let history = useHistory();
 
-  let [setRegisteredUSer] = useState({});
+  let [registeredUser, setRegisteredUSer] = useState({});
 
   useEffect(() => {
     axios
