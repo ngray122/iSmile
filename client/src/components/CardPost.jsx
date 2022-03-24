@@ -2,18 +2,16 @@ import Card from "@mui/material/Card";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Avatar, CardActionArea, CardHeader } from "@mui/material";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
-import { spacing } from "@mui/system";
+import { CardTitle, CardImg, CardText } from "reactstrap";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
   let [deleted, setDeleted] = useState(false);
-  let [baseImg, setBaseImg] = useState("");
 
   useEffect(() => {
     axios
@@ -36,18 +34,9 @@ const CardPost = () => {
       .catch((err) => console.log("error in submitting delete request"));
   };
 
-  //   const decodeBase64 = (imgString) => {
-  //     let base64ToString = Buffer.from(imgString, "base64").toString();
-  //     setBaseImg({ data: base64ToString });
-  //   };
-
   return (
     <>
       {allPosts.map((postObj, i) => {
-        {
-          /* console.log("post obj -> " + postObj.photo); */
-        }
-        let imgString = postObj.photo;
         return (
           <Card key={i} sx={{ maxWidth: 645, p: 2, m: 2 }}>
             <CardHeader>
@@ -70,9 +59,9 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <Typography variant="body2" color="text.secondary">
+                <Link to="{postObj.url}" variant="body2" color="text.secondary">
                   {postObj.url}
-                </Typography>
+                </Link>
               </CardContent>
             </CardActionArea>
             <CardActions>
@@ -82,9 +71,12 @@ const CardPost = () => {
               <Button size="small" color="primary">
                 Pin
               </Button>
-              <Button size="small" color="primary">
-                Edit
-              </Button>
+              <Link to="/posts/edit/:id">
+                <Button size="small" color="primary">
+                  {" "}
+                  Edit
+                </Button>
+              </Link>
               <Button
                 onClick={() => deletePost(postObj._id)}
                 size="small"

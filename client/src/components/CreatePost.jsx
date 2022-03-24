@@ -2,15 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
-import FormLabel from "@mui/material/FormLabel";
-import { FormGroup, Input, TextField } from "@mui/material";
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import PostForm from "./PostForm";
 
 const CreatePost = () => {
   let history = useHistory();
@@ -28,7 +21,6 @@ const CreatePost = () => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
       .then((res) => {
-        // console.log("RESULT on load, GETONE registered user => ", res)
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -38,23 +30,6 @@ const CreatePost = () => {
         console.log("ERR WHEN GETTING LOGGED IN USER", err);
       });
   }, []);
-
-  // const changeHandler = (e) => {
-  //     e.preventDefault();
-  //     if (e.target.type == 'file') {
-  //         setUserFormInput({
-  //             ...userFormInput,
-  //             [e.target.photo]: e.target.file,
-  //         })
-  //     } else {
-  //         console.log([e.target.name])
-  //         setUserFormInput({
-  //             [e.target.name]: e.target.value,
-  //             [e.target.text]: e.target.value,
-  //             [e.target.url]: e.target.value
-  //         })
-  //     }
-  // }
 
   const onchangeFileSelectHandler = (e) => {
     e.preventDefault();
@@ -93,103 +68,21 @@ const CreatePost = () => {
 
   return (
     <Box sx={{ bgcolor: "primary.light" }}>
-      <form encType="multipart/form-data" onSubmit={submitHandler}>
-        <Paper
-          align="center"
-          variant="outlined"
-          // elevation=''
-          mx="auto"
-          sx={{ p: "20px" }}
-          border="2"
-          // sx={{bgcolor:'primary.light'}}
-        >
-          <FormControl>
-            <Typography component="legend" variant="h6">
-              What made you smile today, {registeredUser.firstName}?
-            </Typography>
+      <Typography component="legend" variant="h6">
+        What made you smile today, {registeredUser.firstName}?
+      </Typography>
 
-            {/* Form Starts */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              {/* NAME INPUT */}
-              <TextField
-                variant="standard"
-                id="component-outlined"
-                value={name}
-                // error
-                onChange={(e) => setName(e.target.value)}
-                label="Name of your post"
-                input="name"
-                name="name"
-                helperText={formInputError.name?.message}
-              />
-            </FormGroup>
-
-            {/*  TEXT INPUT */}
-            <FormGroup sx={{ p: "5px" }}>
-              <TextField
-                variant="standard"
-                // type='email'
-                id="component-outlined"
-                value={text}
-                maxRows="6"
-                name="text"
-                onChange={(e) => setText(e.target.value)}
-                label="Text Area"
-                input="name"
-                helperText={formInputError.url?.message}
-
-                // errorText={formInputError.text?.message}
-              />
-            </FormGroup>
-
-            {/* URL INPUT */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              <TextField
-                variant="standard"
-                // error
-                id="component-outlined"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                label="Add Link (optional)"
-                input="url"
-                name="url"
-                helperText={formInputError.url?.message}
-              />
-            </FormGroup>
-
-            {/* IMAGE UPLOAD */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              <Input
-                className="imgUpload"
-                type="file"
-                onChange={onchangeFileSelectHandler}
-                variant="standard"
-                id="component-outlined"
-                value=""
-                label="Add photo"
-                input="file"
-                filename="photo"
-                accept=".png, .jpg, .jpeg"
-                // error
-                // helperText={formInputError.photo?.message}xs
-              />
-              {/* <PhotoCameraIcon></PhotoCameraIcon> */}
-            </FormGroup>
-
-            <Button
-              // onClick={() => console.log("Button clicked")}
-              type="submit"
-              // component={} to="/"
-              variant="contained"
-            >
-              Submit
-            </Button>
-            <Link to={"/dashboard"} className="btn">
-              Cancel
-            </Link>
-          </FormControl>
-        </Paper>
-      </form>
+      <PostForm
+        onchangeFileSelectHandler={onchangeFileSelectHandler}
+        submitHandler={submitHandler}
+        formInputError={formInputError}
+        setName={setName}
+        setText={setText}
+        name={name}
+        text={text}
+        url={url}
+        setUrl={setUrl}
+      ></PostForm>
     </Box>
   );
 };
