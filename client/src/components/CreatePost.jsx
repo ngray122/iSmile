@@ -21,7 +21,6 @@ const CreatePost = () => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
       .then((res) => {
-        // console.log("RESULT on load, GETONE registered user => ", res)
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -31,23 +30,6 @@ const CreatePost = () => {
         console.log("ERR WHEN GETTING LOGGED IN USER", err);
       });
   }, []);
-
-  // const changeHandler = (e) => {
-  //     e.preventDefault();
-  //     if (e.target.type == 'file') {
-  //         setUserFormInput({
-  //             ...userFormInput,
-  //             [e.target.photo]: e.target.file,
-  //         })
-  //     } else {
-  //         console.log([e.target.name])
-  //         setUserFormInput({
-  //             [e.target.name]: e.target.value,
-  //             [e.target.text]: e.target.value,
-  //             [e.target.url]: e.target.value
-  //         })
-  //     }
-  // }
 
   const onchangeFileSelectHandler = (e) => {
     e.preventDefault();
