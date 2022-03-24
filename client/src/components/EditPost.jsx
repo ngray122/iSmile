@@ -16,20 +16,20 @@ const EditPost = (props) => {
 
   let { id } = useParams();
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-  //     .then((res) => {
-  //       // console.log("RESULT on load, GETONE registered user => ", res)
-  //       if (res.data) {
-  //         setRegisteredUSer(res.data);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       history.push("/");
-  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+      .then((res) => {
+        // console.log("RESULT on load, GETONE registered user => ", res)
+        if (res.data) {
+          setRegisteredUSer(res.data);
+        }
+      })
+      .catch((err) => {
+        history.push("/");
+        console.log("ERR WHEN GETTING LOGGED IN USER", err);
+      });
+  }, []);
 
   useEffect(() => {
     axios
