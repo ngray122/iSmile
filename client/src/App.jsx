@@ -10,7 +10,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
-import { Container } from "@mui/material";
 import { Box } from "@mui/material";
 import CreatePost from "./components/CreatePost";
 import EditPost from "./components/EditPost";
@@ -33,13 +32,6 @@ function App() {
       },
     },
   });
-
-  {
-    /* 
-          ????????????????  Navbar will be visible on all routes, but different nav buttons depending on page user is currently on.  Not just registered/not-resgistered
-        
-        ??????  Do API calls need to be on every component for the dashboard?    Yes becuase of the indivdual routes of each component*/
-  }
 
   return (
     <ThemeProvider theme={siteTheme}>

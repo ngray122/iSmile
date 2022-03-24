@@ -2,9 +2,8 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { flexbox } from "@mui/system";
 import axios from "axios";
-import { BrowserRouter, Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
 
 const RegisteredNavBar = () => {
