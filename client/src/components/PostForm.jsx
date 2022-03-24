@@ -25,7 +25,6 @@ const PostForm = (props) => {
         mx="auto"
         sx={{ p: "20px" }}
         border="2"
-        // sx={{bgcolor:'primary.light'}}
       >
         <FormControl>
           {/* Form Starts */}
