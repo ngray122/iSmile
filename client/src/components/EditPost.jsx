@@ -22,9 +22,9 @@ const EditPost = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/user/getone`, { withCredentials: true })
+      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
       .then((res) => {
-        console.log("RESULT on load, GETONE registered user => ", res);
+        // console.log("RESULT on load, GETONE registered user => ", res)
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -58,7 +58,7 @@ const EditPost = (props) => {
   //     formData.append("url", url);
   //     formData.append("photo", photo);
   //     axios
-  //       .post(`http://localhost:8000/api/posts/edit/${id}`, formData)
+  //       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
   //       .then((res) => {
   //         console.log("CREATE POST ==>", res);
   //         if (res.data.errors) {
@@ -76,7 +76,7 @@ const EditPost = (props) => {
         // onchangeFileSelectHandler={onchangeFileSelectHandler}
         // submitHandler={submitHandler}
         // formInputError={formInputError}
-        setName={setName}
+        // setName.value={onePost.name}
         setText={setText}
         name={name}
         text={text}
