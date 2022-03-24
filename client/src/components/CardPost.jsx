@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
 import { spacing } from "@mui/system";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { LinkButton, Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
@@ -83,9 +83,12 @@ const CardPost = () => {
               <Button size="small" color="primary">
                 Pin
               </Button>
-              <Button size="small" color="primary">
-                Edit
-              </Button>
+              <Link to="/post/edit">
+                <Button size="small" color="primary">
+                  {" "}
+                  Edit
+                </Button>
+              </Link>
               <Button
                 onClick={() => deletePost(postObj._id)}
                 size="small"

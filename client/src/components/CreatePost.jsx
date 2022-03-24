@@ -2,15 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
-import FormLabel from "@mui/material/FormLabel";
-import { FormGroup, Input, TextField } from "@mui/material";
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import PostForm from "./PostForm";
 
 const CreatePost = () => {
