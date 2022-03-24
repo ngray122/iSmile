@@ -69,7 +69,7 @@ function App() {
             <CreatePost />
           </Route>
 
-          <Route exact path="/posts/edit">
+          <Route exact path="/posts/edit/:id">
             <RegisteredNavBar />
             <EditPost></EditPost>
           </Route>

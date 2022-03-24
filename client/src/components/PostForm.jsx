@@ -39,8 +39,8 @@ const PostForm = (props) => {
               onChange={(e) => setName(e.target.value)}
               label="Name of your post"
               input="name"
-              name="name"
-              helperText={formInputError.name?.message}
+              //   name="name"
+              //   helperText={formInputError.name?.message}
             />
           </FormGroup>
 
@@ -52,11 +52,11 @@ const PostForm = (props) => {
               id="component-outlined"
               value={text}
               maxRows="6"
-              name="text"
+              //   name="text"
               onChange={(e) => setText(e.target.value)}
               label="Text Area"
-              input="name"
-              helperText={formInputError.url?.message}
+              input="text"
+              //   helperText={formInputError.url?.message}
 
               // errorText={formInputError.text?.message}
             />
@@ -72,8 +72,8 @@ const PostForm = (props) => {
               onChange={(e) => setUrl(e.target.value)}
               label="Add Link (optional)"
               input="url"
-              name="url"
-              helperText={formInputError.url?.message}
+              //   name="url"
+              //   helperText={formInputError.url?.message}
             />
           </FormGroup>
 

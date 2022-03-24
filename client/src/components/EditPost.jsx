@@ -22,9 +22,9 @@ const EditPost = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+      .get(`http://localhost:8000/api/user/getone`, { withCredentials: true })
       .then((res) => {
-        // console.log("RESULT on load, GETONE registered user => ", res)
+        console.log("RESULT on load, GETONE registered user => ", res);
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -35,44 +35,54 @@ const EditPost = (props) => {
       });
   }, []);
 
-  const onchangeFileSelectHandler = (e) => {
-    e.preventDefault();
-    const fileInput = e.target.files[0];
-    const reader = new FileReader();
-    let base64String;
-    reader.onloadend = () => {
-      base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      // console.log("fileInput log -> " + fileInput);
-      setPhoto(base64String);
-      console.log("base64log -> " + base64String);
-    };
-    reader.readAsDataURL(fileInput);
-  };
+  //   const onchangeFileSelectHandler = (e) => {
+  //     e.preventDefault();
+  //     const fileInput = e.target.files[0];
+  //     const reader = new FileReader();
+  //     let base64String;
+  //     reader.onloadend = () => {
+  //       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+  //       // console.log("fileInput log -> " + fileInput);
+  //       setPhoto(base64String);
+  //       console.log("base64log -> " + base64String);
+  //     };
+  //     reader.readAsDataURL(fileInput);
+  //   };
 
   // Creates new post for user
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("text", text);
-    formData.append("url", url);
-    formData.append("photo", photo);
-    axios
-      .post(`http://localhost:8000/api/posts/edit/${id}`, formData)
-      .then((res) => {
-        console.log("CREATE POST ==>", res);
-        if (res.data.errors) {
-          setFormInputError(res.data.errors);
-        } else {
-          history.push("/dashboard");
-        }
-      })
-      .catch((err) => console.log("error in submitting post request", err));
-  };
+  //   const submitHandler = (e) => {
+  //     e.preventDefault();
+  //     const formData = new FormData();
+  //     formData.append("name", name);
+  //     formData.append("text", text);
+  //     formData.append("url", url);
+  //     formData.append("photo", photo);
+  //     axios
+  //       .post(`http://localhost:8000/api/posts/edit/${id}`, formData)
+  //       .then((res) => {
+  //         console.log("CREATE POST ==>", res);
+  //         if (res.data.errors) {
+  //           setFormInputError(res.data.errors);
+  //         } else {
+  //           history.push("/dashboard");
+  //         }
+  //       })
+  //       .catch((err) => console.log("error in submitting post request", err));
+  //   };
 
   return (
     <div>
-      <PostForm></PostForm>
+      <PostForm
+        // onchangeFileSelectHandler={onchangeFileSelectHandler}
+        // submitHandler={submitHandler}
+        // formInputError={formInputError}
+        setName={setName}
+        setText={setText}
+        name={name}
+        text={text}
+        url={url}
+        setUrl={setUrl}
+      ></PostForm>
     </div>
   );
 };

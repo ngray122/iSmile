@@ -83,7 +83,7 @@ const CardPost = () => {
               <Button size="small" color="primary">
                 Pin
               </Button>
-              <Link to="/post/edit">
+              <Link to="/posts/edit/:id">
                 <Button size="small" color="primary">
                   {" "}
                   Edit
