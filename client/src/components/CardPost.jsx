@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
 import { spacing } from "@mui/system";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
@@ -70,9 +71,9 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <Typography variant="body2" color="text.secondary">
+                <Link to="{postObj.url}" variant="body2" color="text.secondary">
                   {postObj.url}
-                </Typography>
+                </Link>
               </CardContent>
             </CardActionArea>
             <CardActions>

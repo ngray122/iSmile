@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
@@ -32,26 +33,28 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Grid
-      container
-      // bgcolor='primary.light'
-      spacing={3}
-    >
-      <Grid item xs={12} sm={6} md={4}>
-        <Paper>
-          <Profile></Profile>
-        </Paper>
+    <Box container>
+      <Grid
+        container
+        // bgcolor='primary.light'
+        spacing={3}
+      >
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper>
+            <Profile></Profile>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={5.5}>
+          <Paper>
+            {" "}
+            <PostWall />
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={2.5}>
+          <Paper>PINNED 3 col</Paper>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={6} md={6}>
-        <Paper sx={{ mx: "auto", minWidth: 600 }}>
-          {" "}
-          <PostWall />
-        </Paper>
-      </Grid>
-      <Grid item xs={12} sm={6} md={2}>
-        <Paper>PINNED 3 col</Paper>
-      </Grid>
-    </Grid>
+    </Box>
   );
 };
 export default Dashboard;
