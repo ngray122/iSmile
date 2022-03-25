@@ -1,12 +1,6 @@
 const { Post } = require("../models/post.model");
 
 class PostController {
-  index = (req, res) => {
-    res.json({
-      message: "Hello Hello from controller",
-    });
-  };
-
   createPost = (req, res) => {
     const newPost = {
       ...req.body,

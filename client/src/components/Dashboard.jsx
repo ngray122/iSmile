@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
-
-// ???????????????????????As User navigates to different component views, the buttons should change to fit content.  A New Nav Component seems to violate dry code
 
 const Dashboard = () => {
   let history = useHistory();

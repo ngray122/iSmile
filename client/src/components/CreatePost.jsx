@@ -32,23 +32,6 @@ const CreatePost = () => {
       });
   }, []);
 
-  // const changeHandler = (e) => {
-  //     e.preventDefault();
-  //     if (e.target.type == 'file') {
-  //         setUserFormInput({
-  //             ...userFormInput,
-  //             [e.target.photo]: e.target.file,
-  //         })
-  //     } else {
-  //         console.log([e.target.name])
-  //         setUserFormInput({
-  //             [e.target.name]: e.target.value,
-  //             [e.target.text]: e.target.value,
-  //             [e.target.url]: e.target.value
-  //         })
-  //     }
-  // }
-
   const onchangeFileSelectHandler = (e) => {
     e.preventDefault();
     const fileInput = e.target.files[0];
