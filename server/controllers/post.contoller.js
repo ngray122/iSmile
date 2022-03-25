@@ -16,10 +16,17 @@ class PostController {
   };
 
   updatePost = (req, res) => {
-    Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
-      new: true,
-      runValidators: true,
-    })
+    console.log("res -> " + res.json);
+    // console.log("req.body.photo -> " + req.body.photo);
+    // //
+    Post.findOneAndUpdate(
+      { _id: req.params.id },
+      { ...req.body, photo: req.body.photo },
+      {
+        new: true,
+        runValidators: true,
+      }
+    )
       .then((post) => res.json({ result: post }))
       .catch((err) =>
         res.json({ message: "ERROR with update ===> ", error: err })

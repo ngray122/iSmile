@@ -60,6 +60,7 @@ const EditPost = (props) => {
 
   const onChangeHandler = (e) => {
     // console.log("Onchange is working");
+
     setOnePost({
       ...onePost,
       [e.target.name]: e.target.value,
@@ -67,6 +68,8 @@ const EditPost = (props) => {
       [e.target.url]: e.target.value,
       [e.target.photo]: e.target.value,
     });
+
+    console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
 
   const submitHandler = (e) => {
@@ -74,7 +77,10 @@ const EditPost = (props) => {
     axios
       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
-        console.log("Edit put -> ", res);
+        console.log("Edit put -> ", res.data.result);
+        console.log(
+          "onePost I am sending as PUT req to updatePost -> " + onePost
+        );
         if (res.data.error) {
           setFormInputError(res.data.errors);
         } else {
@@ -150,7 +156,7 @@ const EditPost = (props) => {
               <Input
                 className="imgUpload"
                 type="file"
-                onChange={onchangeFileSelectHandler}
+                onChange={onChangeHandler}
                 variant="standard"
                 id="component-outlined"
                 // value={onePost.photo}
