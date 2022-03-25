@@ -16,8 +16,8 @@ class PostController {
   };
 
   updatePost = (req, res) => {
-    console.log("res -> " + res.json);
-    // console.log("req.body.photo -> " + req.body.photo);
+    // console.log("res -> " + res);
+    console.log("req.body.photo -> " + req.body.photo);
     // //
     Post.findOneAndUpdate(
       { _id: req.params.id },

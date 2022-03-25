@@ -53,7 +53,7 @@ const EditPost = (props) => {
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
-      console.log("base64log -> " + base64String);
+      // console.log("base64log -> " + base64String);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -66,7 +66,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      [e.target.photo]: e.target.value,
+      [e.target.photo]: onchangeFileSelectHandler,
     });
 
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
