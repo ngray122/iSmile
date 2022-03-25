@@ -2,19 +2,16 @@ import Card from "@mui/material/Card";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Avatar, CardActionArea, CardHeader } from "@mui/material";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
-import { spacing } from "@mui/system";
-import { LinkButton, Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
   let [deleted, setDeleted] = useState(false);
-  let [baseImg, setBaseImg] = useState("");
 
   useEffect(() => {
     axios
@@ -37,17 +34,9 @@ const CardPost = () => {
       .catch((err) => console.log("error in submitting delete request"));
   };
 
-  //   const decodeBase64 = (imgString) => {
-  //     let base64ToString = Buffer.from(imgString, "base64").toString();
-  //     setBaseImg({ data: base64ToString });
-  //   };
-
   return (
     <>
       {allPosts.map((postObj, i) => {
-        {
-          /* console.log("post obj -> " + postObj.photo); */
-        }
         let imgString = postObj.photo;
         return (
           <Card key={i} sx={{ maxWidth: 645, p: 2, m: 2 }}>
