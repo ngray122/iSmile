@@ -15,6 +15,17 @@ class PostController {
       });
   };
 
+  updatePost = (req, res) => {
+    Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true,
+    })
+      .then((post) => res.json({ result: post }))
+      .catch((err) =>
+        res.json({ message: "ERROR with update ===> ", error: err })
+      );
+  };
+
   findAllPosts = (req, res) => {
     Post.find()
       .populate("user_id")
@@ -30,17 +41,6 @@ class PostController {
       .then((onePost) => res.json({ result: onePost }))
       .catch((err) =>
         res.json({ message: "ERROR with find one ===> ", error: err })
-      );
-  };
-
-  updatePost = (req, res) => {
-    Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
-      new: true,
-      runValidators: true,
-    })
-      .then((prod) => res.json({ result: prod }))
-      .catch((err) =>
-        res.json({ message: "ERROR with update ===> ", error: err })
       );
   };
 

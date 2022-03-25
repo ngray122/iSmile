@@ -13,12 +13,9 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const EditPost = (props) => {
   let history = useHistory();
   let [formInputError, setFormInputError] = useState({});
-
   let [registeredUser, setRegisteredUSer] = useState({});
-
   let [onePost, setOnePost] = useState({});
   let [photo, setPhoto] = useState({});
-
   let { id } = useParams();
 
   useEffect(() => {
@@ -40,7 +37,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data.result);
-        // console.log("one post log -> " + res.data.result);
+        console.log("one post log -> " + res.data);
       })
       .catch((err) => {
         history.push("/");
@@ -62,13 +59,13 @@ const EditPost = (props) => {
   };
 
   const onChangeHandler = (e) => {
-    console.log("Onchange is working");
+    // console.log("Onchange is working");
     setOnePost({
       ...onePost,
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      // [e.target.photo]: photo,
+      [e.target.photo]: e.target.value,
     });
   };
 
@@ -156,7 +153,7 @@ const EditPost = (props) => {
                 onChange={onchangeFileSelectHandler}
                 variant="standard"
                 id="component-outlined"
-                value=""
+                // value={onePost.photo}
                 label="Add photo"
                 input="file"
                 filename="photo"
