@@ -67,12 +67,13 @@ const CreatePost = () => {
   };
 
   return (
-    <Paper sx={{ bgcolor: "primary.light", p: "30px" }} container elevation={3}>
+    <Paper sx={{ p: "30px" }} container elevation={3}>
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
 
       <PostForm
+        sx={{ bgcolor: "primary.light" }}
         onchangeFileSelectHandler={onchangeFileSelectHandler}
         submitHandler={submitHandler}
         formInputError={formInputError}

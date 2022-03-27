@@ -80,13 +80,7 @@ function App() {
 
           <Route exact path="/posts/edit/:id">
             <RegisteredNavBar />
-            <Grid
-              container
-              // bgcolor='primary.light'
-              spacing={3}
-              mt={1}
-              p={1}
-            >
+            <Grid container spacing={3} mt={1} p={1}>
               <Grid item xs={12} sm={6} md={4}>
                 <Profile></Profile>
               </Grid>
