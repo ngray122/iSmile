@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
 
 const CreatePost = () => {
@@ -67,7 +67,7 @@ const CreatePost = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "primary.light" }} className="container">
+    <Paper sx={{ bgcolor: "primary.light", p: "30px" }} container elevation={3}>
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
@@ -83,7 +83,7 @@ const CreatePost = () => {
         url={url}
         setUrl={setUrl}
       ></PostForm>
-    </Box>
+    </Paper>
   );
 };
 

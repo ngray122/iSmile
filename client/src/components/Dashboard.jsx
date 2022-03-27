@@ -27,15 +27,12 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Grid container spacing={3} mt={1}>
+    <Grid container spacing={3} m={1} p={1}>
       <Grid item xs={12} sm={6} md={4}>
         <Profile></Profile>
       </Grid>
-      <Grid item xs={12} sm={6} md={5.5}>
+      <Grid item xs={12} sm={6} md={8}>
         <PostWall sx={{ backgroundColor: "#fff1ff", minHeight: "100%" }} />
-      </Grid>
-      <Grid item xs={12} sm={6} md={2.5}>
-        <Paper>PINNED 3 col</Paper>
       </Grid>
     </Grid>
   );

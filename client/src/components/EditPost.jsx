@@ -92,94 +92,85 @@ const EditPost = (props) => {
   };
 
   return (
-    <div className="container">
+    <Paper align="center" mx="auto" container elevation={3} sx={{ p: "30px" }}>
       <form encType="multipart/form-data" onSubmit={submitHandler}>
-        <Paper
-          align="center"
-          variant="outlined"
-          mx="auto"
-          sx={{ p: "20px" }}
-          border="2"
-          // sx={{bgcolor:'primary.light'}}
-        >
-          <FormControl>
-            {/* Form Starts */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              {/* NAME INPUT */}
-              <TextField
-                variant="standard"
-                id="component-outlined"
-                value={onePost.name}
-                // error
-                onChange={onChangeHandler}
-                label="Name of your post"
-                input="name"
-                name="name"
-                //   helperText={formInputError.name?.message}
-              />
-            </FormGroup>
+        <FormControl>
+          {/* Form Starts */}
+          <FormGroup row={false}>
+            {/* NAME INPUT */}
+            <TextField
+              variant="standard"
+              id="component-outlined"
+              value={onePost.name}
+              // error
+              onChange={onChangeHandler}
+              label="Name of your post"
+              input="name"
+              name="name"
+              //   helperText={formInputError.name?.message}
+            />
+          </FormGroup>
 
-            {/*  TEXT INPUT */}
-            <FormGroup sx={{ p: "5px" }}>
-              <TextField
-                variant="standard"
-                // type='email'
-                id="component-outlined"
-                value={onePost.text}
-                maxRows="6"
-                name="text"
-                onChange={onChangeHandler}
-                label="Text Area"
-                input="text"
-                //   helperText={formInputError.url?.message}
+          {/*  TEXT INPUT */}
+          <FormGroup sx={{ p: "5px" }}>
+            <TextField
+              variant="standard"
+              // type='email'
+              id="component-outlined"
+              value={onePost.text}
+              maxRows="6"
+              name="text"
+              onChange={onChangeHandler}
+              label="Text Area"
+              input="text"
+              //   helperText={formInputError.url?.message}
 
-                // errorText={formInputError.text?.message}
-              />
-            </FormGroup>
+              // errorText={formInputError.text?.message}
+            />
+          </FormGroup>
 
-            {/* URL INPUT */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              <TextField
-                variant="standard"
-                // error
-                id="component-outlined"
-                value={onePost.url}
-                onChange={onChangeHandler}
-                label="Add Link (optional)"
-                input="url"
-                name="url"
-                //   helperText={formInputError.url?.message}
-              />
-            </FormGroup>
+          {/* URL INPUT */}
+          <FormGroup row={false} sx={{ p: "5px" }}>
+            <TextField
+              variant="standard"
+              // error
+              id="component-outlined"
+              value={onePost.url}
+              onChange={onChangeHandler}
+              label="Add Link (optional)"
+              input="url"
+              name="url"
+              //   helperText={formInputError.url?.message}
+            />
+          </FormGroup>
 
-            {/* IMAGE UPLOAD */}
-            <FormGroup row={false} sx={{ p: "5px" }}>
-              <Input
-                className="imgUpload"
-                type="file"
-                onChange={onchangeFileSelectHandler}
-                variant="standard"
-                id="component-outlined"
-                // value={onePost.photo}
-                label="Add photo"
-                input="file"
-                filename="photo"
-                accept=".png, .jpg, .jpeg"
-                name="photo"
-                // helperText={formInputError.photo?.message}xs
-              />
-            </FormGroup>
+          {/* IMAGE UPLOAD */}
+          <FormGroup row={false} sx={{ p: "5px" }}>
+            <Input
+              className="imgUpload"
+              type="file"
+              onChange={onchangeFileSelectHandler}
+              variant="standard"
+              id="component-outlined"
+              // value={onePost.photo}
+              label="Add photo"
+              input="file"
+              filename="photo"
+              accept=".png, .jpg, .jpeg"
+              name="photo"
+              // helperText={formInputError.photo?.message}xs
+            />
+          </FormGroup>
 
-            <Button type="submit" variant="contained">
-              Submit
-            </Button>
-            <Link to={"/dashboard"} className="btn">
-              Cancel
-            </Link>
-          </FormControl>
-        </Paper>
+          <Button type="submit" variant="contained">
+            Submit
+          </Button>
+          <Link to={"/dashboard"} className="btn">
+            Cancel
+          </Link>
+        </FormControl>
       </form>
-    </div>
+    </Paper>
   );
 };
 

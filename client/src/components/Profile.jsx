@@ -31,7 +31,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3} sx={{ p: "20px" }}>
       <Card>
         <CardMedia>
           <Avatar
