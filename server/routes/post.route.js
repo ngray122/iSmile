@@ -51,7 +51,11 @@ module.exports = (app) => {
   app.get("/api/posts/getone/:id", PostController.findOnePost);
 
   // @route PUT -- edit post
-  app.put("/api/posts/edit/:id", PostController.updatePost);
+  app.put(
+    "/api/posts/edit/:id",
+    upload.single("photo"),
+    PostController.updatePost
+  );
 
   // @route DELETE -- delete post
   app.delete("/api/posts/delete/:id", PostController.deletePost);

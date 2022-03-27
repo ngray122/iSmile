@@ -57,7 +57,7 @@ const CreatePost = () => {
     axios
       .post("http://localhost:8000/api/posts/create", formData)
       .then((res) => {
-        console.log("CREATE POST ==>", res);
+        // console.log("CREATE POST ==>", res);
         if (res.data.errors) {
           setFormInputError(res.data.errors);
         } else {
@@ -68,7 +68,7 @@ const CreatePost = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "primary.light" }}>
+    <Box sx={{ bgcolor: "primary.light" }} className="container">
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>

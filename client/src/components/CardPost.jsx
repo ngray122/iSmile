@@ -17,7 +17,7 @@ const CardPost = () => {
     axios
       .get("http://localhost:8000/api/posts/getall")
       .then((res) => {
-        console.log("RES getting all posts ===> ", res);
+        // console.log("RES getting all posts ===> ", res);
         setAllPosts(res.data.result);
       })
       .catch((err) => {

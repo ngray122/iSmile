@@ -37,7 +37,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data.result);
-        console.log("one post log -> " + res.data);
+        // console.log("one post log -> " + res.data);
       })
       .catch((err) => {
         history.push("/");
@@ -46,16 +46,17 @@ const EditPost = (props) => {
   }, []);
 
   const onchangeFileSelectHandler = (e) => {
+    console.log("hello from inside ");
     e.preventDefault();
     const fileInput = e.target.files[0];
-    const reader = new FileReader();
-    let base64String;
-    reader.onloadend = () => {
-      base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      setPhoto(base64String);
+    const fReader = new FileReader();
+    let img;
+    fReader.onloadend = (e) => {
+      img = fReader.result.readAsDataURL(fileInput);
+      setPhoto(img);
+      console.log("img in filehandler -> " + img);
       // console.log("base64log -> " + base64String);
     };
-    reader.readAsDataURL(fileInput);
   };
 
   const onChangeHandler = (e) => {
@@ -66,7 +67,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      [e.target.photo]: onchangeFileSelectHandler,
+      [e.target.photo]: { onchangeFileSelectHandler },
     });
 
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
@@ -91,7 +92,7 @@ const EditPost = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <form encType="multipart/form-data" onSubmit={submitHandler}>
         <Paper
           align="center"
@@ -156,7 +157,7 @@ const EditPost = (props) => {
               <Input
                 className="imgUpload"
                 type="file"
-                onChange={onChangeHandler}
+                onChange={onchangeFileSelectHandler}
                 variant="standard"
                 id="component-outlined"
                 // value={onePost.photo}

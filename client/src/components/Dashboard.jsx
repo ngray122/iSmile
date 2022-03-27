@@ -28,7 +28,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Box container>
+    <Box className="container">
       <Grid
         container
         // bgcolor='primary.light'

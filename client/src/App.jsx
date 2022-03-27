@@ -13,6 +13,9 @@ import RegisteredNavBar from "./components/RegisteredNavBar";
 import { Box } from "@mui/material";
 import CreatePost from "./components/CreatePost";
 import EditPost from "./components/EditPost";
+import Profile from "./components/Profile";
+import Paper from "./components/Dashboard";
+import Grid from "@mui/material/Grid";
 
 function App() {
   const siteTheme = createTheme({
@@ -58,7 +61,21 @@ function App() {
           {/* Create a New Post */}
           <Route exact path="/posts/create">
             <RegisteredNavBar />
-            <CreatePost />
+            <Grid
+              container
+              // bgcolor='primary.light'
+              spacing={3}
+            >
+              <Grid item xs={12} sm={6} md={4}>
+                <Profile></Profile>
+              </Grid>
+              <Grid item xs={12} sm={6} md={5.5}>
+                <CreatePost />
+              </Grid>
+              <Grid item xs={12} sm={6} md={2.5}>
+                PINNED 3 col
+              </Grid>
+            </Grid>
           </Route>
 
           <Route exact path="/posts/edit/:id">
