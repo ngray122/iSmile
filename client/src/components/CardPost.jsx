@@ -5,9 +5,11 @@ import { Avatar, CardActionArea, CardHeader } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
@@ -45,7 +47,7 @@ const CardPost = () => {
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
               ></CardImg>
-              <CardContent sx={{ bgcolor: "primary.main" }}>
+              <CardContent sx={{ bgcolor: "primary.light" }}>
                 <Typography gutterBottom variant="h5" component="div">
                   {postObj.name}
                 </Typography>
@@ -70,13 +72,14 @@ const CardPost = () => {
                   Edit
                 </Button>
               </Link>
-              <Button
+              <IconButton
                 onClick={() => deletePost(postObj._id)}
                 size="small"
                 color="primary"
+                aria-label="delete"
               >
-                Delete
-              </Button>
+                <DeleteIcon />
+              </IconButton>
             </CardActions>
           </Card>
         );

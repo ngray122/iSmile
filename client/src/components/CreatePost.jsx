@@ -21,7 +21,6 @@ const CreatePost = () => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
       .then((res) => {
-        // console.log("RESULT on load, GETONE registered user => ", res)
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -39,9 +38,8 @@ const CreatePost = () => {
     let base64String;
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      // console.log("fileInput log -> " + fileInput);
       setPhoto(base64String);
-      console.log("base64log -> " + base64String);
+      // console.log("base64log -> " + base64String);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -67,13 +65,20 @@ const CreatePost = () => {
   };
 
   return (
-    <Paper sx={{ p: "30px" }} container elevation={3}>
+    <Paper
+      sx={{ maxWidth: "750px", p: "30px" }}
+      container
+      elevation={3}
+      align="center"
+      mx="auto"
+    >
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
 
       <PostForm
         sx={{ bgcolor: "primary.light" }}
+        elevation={3}
         onchangeFileSelectHandler={onchangeFileSelectHandler}
         submitHandler={submitHandler}
         formInputError={formInputError}
@@ -83,6 +88,7 @@ const CreatePost = () => {
         text={text}
         url={url}
         setUrl={setUrl}
+        filename={photo}
       ></PostForm>
     </Paper>
   );

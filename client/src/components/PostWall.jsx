@@ -28,7 +28,7 @@ const PostWall = () => {
       });
   }, []);
 
-  return <CardPost varient="outlined" elevation={6}></CardPost>;
+  return <CardPost elevation={6}></CardPost>;
 };
 
 export default PostWall;

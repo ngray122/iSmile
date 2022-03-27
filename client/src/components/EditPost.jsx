@@ -7,6 +7,7 @@ import {
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import { FormGroup, Input, TextField } from "@mui/material";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -79,9 +80,9 @@ const EditPost = (props) => {
       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
         console.log("Edit put -> ", res.data.result);
-        console.log(
-          "onePost I am sending as PUT req to updatePost -> " + onePost
-        );
+        // console.log(
+        //   "onePost I am sending as PUT req to updatePost -> " + onePost
+        // );
         if (res.data.error) {
           setFormInputError(res.data.errors);
         } else {
@@ -92,7 +93,16 @@ const EditPost = (props) => {
   };
 
   return (
-    <Paper align="center" mx="auto" container elevation={3} sx={{ p: "30px" }}>
+    <Paper
+      align="center"
+      mx="auto"
+      container
+      elevation={3}
+      sx={{ p: "30px", maxWidth: "750px" }}
+    >
+      <Typography component="legend" variant="h6">
+        Edit your post
+      </Typography>
       <form encType="multipart/form-data" onSubmit={submitHandler}>
         <FormControl>
           {/* Form Starts */}

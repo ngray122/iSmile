@@ -23,9 +23,9 @@ const PostForm = (props) => {
         align="center"
         variant="outlined"
         mx="auto"
-        sx={{ p: "20px" }}
+        p={1}
         border="2"
-        // sx={{bgcolor:'primary.light'}}
+        // sx={{ bgcolor: "primary.light" }}
       >
         <FormControl>
           {/* Form Starts */}
@@ -96,12 +96,7 @@ const PostForm = (props) => {
             {/* <PhotoCameraIcon></PhotoCameraIcon> */}
           </FormGroup>
 
-          <Button
-            // onClick={() => console.log("Button clicked")}
-            type="submit"
-            // component={} to="/"
-            variant="contained"
-          >
+          <Button type="submit" variant="contained">
             Submit
           </Button>
           <Link to={"/dashboard"} className="btn">

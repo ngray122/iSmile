@@ -32,7 +32,7 @@ const Dashboard = () => {
         <Profile></Profile>
       </Grid>
       <Grid item xs={12} sm={6} md={8}>
-        <PostWall sx={{ backgroundColor: "#fff1ff", minHeight: "100%" }} />
+        <PostWall />
       </Grid>
     </Grid>
   );
