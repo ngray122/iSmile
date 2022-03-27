@@ -73,14 +73,28 @@ function App() {
                 <CreatePost />
               </Grid>
               <Grid item xs={12} sm={6} md={2.5}>
-                PINNED 3 col
+                <Box>PINNED 3 col</Box>
               </Grid>
             </Grid>
           </Route>
 
           <Route exact path="/posts/edit/:id">
             <RegisteredNavBar />
-            <EditPost></EditPost>
+            <Grid
+              container
+              // bgcolor='primary.light'
+              spacing={3}
+            >
+              <Grid item xs={12} sm={6} md={4}>
+                <Profile></Profile>
+              </Grid>
+              <Grid item xs={12} sm={6} md={5.5}>
+                <EditPost></EditPost>
+              </Grid>
+              <Grid item xs={12} sm={6} md={2.5}>
+                <Box>PINNED 3 col</Box>
+              </Grid>
+            </Grid>
           </Route>
         </BrowserRouter>
       </Box>
