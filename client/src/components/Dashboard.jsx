@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
 
@@ -28,28 +27,17 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Box className="container">
-      <Grid
-        container
-        // bgcolor='primary.light'
-        spacing={3}
-      >
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper>
-            <Profile></Profile>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={5.5}>
-          <Paper>
-            {" "}
-            <PostWall />
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2.5}>
-          <Paper>PINNED 3 col</Paper>
-        </Grid>
+    <Grid container spacing={3} mt={1}>
+      <Grid item xs={12} sm={6} md={4}>
+        <Profile></Profile>
       </Grid>
-    </Box>
+      <Grid item xs={12} sm={6} md={5.5}>
+        <PostWall sx={{ backgroundColor: "#fff1ff", minHeight: "100%" }} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={2.5}>
+        <Paper>PINNED 3 col</Paper>
+      </Grid>
+    </Grid>
   );
 };
 export default Dashboard;

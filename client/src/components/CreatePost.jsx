@@ -57,7 +57,6 @@ const CreatePost = () => {
     axios
       .post("http://localhost:8000/api/posts/create", formData)
       .then((res) => {
-        // console.log("CREATE POST ==>", res);
         if (res.data.errors) {
           setFormInputError(res.data.errors);
         } else {

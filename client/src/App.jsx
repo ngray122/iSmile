@@ -16,6 +16,7 @@ import EditPost from "./components/EditPost";
 import Profile from "./components/Profile";
 import Paper from "./components/Dashboard";
 import Grid from "@mui/material/Grid";
+import { minHeight } from "@mui/system";
 
 function App() {
   const siteTheme = createTheme({
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light" }}>
+      <Box className="App" sx={{ bgcolor: "primary.light", minHeight: "100%" }}>
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">
@@ -65,9 +66,11 @@ function App() {
               container
               // bgcolor='primary.light'
               spacing={3}
+              mt={1}
+              p={1}
             >
               <Grid item xs={12} sm={6} md={4}>
-                <Profile></Profile>
+                <Profile />
               </Grid>
               <Grid item xs={12} sm={6} md={5.5}>
                 <CreatePost />

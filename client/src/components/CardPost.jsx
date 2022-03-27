@@ -37,14 +37,8 @@ const CardPost = () => {
   return (
     <>
       {allPosts.map((postObj, i) => {
-        let imgString = postObj.photo;
         return (
-          <Card key={i} sx={{ maxWidth: 645, p: 2, m: 2 }}>
-            <CardHeader>
-              <Avatar></Avatar>
-              <CardTitle tag="h5">User's Name</CardTitle>
-              <subheader>Date/Time</subheader>
-            </CardHeader>
+          <Card key={i} sx={{ maxWidth: 645, p: 2, mb: 3 }}>
             <CardActionArea>
               <CardImg
                 component="img"
