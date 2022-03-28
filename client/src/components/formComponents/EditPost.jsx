@@ -16,7 +16,7 @@ const EditPost = (props) => {
   let [formInputError, setFormInputError] = useState({});
   let [registeredUser, setRegisteredUSer] = useState({});
   let [onePost, setOnePost] = useState({});
-  let [photo, setPhoto] = useState({});
+  let [photo, setPhoto] = useState("");
   let { id } = useParams();
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      [e.target.photo]: { onchangeFileSelectHandler },
+      // [e.target.photo]: photo,
     });
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
@@ -73,7 +73,7 @@ const EditPost = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
+      .put(`http://localhost:8000/api/posts/edit/${id}`, onePost, photo)
       .then((res) => {
         console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
@@ -151,7 +151,7 @@ const EditPost = (props) => {
             <Input
               className="imgUpload"
               type="file"
-              onChange={onChangeHandler}
+              onChange={onchangeFileSelectHandler}
               variant="standard"
               id="component-outlined"
               value=""

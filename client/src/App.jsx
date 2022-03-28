@@ -11,12 +11,10 @@ import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
 import { Box } from "@mui/material";
-import CreatePost from "./components/CreatePost";
-import EditPost from "./components/EditPost";
 import Profile from "./components/Profile";
-import Paper from "./components/Dashboard";
 import Grid from "@mui/material/Grid";
-import { minHeight } from "@mui/system";
+import EditPost from "./components/formComponents/EditPost";
+import CreatePost from "./components/formComponents/CreatePost";
 
 function App() {
   const siteTheme = createTheme({
