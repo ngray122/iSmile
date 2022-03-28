@@ -38,7 +38,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data.result);
-        // console.log("one post log -> " + res.data);
+        // console.log("one post log -> " + res.data.result);
       })
       .catch((err) => {
         history.push("/");
@@ -46,31 +46,41 @@ const EditPost = (props) => {
       });
   }, []);
 
+  // const onchangeFileSelectHandler = (e) => {
+  //   // console.log("hello from inside change file edit");
+  //   e.preventDefault();
+  //   const fileInput = e.target.files[0];
+  //   const fReader = new FileReader();
+  //   let img;
+  //   fReader.onloadend = (e) => {
+  //     img = fReader.result.readAsDataURL(fileInput);
+  //     setPhoto(img);
+  //     console.log("img in filehandler -> " + photo);
+  //     // console.log("base64log -> " + base64String);
+  //   };
+  // };
+
   const onchangeFileSelectHandler = (e) => {
-    console.log("hello from inside ");
     e.preventDefault();
     const fileInput = e.target.files[0];
-    const fReader = new FileReader();
-    let img;
-    fReader.onloadend = (e) => {
-      img = fReader.result.readAsDataURL(fileInput);
-      setPhoto(img);
-      console.log("img in filehandler -> " + img);
-      // console.log("base64log -> " + base64String);
+    const reader = new FileReader();
+    let base64String;
+    reader.onloadend = () => {
+      base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+      setPhoto(base64String);
+      console.log("base64log edit-> " + base64String);
     };
+    reader.readAsDataURL(fileInput);
   };
 
   const onChangeHandler = (e) => {
-    // console.log("Onchange is working");
-
     setOnePost({
       ...onePost,
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      [e.target.photo]: { onchangeFileSelectHandler },
+      [e.target.photo]: onchangeFileSelectHandler,
     });
-
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
 
@@ -80,9 +90,6 @@ const EditPost = (props) => {
       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
         console.log("Edit put -> ", res.data.result);
-        // console.log(
-        //   "onePost I am sending as PUT req to updatePost -> " + onePost
-        // );
         if (res.data.error) {
           setFormInputError(res.data.errors);
         } else {
@@ -162,7 +169,7 @@ const EditPost = (props) => {
               onChange={onchangeFileSelectHandler}
               variant="standard"
               id="component-outlined"
-              // value={onePost.photo}
+              value={""}
               label="Add photo"
               input="file"
               filename="photo"

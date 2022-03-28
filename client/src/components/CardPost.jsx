@@ -54,9 +54,9 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <Link to="{postObj.url}" variant="body2" color="text.secondary">
+                <CardText variant="body2" color="text.secondary">
                   {postObj.url}
-                </Link>
+                </CardText>
               </CardContent>
             </CardActionArea>
             <CardActions>
@@ -66,10 +66,20 @@ const CardPost = () => {
               <Button size="small" color="primary">
                 Pin
               </Button>
-              <Link to={`/posts/edit/${postObj._id}`}>
-                <Button size="small" color="primary">
+
+              <Link
+                to={`/posts/edit/${postObj._id}`}
+                sx={{ textDecoration: "none" }}
+                textDecoration="none"
+              >
+                <Button
+                  size="small"
+                  color="primary"
+                  sx={{ textDecoration: "none" }}
+                  textDecoration="none"
+                >
                   {" "}
-                  Edit
+                  <i class="material-icons">edit</i>
                 </Button>
               </Link>
               <IconButton
