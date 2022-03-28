@@ -46,20 +46,6 @@ const EditPost = (props) => {
       });
   }, []);
 
-  // const onchangeFileSelectHandler = (e) => {
-  //   // console.log("hello from inside change file edit");
-  //   e.preventDefault();
-  //   const fileInput = e.target.files[0];
-  //   const fReader = new FileReader();
-  //   let img;
-  //   fReader.onloadend = (e) => {
-  //     img = fReader.result.readAsDataURL(fileInput);
-  //     setPhoto(img);
-  //     console.log("img in filehandler -> " + photo);
-  //     // console.log("base64log -> " + base64String);
-  //   };
-  // };
-
   const onchangeFileSelectHandler = (e) => {
     e.preventDefault();
     const fileInput = e.target.files[0];
@@ -79,7 +65,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.text]: e.target.value,
       [e.target.url]: e.target.value,
-      [e.target.photo]: onchangeFileSelectHandler,
+      [e.target.photo]: { onchangeFileSelectHandler },
     });
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
@@ -132,7 +118,6 @@ const EditPost = (props) => {
           <FormGroup sx={{ p: "5px" }}>
             <TextField
               variant="standard"
-              // type='email'
               id="component-outlined"
               value={onePost.text}
               maxRows="6"
@@ -166,10 +151,10 @@ const EditPost = (props) => {
             <Input
               className="imgUpload"
               type="file"
-              onChange={onchangeFileSelectHandler}
+              onChange={onChangeHandler}
               variant="standard"
               id="component-outlined"
-              value={""}
+              value=""
               label="Add photo"
               input="file"
               filename="photo"
