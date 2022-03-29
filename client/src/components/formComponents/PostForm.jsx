@@ -69,7 +69,8 @@ const PostForm = (props) => {
           {/* IMAGE UPLOAD */}
           <div className="file-field input-field" row={false} sx={{ p: "5px" }}>
             <div className="btn">
-              <span>Photo</span>
+              <i className="material-icons large prefix">photo_camera</i>
+
               <input
                 className="photo"
                 type="file"
@@ -79,12 +80,11 @@ const PostForm = (props) => {
                 filename="photo"
                 accept=".png, .jpg, .jpeg"
               />
-              {/* <PhotoCameraIcon></PhotoCameraIcon> */}
             </div>
             <div className="file-path-wrapper">
               <input className="file-path validate" type="text" />
             </div>
-            <span class="helper-text" data-error="wrong" data-success="right">
+            <span className="helper-text" data-error="wrong">
               {formInputError.photo?.message}
             </span>
           </div>

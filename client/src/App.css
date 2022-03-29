@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -36,4 +40,3 @@
     transform: rotate(360deg);
   }
 }
-
