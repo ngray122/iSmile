@@ -6,11 +6,7 @@ class UserController {
   registerUser = (req, res) => {
     User.find({ email: req.body.email })
       .then((userEmail) => {
-<<<<<<< HEAD
-        console.log("Res finding user =>> ", userEmail);
-=======
-        // console.log('Res finding user =>> ', userEmail)
->>>>>>> feature/add-edit-form
+        // console.log("Res finding user =>> ", userEmail);
         if (userEmail.length === 0) {
           User.create(req.body)
             .then((user) => {
@@ -72,14 +68,12 @@ class UserController {
       .json({ msg: "success!" });
   };
 
-  // all my made users token is id not _id but their id is still _id
-
   // GET ONE LOGGED IN USER
   getOneLoggedInUser = (req, res) => {
     // console.log(req)
     // use cookie to get single user
     const decodedJWT = jwt.decode(req.cookies.usertoken, { complete: true });
-    // decodedJWT.payload.id
+    decodedJWT.payload.id;
     User.findById(decodedJWT.payload.id)
       .then((user) => {
         res.json(user);
