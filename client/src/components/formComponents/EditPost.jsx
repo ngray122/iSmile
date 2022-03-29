@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { FormGroup, Input, TextField } from "@mui/material";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const EditPost = (props) => {
@@ -63,9 +62,7 @@ const EditPost = (props) => {
     setOnePost({
       ...onePost,
       [e.target.name]: e.target.value,
-      [e.target.text]: e.target.value,
-      [e.target.url]: e.target.value,
-      // [e.target.photo]: photo,
+      [onePost.photo]: photo,
     });
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
@@ -73,7 +70,7 @@ const EditPost = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8000/api/posts/edit/${id}`, onePost, photo)
+      .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
         console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
@@ -89,6 +86,7 @@ const EditPost = (props) => {
     <Paper
       align="center"
       mx="auto"
+      variant="outlined"
       container
       elevation={3}
       sx={{ p: "30px", maxWidth: "750px" }}
@@ -99,9 +97,9 @@ const EditPost = (props) => {
       <form encType="multipart/form-data" onSubmit={submitHandler}>
         <FormControl>
           {/* Form Starts */}
-          <FormGroup row={false}>
+          <div className="input-field" row={false}>
             {/* NAME INPUT */}
-            <TextField
+            <input
               variant="standard"
               id="component-outlined"
               value={onePost.name}
@@ -112,11 +110,11 @@ const EditPost = (props) => {
               name="name"
               //   helperText={formInputError.name?.message}
             />
-          </FormGroup>
+          </div>
 
           {/*  TEXT INPUT */}
-          <FormGroup sx={{ p: "5px" }}>
-            <TextField
+          <div sx={{ p: "5px" }}>
+            <input
               variant="standard"
               id="component-outlined"
               value={onePost.text}
@@ -129,11 +127,11 @@ const EditPost = (props) => {
 
               // errorText={formInputError.text?.message}
             />
-          </FormGroup>
+          </div>
 
           {/* URL INPUT */}
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
+          <div row={false} sx={{ p: "5px" }}>
+            <input
               variant="standard"
               // error
               id="component-outlined"
@@ -144,11 +142,11 @@ const EditPost = (props) => {
               name="url"
               //   helperText={formInputError.url?.message}
             />
-          </FormGroup>
+          </div>
 
           {/* IMAGE UPLOAD */}
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <Input
+          <div row={false} sx={{ p: "5px" }}>
+            <input
               className="imgUpload"
               type="file"
               onChange={onchangeFileSelectHandler}
@@ -162,7 +160,7 @@ const EditPost = (props) => {
               name="photo"
               // helperText={formInputError.photo?.message}xs
             />
-          </FormGroup>
+          </div>
 
           <Button type="submit" variant="contained">
             Submit

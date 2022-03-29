@@ -84,9 +84,6 @@ const CreatePost = () => {
         formInputError={formInputError}
         setName={setName}
         setText={setText}
-        name={name}
-        text={text}
-        url={url}
         setUrl={setUrl}
         filename={photo}
       ></PostForm>
