@@ -17,6 +17,7 @@ const EditPost = (props) => {
   let [photo, setPhoto] = useState("");
   let { id } = useParams();
 
+  //
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
