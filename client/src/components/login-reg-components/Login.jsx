@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container col s6">
       <div className="row">
         <form className="col s6" onSubmit={login}>
           <div className="row">
