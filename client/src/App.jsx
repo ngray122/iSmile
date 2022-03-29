@@ -21,9 +21,9 @@ function App() {
     palette: {
       mode: "light",
       primary: {
-        light: " #fff1ff",
-        main: "#e1bee7",
-        dark: "#af8eb5",
+        light: "#FFF7BC ",
+        main: "#black",
+        dark: "#FF8080",
         contrastText: "#ffffff",
       },
       secondary: {
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light", minHeight: "100%" }}>
+      <Box className="App" sx={{ bgcolor: "primary.light", height: "100%" }}>
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">

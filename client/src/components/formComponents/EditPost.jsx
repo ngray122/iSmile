@@ -6,7 +6,6 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -62,7 +61,7 @@ const EditPost = (props) => {
     setOnePost({
       ...onePost,
       [e.target.name]: e.target.value,
-      [onePost.photo]: photo,
+      [e.target.photo]: photo,
     });
     console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
@@ -162,12 +161,12 @@ const EditPost = (props) => {
             />
           </div>
 
-          <Button type="submit" variant="contained">
-            Submit
-          </Button>
-          <Link to={"/dashboard"} className="btn">
-            Cancel
-          </Link>
+          <button type="submit">Submit</button>
+          <button>
+            <Link to={"/dashboard"} className="btn">
+              Cancel
+            </Link>
+          </button>
         </FormControl>
       </form>
     </Paper>

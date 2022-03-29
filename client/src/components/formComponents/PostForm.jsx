@@ -1,6 +1,5 @@
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
-import Button from "@mui/material/Button";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
@@ -19,7 +18,7 @@ const PostForm = (props) => {
 
   return (
     <form encType="multipart/form-data" onSubmit={submitHandler}>
-      <Paper align="center" variant="outlined" mx="auto" p={1} border="2">
+      <Paper align="center" variant="outlined" mx="auto" p={1}>
         <FormControl>
           {/* Form Starts */}
           <div className="input-field" row={false} sx={{ p: "5px" }}>
@@ -89,13 +88,22 @@ const PostForm = (props) => {
               {formInputError.photo?.message}
             </span>
           </div>
-
-          <Button type="submit" variant="contained">
-            Submit
-          </Button>
-          <Link to={"/dashboard"} className="btn">
-            Cancel
-          </Link>
+          <div>
+            <button
+              className="btn waves-effect waves-light"
+              type="submit"
+              name="action"
+              id="form-button"
+            >
+              Submit
+              <i className="material-icons right">send</i>
+            </button>
+            <button className="btn waves-effect waves-light" id="form-button">
+              <Link id="form-link" to={"/dashboard"}>
+                Cancel
+              </Link>
+            </button>
+          </div>
         </FormControl>
       </Paper>
     </form>

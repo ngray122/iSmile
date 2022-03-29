@@ -41,6 +41,7 @@ const CardPost = () => {
           <Card key={i} sx={{ maxWidth: 750, p: 2, mb: 3 }} elevation={3}>
             <CardActionArea>
               <CardImg
+                p="10px"
                 component="img"
                 height="400"
                 width="100%"

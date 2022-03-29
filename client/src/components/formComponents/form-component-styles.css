@@ -1,10 +1,10 @@
 /* label color */
 .input-field label {
-  color: #af8eb5;
+  color: #ff8080;
 }
 /* label focus color */
 .input-field input[type="text"]:focus + label {
-  color: #af8eb5;
+  color: #ff8080;
 }
 /* label underline focus color */
 .input-field input[type="text"]:focus {
@@ -23,5 +23,18 @@
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-  color: #af8eb5;
+  color: #ff8080;
+}
+
+.input-field {
+  color: #ff8080;
+}
+#form-link {
+  text-decoration: none;
+  color: black;
+}
+
+#form-button {
+  margin: 10px;
+  background-color: #b6ffce;
 }
