@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
 
@@ -16,7 +15,7 @@ const Dashboard = () => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
       .then((res) => {
-        console.log("RESULT ON DASH after login , => ", res);
+        // console.log("RESULT ON DASH after login , => ", res);
         if (res.data) {
           setRegisteredUSer(res.data);
         }
@@ -28,24 +27,14 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Box container>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper>
-            <Profile></Profile>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={5.5}>
-          <Paper>
-            {" "}
-            <PostWall />
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2.5}>
-          <Paper>PINNED 3 col</Paper>
-        </Grid>
+    <Grid container spacing={3} m={1} p={1}>
+      <Grid item xs={12} sm={6} md={4}>
+        <Profile></Profile>
       </Grid>
-    </Box>
+      <Grid item xs={12} sm={6} md={8}>
+        <PostWall />
+      </Grid>
+    </Grid>
   );
 };
 export default Dashboard;

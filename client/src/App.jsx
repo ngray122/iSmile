@@ -11,17 +11,19 @@ import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
 import { Box } from "@mui/material";
-import CreatePost from "./components/CreatePost";
-import EditPost from "./components/EditPost";
+import Profile from "./components/Profile";
+import Grid from "@mui/material/Grid";
+import EditPost from "./components/formComponents/EditPost";
+import CreatePost from "./components/formComponents/CreatePost";
 
 function App() {
   const siteTheme = createTheme({
     palette: {
       mode: "light",
       primary: {
-        light: " #fff1ff",
-        main: "#e1bee7",
-        dark: "#af8eb5",
+        light: "#FFF7BC ",
+        main: "#black",
+        dark: "#FF8080",
         contrastText: "#ffffff",
       },
       secondary: {
@@ -35,7 +37,7 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light" }}>
+      <Box className="App" sx={{ bgcolor: "primary.light", height: "100%" }}>
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">
@@ -58,12 +60,26 @@ function App() {
           {/* Create a New Post */}
           <Route exact path="/posts/create">
             <RegisteredNavBar />
-            <CreatePost />
+            <Grid container spacing={3} m={1} p={1}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Profile />
+              </Grid>
+              <Grid item xs={12} sm={6} md={8}>
+                <CreatePost />
+              </Grid>
+            </Grid>
           </Route>
 
           <Route exact path="/posts/edit/:id">
             <RegisteredNavBar />
-            <EditPost></EditPost>
+            <Grid container spacing={3} m={1} p={1}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Profile></Profile>
+              </Grid>
+              <Grid item xs={12} sm={6} md={8}>
+                <EditPost></EditPost>
+              </Grid>
+            </Grid>
           </Route>
         </BrowserRouter>
       </Box>

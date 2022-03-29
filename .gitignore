@@ -1,3 +1,6 @@
 .env
+<<<<<<< HEAD
 node_modules
+=======
+>>>>>>> feature/add-edit-form
 .DS_Store

@@ -1,12 +1,6 @@
 const { Post } = require("../models/post.model");
 
 class PostController {
-  index = (req, res) => {
-    res.json({
-      message: "Hello Hello from controller",
-    });
-  };
-
   createPost = (req, res) => {
     const newPost = {
       ...req.body,
@@ -19,6 +13,24 @@ class PostController {
       .catch((err) => {
         res.json({ error: err });
       });
+  };
+
+  updatePost = (req, res) => {
+    // console.log("res -> " + res);
+    // console.log("req.body.photo -> " + req.body.photo);
+    // //
+    Post.findOneAndUpdate(
+      { _id: req.params.id },
+      { ...req.body, photo: req.file },
+      {
+        new: true,
+        runValidators: true,
+      }
+    )
+      .then((post) => res.json({ result: post }))
+      .catch((err) =>
+        res.json({ message: "ERROR with update ===> ", error: err })
+      );
   };
 
   findAllPosts = (req, res) => {
@@ -36,17 +48,6 @@ class PostController {
       .then((onePost) => res.json({ result: onePost }))
       .catch((err) =>
         res.json({ message: "ERROR with find one ===> ", error: err })
-      );
-  };
-
-  updatePost = (req, res) => {
-    Post.findOneAndUpdate({ _id: req.params.id }, req.body, {
-      new: true,
-      runValidators: true,
-    })
-      .then((prod) => res.json({ result: prod }))
-      .catch((err) =>
-        res.json({ message: "ERROR with update ===> ", error: err })
       );
   };
 

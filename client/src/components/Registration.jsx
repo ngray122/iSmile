@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -46,17 +47,20 @@ const User = (props) => {
         sx={{ p: "20px" }}
         border="2"
         borderColor="black"
+        // sx={{bgcolor:'primary.light'}}
       >
         <FormLabel component="legend">Register</FormLabel>
         <FormControl>
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
+              // type='email'
               id="component-outlined"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               label="First Name"
               input="text"
+              // required
               helperText={formInputError.firstName?.message}
             />
           </FormGroup>
@@ -64,11 +68,13 @@ const User = (props) => {
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
+              // type='email'
               id="component-outlined"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               label="Last Name"
               input="text"
+              // required
               helperText={formInputError.lastName?.message}
             />
           </FormGroup>
@@ -76,11 +82,13 @@ const User = (props) => {
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
+              // type='email'
               id="component-outlined"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               label="Email"
               input="email"
+              // required
               errorText={formInputError.email?.message}
             />
           </FormGroup>

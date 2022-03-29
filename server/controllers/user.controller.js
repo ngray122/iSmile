@@ -6,7 +6,11 @@ class UserController {
   registerUser = (req, res) => {
     User.find({ email: req.body.email })
       .then((userEmail) => {
+<<<<<<< HEAD
         console.log("Res finding user =>> ", userEmail);
+=======
+        // console.log('Res finding user =>> ', userEmail)
+>>>>>>> feature/add-edit-form
         if (userEmail.length === 0) {
           User.create(req.body)
             .then((user) => {

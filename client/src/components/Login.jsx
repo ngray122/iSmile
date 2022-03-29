@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 import { FormGroup, TextField } from "@mui/material";
@@ -35,22 +38,32 @@ const Login = () => {
 
   return (
     <form autoComplete="off" onSubmit={login}>
-      <Container align="center" variant="outlined" mx="auto" sx={{ p: "10px" }}>
+      <Container
+        align="center"
+        // justifyContent="center"
+        variant="outlined"
+        // elevation=''
+        mx="auto"
+        sx={{ p: "10px" }}
+      >
         <FormLabel component="legend">Sign In</FormLabel>
+
         <FormControl>
           <FormGroup row={false} sx={{ p: "2px" }}>
-            <TextField
+            <input
               variant="standard"
+              // type='email'
               id="standard-basic"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               label="Email"
               input="email"
+              // required
               errorText={formInputError.email?.message}
             />
           </FormGroup>
           <FormGroup row={false} sx={{ p: "2px" }}>
-            <TextField
+            <input
               variant="standard"
               type="password"
               id="standard-basic"

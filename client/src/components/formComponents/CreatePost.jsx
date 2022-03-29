@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
 
 const CreatePost = () => {
@@ -38,7 +38,6 @@ const CreatePost = () => {
     let base64String;
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      // console.log("fileInput log -> " + fileInput);
       setPhoto(base64String);
       console.log("base64log -> " + base64String);
     };
@@ -56,7 +55,6 @@ const CreatePost = () => {
     axios
       .post("http://localhost:8000/api/posts/create", formData)
       .then((res) => {
-        console.log("CREATE POST ==>", res);
         if (res.data.errors) {
           setFormInputError(res.data.errors);
         } else {
@@ -67,23 +65,30 @@ const CreatePost = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "primary.light" }}>
+    <Paper
+      sx={{ maxWidth: "750px", p: "30px" }}
+      container
+      elevation={3}
+      align="center"
+      mx="auto"
+      variant="outlined"
+    >
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
 
       <PostForm
+        sx={{ bgcolor: "primary.light" }}
+        elevation={3}
         onchangeFileSelectHandler={onchangeFileSelectHandler}
         submitHandler={submitHandler}
         formInputError={formInputError}
         setName={setName}
         setText={setText}
-        name={name}
-        text={text}
-        url={url}
         setUrl={setUrl}
+        filename={photo}
       ></PostForm>
-    </Box>
+    </Paper>
   );
 };
 

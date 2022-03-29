@@ -5,9 +5,11 @@ import { Avatar, CardActionArea, CardHeader } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import { CardTitle, CardImg, CardText } from "reactstrap";
+import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
@@ -17,7 +19,6 @@ const CardPost = () => {
     axios
       .get("http://localhost:8000/api/posts/getall")
       .then((res) => {
-        console.log("RES getting all posts ===> ", res);
         setAllPosts(res.data.result);
       })
       .catch((err) => {
@@ -27,7 +28,6 @@ const CardPost = () => {
 
   //   Delete post
   const deletePost = (postId) => {
-    // console.log(postId);
     axios
       .delete(`http://localhost:8000/api/posts/delete/${postId}`)
       .then((res) => setDeleted(!deleted))
@@ -38,30 +38,26 @@ const CardPost = () => {
     <>
       {allPosts.map((postObj, i) => {
         return (
-          <Card key={i} sx={{ maxWidth: 645, p: 2, m: 2 }}>
-            <CardHeader>
-              <Avatar></Avatar>
-              <CardTitle tag="h5">User's Name</CardTitle>
-              <subheader>Date/Time</subheader>
-            </CardHeader>
+          <Card key={i} sx={{ maxWidth: 750, p: 2, mb: 3 }} elevation={3}>
             <CardActionArea>
               <CardImg
+                p="10px"
                 component="img"
                 height="400"
                 width="100%"
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
               ></CardImg>
-              <CardContent>
+              <CardContent sx={{ bgcolor: "primary.light" }}>
                 <Typography gutterBottom variant="h5" component="div">
                   {postObj.name}
                 </Typography>
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <Link to="{postObj.url}" variant="body2" color="text.secondary">
+                <CardText variant="body2" color="text.secondary">
                   {postObj.url}
-                </Link>
+                </CardText>
               </CardContent>
             </CardActionArea>
             <CardActions>
@@ -71,19 +67,30 @@ const CardPost = () => {
               <Button size="small" color="primary">
                 Pin
               </Button>
-              <Link to="/posts/edit/:id">
-                <Button size="small" color="primary">
+
+              <Link
+                to={`/posts/edit/${postObj._id}`}
+                sx={{ textDecoration: "none" }}
+                textDecoration="none"
+              >
+                <Button
+                  size="small"
+                  color="primary"
+                  sx={{ textDecoration: "none" }}
+                  textDecoration="none"
+                >
                   {" "}
-                  Edit
+                  <i class="material-icons">edit</i>
                 </Button>
               </Link>
-              <Button
+              <IconButton
                 onClick={() => deletePost(postObj._id)}
                 size="small"
                 color="primary"
+                aria-label="delete"
               >
-                Delete
-              </Button>
+                <DeleteIcon />
+              </IconButton>
             </CardActions>
           </Card>
         );
