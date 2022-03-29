@@ -88,6 +88,7 @@ const PostForm = (props) => {
               {formInputError.photo?.message}
             </span>
           </div>
+          {/* Submit Button */}
           <div>
             <button
               className="btn waves-effect waves-light"

@@ -93,81 +93,102 @@ const EditPost = (props) => {
       <Typography component="legend" variant="h6">
         Edit your post
       </Typography>
+
       <form encType="multipart/form-data" onSubmit={submitHandler}>
-        <FormControl>
-          {/* Form Starts */}
-          <div className="input-field" row={false}>
-            {/* NAME INPUT */}
-            <input
-              variant="standard"
-              id="component-outlined"
-              value={onePost.name}
-              // error
-              onChange={onChangeHandler}
-              label="Name of your post"
-              input="name"
-              name="name"
-              //   helperText={formInputError.name?.message}
-            />
-          </div>
+        <Paper align="center" variant="outlined" mx="auto" p={1}>
+          <FormControl>
+            {/* Form Starts */}
+            <div className="input-field" row={false} sx={{ p: "5px" }}>
+              {/* NAME INPUT */}
+              <input
+                value={onePost.name}
+                // error
+                onChange={onChangeHandler}
+                label="Name of your post"
+                input="name"
+                name="name"
+              />
+              <label for="name"></label>
+              <span class="helper-text" data-error="wrong" data-success="right">
+                {formInputError.name?.message}
+              </span>
+            </div>
 
-          {/*  TEXT INPUT */}
-          <div sx={{ p: "5px" }}>
-            <input
-              variant="standard"
-              id="component-outlined"
-              value={onePost.text}
-              maxRows="6"
-              name="text"
-              onChange={onChangeHandler}
-              label="Text Area"
-              input="text"
-              //   helperText={formInputError.url?.message}
+            {/*  TEXT INPUT */}
+            <div className="input-field" sx={{ p: "5px" }}>
+              <textarea
+                id="text"
+                value={onePost.text}
+                maxRows="6"
+                name="text"
+                onChange={onChangeHandler}
+                className="materialize-textarea"
+              />
+              <label for="text"></label>
+              <span class="helper-text" data-error="wrong" data-success="right">
+                {formInputError.text?.message}
+              </span>
+            </div>
 
-              // errorText={formInputError.text?.message}
-            />
-          </div>
+            {/* URL INPUT */}
+            <div className="input-field" row={false} sx={{ p: "5px" }}>
+              <input
+                id="url"
+                value={onePost.url}
+                onChange={onChangeHandler}
+                name="url"
+              />
+              <label for="url"></label>
+              <span class="helper-text" data-error="wrong" data-success="right">
+                {formInputError.url?.message}
+              </span>
+            </div>
 
-          {/* URL INPUT */}
-          <div row={false} sx={{ p: "5px" }}>
-            <input
-              variant="standard"
-              // error
-              id="component-outlined"
-              value={onePost.url}
-              onChange={onChangeHandler}
-              label="Add Link (optional)"
-              input="url"
-              name="url"
-              //   helperText={formInputError.url?.message}
-            />
-          </div>
+            {/* IMAGE UPLOAD */}
+            <div
+              className="file-field input-field"
+              row={false}
+              sx={{ p: "5px" }}
+            >
+              <div className="btn">
+                <i className="material-icons large prefix">photo_camera</i>
+                <input
+                  className="photo"
+                  type="file"
+                  onChange={onchangeFileSelectHandler}
+                  id="photo"
+                  value=""
+                  filename="photo"
+                  accept=".png, .jpg, .jpeg"
+                  name="photo"
+                />
+              </div>
 
-          {/* IMAGE UPLOAD */}
-          <div row={false} sx={{ p: "5px" }}>
-            <input
-              className="imgUpload"
-              type="file"
-              onChange={onchangeFileSelectHandler}
-              variant="standard"
-              id="component-outlined"
-              value=""
-              label="Add photo"
-              input="file"
-              filename="photo"
-              accept=".png, .jpg, .jpeg"
-              name="photo"
-              // helperText={formInputError.photo?.message}xs
-            />
-          </div>
-
-          <button type="submit">Submit</button>
-          <button>
-            <Link to={"/dashboard"} className="btn">
-              Cancel
-            </Link>
-          </button>
-        </FormControl>
+              <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.photo?.message}
+              </span>
+            </div>
+            <div>
+              <button
+                className="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+                id="form-button"
+              >
+                Submit
+                <i className="material-icons right">send</i>
+              </button>
+              <button className="btn waves-effect waves-light" id="form-button">
+                <Link id="form-link" to={"/dashboard"}>
+                  Cancel
+                </Link>
+              </button>
+            </div>
+          </FormControl>
+        </Paper>
       </form>
     </Paper>
   );

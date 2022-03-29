@@ -71,6 +71,7 @@ const CreatePost = () => {
       elevation={3}
       align="center"
       mx="auto"
+      variant="outlined"
     >
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
