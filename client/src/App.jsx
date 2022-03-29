@@ -10,6 +10,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
+import Login from "./components/Login";
+import Registration from "./components/Registration";
 import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
@@ -45,10 +47,16 @@ function App() {
             <Landing />
           </Route>
 
-          {/* Login and Register */}
-          <Route exact path="/signin">
+          {/* Login */}
+          <Route exact path="/login">
             <NavBar />
-            <SignIn />
+            <Login />
+          </Route>
+
+          {/* Register */}
+          <Route exact path="/register">
+            <NavBar />
+            <Registration />
           </Route>
 
           {/* Dashboard */}
