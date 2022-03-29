@@ -28,54 +28,52 @@ const Login = () => {
 
   return (
     <div className="container col s6">
-      <div className="row">
-        <form className="col s6" onSubmit={login}>
-          <div className="row">
-            <h4 id="signIn-header">Sign In</h4>
-            <div className="input-field col s6">
-              <input
-                id="email"
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                input="email"
-                className="validate"
-              />
-              <label for="email">Email</label>
-              <span className="helper-text" data-error="wrong">
-                {formInputError.email?.message}
-              </span>
-            </div>
+      <form className="col s6" onSubmit={login}>
+        <div className="row">
+          <h3 id="signIn-header">Sign In</h3>
+          <div className="input-field col s6">
+            <input
+              id="email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              input="email"
+              className="validate"
+            />
+            <label for="email">Email</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.email?.message}
+            </span>
           </div>
+        </div>
 
-          <div className="row">
-            <div className="input-field col s6">
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                input="password"
-              />
-              <label for="password">Password</label>
-              <span className="helper-text" data-error="wrong">
-                {formInputError.password?.message}
-              </span>
-              <p>{formInputError}</p>
-            </div>
+        <div className="row">
+          <div className="input-field col s6">
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              input="password"
+            />
+            <label for="password">Password</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.password?.message}
+            </span>
+            <p>{formInputError}</p>
           </div>
-          <div>
-            <button
-              className="btn waves-effect waves-light"
-              type="submit"
-              name="action"
-              id="form-button"
-            >
-              Submit
-              <i className="material-icons right">send</i>
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div>
+          <button
+            className="btn waves-effect waves-light center"
+            type="submit"
+            name="action"
+            id="form-button"
+          >
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

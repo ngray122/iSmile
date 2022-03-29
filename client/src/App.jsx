@@ -50,8 +50,8 @@ function App() {
           {/* Login */}
           <Route exact path="/login">
             <NavBar />
-            <Login />
             <HeroImg />
+            <Login />
           </Route>
 
           {/* Register */}
