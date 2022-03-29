@@ -29,7 +29,7 @@ const Login = () => {
   return (
     <div className="container">
       <div className="row">
-        <form className="col s12" onSubmit={login}>
+        <form className="col s6" onSubmit={login}>
           <div className="row">
             <h4 id="signIn-header">Sign In</h4>
             <div className="input-field col s6">
@@ -39,9 +39,11 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 input="email"
                 className="validate"
-                errorText={formInputError.email?.message}
               />
               <label for="email">Email</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.email?.message}
+              </span>
             </div>
           </div>
 
@@ -53,10 +55,11 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 input="password"
-                // required
-                errorText={formInputError.password?.message}
               />
               <label for="password">Password</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.password?.message}
+              </span>
               <p>{formInputError}</p>
             </div>
           </div>
