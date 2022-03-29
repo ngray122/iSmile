@@ -3,15 +3,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import SignIn from "./components/SignIn";
 import Landing from "./components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
-import Login from "./components/Login";
-import Registration from "./components/Registration";
+import Login from "./components/login-reg-components/Login";
+import Registration from "./components/login-reg-components/Registration";
 import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
@@ -39,7 +38,7 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light", height: "100%" }}>
+      <Box className="App" sx={{ bgcolor: "primary.light" }}>
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">
