@@ -13,9 +13,7 @@ import { FormGroup, TextField } from "@mui/material";
 const Login = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-
   let [formInputError, setFormInputError] = useState("");
-
   const history = useHistory();
 
   const login = (e) => {
@@ -27,7 +25,6 @@ const Login = () => {
         withCredentials: true,
       })
       .then((res) => {
-        // console.log("SUCCESS logging in res ==>", res)
         if (res.data.error) {
           setFormInputError(res.data.error);
         } else {
@@ -51,7 +48,7 @@ const Login = () => {
 
         <FormControl>
           <FormGroup row={false} sx={{ p: "2px" }}>
-            <TextField
+            <input
               variant="standard"
               // type='email'
               id="standard-basic"
@@ -64,7 +61,7 @@ const Login = () => {
             />
           </FormGroup>
           <FormGroup row={false} sx={{ p: "2px" }}>
-            <TextField
+            <input
               variant="standard"
               type="password"
               id="standard-basic"
