@@ -7,12 +7,7 @@ export const HeroImg = () => {
       <div className="row">
         <div className="">
           {" "}
-          <img
-            className="materialboxed"
-            height="650"
-            width="650"
-            src={"/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg"}
-          />
+          <img className="materialboxed" height="400" width="400" src={imgs} />
         </div>
       </div>
     </div>
