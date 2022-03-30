@@ -38,47 +38,41 @@ const User = (props) => {
   };
 
   return (
-    // REGISTRATION FORM
-    <form autoComplete="off" onSubmit={register}>
-      <Container
-        align="center"
-        variant="outlined"
-        mx="auto"
-        sx={{ p: "20px" }}
-        border="2"
-        borderColor="black"
-        // sx={{bgcolor:'primary.light'}}
-      >
-        <FormLabel component="legend">Register</FormLabel>
-        <FormControl>
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+    <div className="container col s6">
+      <form autoComplete="off" className="col s6" onSubmit={register}>
+        <div className="row">
+          <h3 component="h3">Register</h3>
+
+          <div className="input-field col s6">
+            <input
+              id="first-name-form"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              label="First Name"
-              input="text"
-              // required
-              helperText={formInputError.firstName?.message}
+              type="text"
+              required
             />
-          </FormGroup>
-
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+            <label for="first-name-form">First Name</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.firstName?.message}
+            </span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s6">
+            <input
+              type="text"
+              id="last-name-form"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              label="Last Name"
-              input="text"
-              // required
-              helperText={formInputError.lastName?.message}
+              required
             />
-          </FormGroup>
-
+            <label for="last-name-form">Last Name</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.lastName?.message}
+            </span>
+          </div>
+        </div>
+        <div>
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
@@ -92,7 +86,9 @@ const User = (props) => {
               errorText={formInputError.email?.message}
             />
           </FormGroup>
+        </div>
 
+        <div>
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
@@ -107,7 +103,9 @@ const User = (props) => {
             />
             {/* <p>{formInputError}</p> */}
           </FormGroup>
+        </div>
 
+        <div>
           <FormGroup row={false} sx={{ p: "5px" }}>
             <TextField
               variant="standard"
@@ -122,12 +120,16 @@ const User = (props) => {
             />
             {/* <p>{formInputError}</p> */}
           </FormGroup>
+        </div>
+
+        <div>
           <Button type="submit" variant="contained">
             Register
           </Button>
-        </FormControl>
-      </Container>
-    </form>
+        </div>
+      </form>
+    </div>
+    // REGISTRATION FORM
   );
 };
 

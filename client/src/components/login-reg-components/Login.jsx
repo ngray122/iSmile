@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 import style from "./login-reg-component-styles.css";
 
 const Login = () => {
@@ -63,7 +65,7 @@ const Login = () => {
           </div>
         </div>
         <div>
-          <button
+          <Button
             className="btn waves-effect waves-light center"
             type="submit"
             name="action"
@@ -71,7 +73,7 @@ const Login = () => {
           >
             Submit
             <i className="material-icons right">send</i>
-          </button>
+          </Button>
         </div>
       </form>
     </div>
