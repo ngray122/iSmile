@@ -59,7 +59,7 @@ const Login = () => {
             <span className="helper-text" data-error="wrong">
               {formInputError.password?.message}
             </span>
-            <p>{formInputError}</p>
+            {/* <p>{formInputError}</p> */}
           </div>
         </div>
         <div>

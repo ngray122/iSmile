@@ -23,7 +23,7 @@ function App() {
     palette: {
       mode: "light",
       primary: {
-        light: "#FFF7BC ",
+        light: "#6C5B7B ",
         main: "#black",
         dark: "#FF8080",
         contrastText: "#ffffff",

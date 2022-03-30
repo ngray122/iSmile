@@ -5,5 +5,8 @@
   margin-bottom: 20px;
 }
 
-#form-button {
+/* invalid color */
+.input-field input[type="password"].invalid {
+  border-bottom: 1px solid red(231, 13, 13);
+  box-shadow: 0 1px 0 0 red;
 }
