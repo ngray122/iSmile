@@ -11,9 +11,7 @@ export const HeroImg = () => {
             className="materialboxed"
             height="650"
             width="650"
-            src={
-              "/client/public/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg"
-            }
+            src={"/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg"}
           />
         </div>
       </div>
