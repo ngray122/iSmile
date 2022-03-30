@@ -11,9 +11,9 @@ import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
 import Login from "./components/login-reg-components/Login";
 import Registration from "./components/login-reg-components/Registration";
-import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import EditPost from "./components/formComponents/EditPost";
 import CreatePost from "./components/formComponents/CreatePost";
 
