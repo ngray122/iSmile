@@ -34,7 +34,7 @@ const Login = () => {
         <div className="row">
           <h4 id="signIn-header">Sign In</h4>
           <div className="input-field col s6">
-            <i class="material-icons prefix">email</i>
+            <i className="material-icons prefix">email</i>
 
             <input
               id="email"
@@ -52,7 +52,7 @@ const Login = () => {
 
         <div className="row">
           <div className="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
+            <i className="material-icons prefix">account_circle</i>
 
             <input
               type="password"
