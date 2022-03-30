@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import FormLabel from "@mui/material/FormLabel";
-import { FormGroup, TextField } from "@mui/material";
 
 const User = (props) => {
   let [formInputError, setFormInputError] = useState({});

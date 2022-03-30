@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-
 import style from "./login-reg-component-styles.css";
 
 const Login = () => {
