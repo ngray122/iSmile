@@ -9,8 +9,8 @@ export const HeroImg = () => {
         <img
           className="materialboxed responsive-img center"
           id="hero-img"
-          height="400"
-          width="400"
+          height="500"
+          width="500"
           src={imgs}
           alt=""
         />

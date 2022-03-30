@@ -1,8 +1,35 @@
 #signIn-header,
-#registration-header {
+#registration-header,
+.hero-img-wrapper {
   color: #ff8080;
   text-align: center;
   margin: 20px;
+  padding: 20px;
+}
+
+/* Input label while selected */
+.row .input-field input[type="password"]:focus + label {
+  color: #b6ffce;
+}
+.row .input-field input[type="text"]:focus + label {
+  color: #b6ffce;
+}
+.row .input-field input[type="email"]:focus + label {
+  color: #b6ffce;
+}
+
+/* label underline focus color */
+.row .input-field input[type="text"]:focus {
+  border-bottom: 1px solid #b6ffce;
+  box-shadow: 0 1px 0 0 #b6ffce;
+}
+.row .input-field input[type="email"]:focus {
+  border-bottom: 1px solid #b6ffce;
+  box-shadow: 0 1px 0 0 #b6ffce;
+}
+.row .input-field input[type="password"]:focus {
+  border-bottom: 1px solid #b6ffce;
+  box-shadow: 0 1px 0 0 #b6ffce;
 }
 
 /* invalid color */
@@ -18,4 +45,5 @@
 
 .hero-img-wrapper {
   margin: 20px;
+  padding: 20px;
 }
