@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+
 import style from "./login-reg-component-styles.css";
 
 const Login = () => {
@@ -28,10 +30,12 @@ const Login = () => {
 
   return (
     <div className="container col s6">
-      <form className="col s6" onSubmit={login}>
+      <form className="col s6 container" onSubmit={login} id="login-form">
         <div className="row">
-          <h3 id="signIn-header">Sign In</h3>
+          <h4 id="signIn-header">Sign In</h4>
           <div className="input-field col s6">
+            <i class="material-icons prefix">email</i>
+
             <input
               id="email"
               type="email"
@@ -48,6 +52,8 @@ const Login = () => {
 
         <div className="row">
           <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+
             <input
               type="password"
               id="password"
@@ -59,19 +65,20 @@ const Login = () => {
             <span className="helper-text" data-error="wrong">
               {formInputError.password?.message}
             </span>
-            <p>{formInputError}</p>
+            {/* <p>{formInputError}</p> */}
           </div>
         </div>
         <div>
-          <button
+          <Button
             className="btn waves-effect waves-light center"
             type="submit"
             name="action"
             id="form-button"
           >
+            {" "}
             Submit
             <i className="material-icons right">send</i>
-          </button>
+          </Button>
         </div>
       </form>
     </div>

@@ -38,96 +38,120 @@ const User = (props) => {
   };
 
   return (
-    // REGISTRATION FORM
-    <form autoComplete="off" onSubmit={register}>
-      <Container
-        align="center"
-        variant="outlined"
-        mx="auto"
-        sx={{ p: "20px" }}
-        border="2"
-        borderColor="black"
-        // sx={{bgcolor:'primary.light'}}
+    <div className="container col s6">
+      <form
+        autoComplete="off"
+        className="col s6 container"
+        onSubmit={register}
+        id="registration-form"
       >
-        <FormLabel component="legend">Register</FormLabel>
-        <FormControl>
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+        <div className="row">
+          <h4 id="registration-header">Register</h4>
+
+          <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input
+              id="first-name-form"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              label="First Name"
-              input="text"
-              // required
-              helperText={formInputError.firstName?.message}
+              type="text"
+              required
             />
-          </FormGroup>
+            <label for="first-name-form">First Name</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.firstName?.message}
+            </span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
 
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+            <input
+              type="text"
+              id="last-name-form"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              label="Last Name"
-              input="text"
-              // required
-              helperText={formInputError.lastName?.message}
+              required
             />
-          </FormGroup>
+            <label for="last-name-form">Last Name</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.lastName?.message}
+            </span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">email</i>
 
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+            <input
+              type="email"
+              id="email-reg-form"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              label="Email"
-              input="email"
-              // required
+              required
               errorText={formInputError.email?.message}
             />
-          </FormGroup>
+            <label for="email-reg-form">Email</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.email?.message}
+            </span>
+          </div>
+        </div>
 
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+
+            <input
               type="password"
-              id="component-outlined"
+              id="password-reg-form"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              label="Password"
               input="password"
-              // required
-              errorText={formInputError.password?.message}
+              required
             />
+            <label for="password-reg-form">Password</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.password?.message}
+            </span>
             {/* <p>{formInputError}</p> */}
-          </FormGroup>
+          </div>
+        </div>
 
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+
+            <input
               type="password"
-              id="component-outlined"
+              id="confirm-password-reg-form"
               value={verifyPassword}
               onChange={(e) => setVerifyPassword(e.target.value)}
-              label="Verify Password"
               input="password"
-              // required
-              errorText={formInputError.password?.message}
+              required
             />
+            <label for="confirm-password-reg-form">Confirm Password</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.password?.message}
+            </span>
             {/* <p>{formInputError}</p> */}
-          </FormGroup>
-          <Button type="submit" variant="contained">
-            Register
+          </div>
+        </div>
+
+        <div>
+          <Button
+            className="btn waves-effect waves-light center"
+            type="submit"
+            name="action"
+            id="form-button"
+          >
+            Register <i class="material-icons right">send</i>
           </Button>
-        </FormControl>
-      </Container>
-    </form>
+        </div>
+      </form>
+    </div>
+    // REGISTRATION FORM
   );
 };
 

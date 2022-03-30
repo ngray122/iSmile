@@ -1,9 +1,17 @@
-#signIn-header {
+#signIn-header,
+#registration-header {
   color: #ff8080;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
-#form-button {
+/* invalid color */
+.input-field input[type="password"].invalid {
+  border-bottom: 1px solid red(231, 13, 13);
+  box-shadow: 0 1px 0 0 red;
+}
+
+#login-form,
+#registration-form {
+  max-width: 400px;
 }
