@@ -51,6 +51,7 @@ const User = (props) => {
                 <i class="material-icons prefix">account_circle</i>
                 <input
                   id="first-name-form"
+                  className="reg-form-input"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   type="text"
@@ -67,6 +68,7 @@ const User = (props) => {
                 <i class="material-icons prefix">account_circle</i>
 
                 <input
+                  className="reg-form-input"
                   type="text"
                   id="last-name-form"
                   value={lastName}
@@ -84,6 +86,7 @@ const User = (props) => {
                 <i class="material-icons prefix">email</i>
 
                 <input
+                  className="reg-form-input"
                   type="email"
                   id="email-reg-form"
                   value={email}
@@ -103,6 +106,7 @@ const User = (props) => {
                 <i class="material-icons prefix">lock</i>
 
                 <input
+                  className="reg-form-input"
                   type="password"
                   id="password-reg-form"
                   value={password}
@@ -124,6 +128,7 @@ const User = (props) => {
 
                 <input
                   type="password"
+                  className="reg-form-input"
                   id="confirm-password-reg-form"
                   value={verifyPassword}
                   onChange={(e) => setVerifyPassword(e.target.value)}
