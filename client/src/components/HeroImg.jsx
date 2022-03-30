@@ -1,4 +1,5 @@
 import React from "react";
+import imgs from "../static/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg";
 
 export const HeroImg = () => {
   return (
@@ -7,10 +8,12 @@ export const HeroImg = () => {
         <div className="">
           {" "}
           <img
-            class="materialboxed"
+            className="materialboxed"
             height="650"
             width="650"
-            src="./static-imgs/jpgjacqueline-munguia-1pAwJiCD60c-unsplash.jpg"
+            src={
+              "/client/public/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg"
+            }
           />
         </div>
       </div>
