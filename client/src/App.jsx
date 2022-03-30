@@ -16,7 +16,6 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import EditPost from "./components/formComponents/EditPost";
 import CreatePost from "./components/formComponents/CreatePost";
-import { HeroImg } from "./components/HeroImg";
 
 function App() {
   const siteTheme = createTheme({
@@ -50,7 +49,6 @@ function App() {
           {/* Login */}
           <Route exact path="/login">
             <NavBar />
-            <HeroImg />
             <Login />
           </Route>
 
