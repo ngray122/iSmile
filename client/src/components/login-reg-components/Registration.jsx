@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { HeroImg } from "../HeroImg";
 
 const User = (props) => {
   let [formInputError, setFormInputError] = useState({});
@@ -33,120 +34,125 @@ const User = (props) => {
   };
 
   return (
-    <div className="container col s6">
-      <form
-        autoComplete="off"
-        className="col s6 container"
-        onSubmit={register}
-        id="registration-form"
-      >
-        <div className="row">
-          <h4 id="registration-header">Register</h4>
+    <div className="row container">
+      <div className="container col s6">
+        <form
+          autoComplete="off"
+          className="container col s6"
+          onSubmit={register}
+          id="registration-form"
+        >
+          <div className="row">
+            <h4 id="registration-header">Register</h4>
 
-          <div className="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
-            <input
-              id="first-name-form"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              type="text"
-              required
-            />
-            <label for="first-name-form">First Name</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.firstName?.message}
-            </span>
+            <div className="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input
+                id="first-name-form"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                type="text"
+                required
+              />
+              <label for="first-name-form">First Name</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.firstName?.message}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
+          <div className="row">
+            <div className="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
 
-            <input
-              type="text"
-              id="last-name-form"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-            <label for="last-name-form">Last Name</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.lastName?.message}
-            </span>
+              <input
+                type="text"
+                id="last-name-form"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+              <label for="last-name-form">Last Name</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.lastName?.message}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s6">
-            <i class="material-icons prefix">email</i>
+          <div className="row">
+            <div className="input-field col s6">
+              <i class="material-icons prefix">email</i>
 
-            <input
-              type="email"
-              id="email-reg-form"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              errorText={formInputError.email?.message}
-            />
-            <label for="email-reg-form">Email</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.email?.message}
-            </span>
+              <input
+                type="email"
+                id="email-reg-form"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                errorText={formInputError.email?.message}
+              />
+              <label for="email-reg-form">Email</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.email?.message}
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="input-field col s6">
-            <i class="material-icons prefix">lock</i>
+          <div className="row">
+            <div className="input-field col s6">
+              <i class="material-icons prefix">lock</i>
 
-            <input
-              type="password"
-              id="password-reg-form"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              input="password"
-              required
-            />
-            <label for="password-reg-form">Password</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.password?.message}
-            </span>
-            {/* <p>{formInputError}</p> */}
+              <input
+                type="password"
+                id="password-reg-form"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                input="password"
+                required
+              />
+              <label for="password-reg-form">Password</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.password?.message}
+              </span>
+              {/* <p>{formInputError}</p> */}
+            </div>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="input-field col s6">
-            <i class="material-icons prefix">lock</i>
+          <div className="row">
+            <div className="input-field col s6">
+              <i class="material-icons prefix">lock</i>
 
-            <input
-              type="password"
-              id="confirm-password-reg-form"
-              value={verifyPassword}
-              onChange={(e) => setVerifyPassword(e.target.value)}
-              input="password"
-              required
-            />
-            <label for="confirm-password-reg-form">Confirm Password</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.password?.message}
-            </span>
-            {/* <p>{formInputError}</p> */}
+              <input
+                type="password"
+                id="confirm-password-reg-form"
+                value={verifyPassword}
+                onChange={(e) => setVerifyPassword(e.target.value)}
+                input="password"
+                required
+              />
+              <label for="confirm-password-reg-form">Confirm Password</label>
+              <span className="helper-text" data-error="wrong">
+                {formInputError.password?.message}
+              </span>
+              {/* <p>{formInputError}</p> */}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <Button
-            className="btn waves-effect waves-light center"
-            type="submit"
-            name="action"
-            id="form-button"
-          >
-            Register <i class="material-icons right">send</i>
-          </Button>
-        </div>
-      </form>
+          <div>
+            <Button
+              className="btn waves-effect waves-light center"
+              type="submit"
+              name="action"
+              id="form-button"
+            >
+              Register <i class="material-icons right">send</i>
+            </Button>
+          </div>
+        </form>
+      </div>
+
+      <div className="container col s6">
+        <HeroImg />
+      </div>
     </div>
-    // REGISTRATION FORM
   );
 };
 
