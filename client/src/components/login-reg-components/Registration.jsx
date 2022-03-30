@@ -39,11 +39,17 @@ const User = (props) => {
 
   return (
     <div className="container col s6">
-      <form autoComplete="off" className="col s6" onSubmit={register}>
+      <form
+        autoComplete="off"
+        className="col s6 container"
+        onSubmit={register}
+        id="registration-form"
+      >
         <div className="row">
-          <h3 component="h3">Register</h3>
+          <h4 id="registration-header">Register</h4>
 
           <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
             <input
               id="first-name-form"
               value={firstName}
@@ -59,6 +65,8 @@ const User = (props) => {
         </div>
         <div className="row">
           <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+
             <input
               type="text"
               id="last-name-form"
@@ -72,58 +80,72 @@ const User = (props) => {
             </span>
           </div>
         </div>
-        <div>
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
-              // type='email'
-              id="component-outlined"
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">email</i>
+
+            <input
+              type="email"
+              id="email-reg-form"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              label="Email"
-              input="email"
-              // required
+              required
               errorText={formInputError.email?.message}
             />
-          </FormGroup>
+            <label for="email-reg-form">Email</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.email?.message}
+            </span>
+          </div>
         </div>
 
-        <div>
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+
+            <input
               type="password"
-              id="component-outlined"
+              id="password-reg-form"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              label="Password"
               input="password"
-              // required
-              errorText={formInputError.password?.message}
+              required
             />
+            <label for="password-reg-form">Password</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.password?.message}
+            </span>
             {/* <p>{formInputError}</p> */}
-          </FormGroup>
+          </div>
         </div>
 
-        <div>
-          <FormGroup row={false} sx={{ p: "5px" }}>
-            <TextField
-              variant="standard"
+        <div className="row">
+          <div className="input-field col s6">
+            <i class="material-icons prefix">lock</i>
+
+            <input
               type="password"
-              id="component-outlined"
+              id="confirm-password-reg-form"
               value={verifyPassword}
               onChange={(e) => setVerifyPassword(e.target.value)}
-              label="Verify Password"
               input="password"
-              // required
-              errorText={formInputError.password?.message}
+              required
             />
+            <label for="confirm-password-reg-form">Confirm Password</label>
+            <span className="helper-text" data-error="wrong">
+              {formInputError.password?.message}
+            </span>
             {/* <p>{formInputError}</p> */}
-          </FormGroup>
+          </div>
         </div>
 
         <div>
-          <Button type="submit" variant="contained">
+          <Button
+            className="btn waves-effect waves-light center"
+            type="submit"
+            name="action"
+            id="form-button"
+          >
             Register
           </Button>
         </div>

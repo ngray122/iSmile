@@ -30,10 +30,12 @@ const Login = () => {
 
   return (
     <div className="container col s6">
-      <form className="col s6" onSubmit={login}>
+      <form className="col s6 container" onSubmit={login} id="login-form">
         <div className="row">
-          <h3 id="signIn-header">Sign In</h3>
+          <h4 id="signIn-header">Sign In</h4>
           <div className="input-field col s6">
+            <i class="material-icons prefix">email</i>
+
             <input
               id="email"
               type="email"
@@ -50,6 +52,8 @@ const Login = () => {
 
         <div className="row">
           <div className="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+
             <input
               type="password"
               id="password"
