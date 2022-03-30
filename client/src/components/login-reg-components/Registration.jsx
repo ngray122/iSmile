@@ -146,7 +146,7 @@ const User = (props) => {
             name="action"
             id="form-button"
           >
-            Register
+            Register <i class="material-icons right">send</i>
           </Button>
         </div>
       </form>
