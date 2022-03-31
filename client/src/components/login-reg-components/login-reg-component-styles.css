@@ -110,3 +110,11 @@ a img {
   font-size: 20px;
   text-align: center;
 }
+
+input:-webkit-autofill:focus {
+  /* border: 1px solid #b6ffce; */
+  -webkit-text-fill-color: #b6ffce;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background-color: #6c5b7b;
+}
