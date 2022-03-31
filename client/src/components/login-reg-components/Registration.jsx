@@ -40,7 +40,7 @@ const User = (props) => {
       <div className="row container">
         <div className="container col s12">
           <form
-            autoComplete="off"
+            // autoComplete="off"
             className="container"
             onSubmit={register}
             id="registration-form"
