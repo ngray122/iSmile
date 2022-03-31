@@ -48,10 +48,14 @@ const Login = () => {
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   input="email"
-                  className="validate"
+                  className="login-form-input"
+                  required
                 />
                 <label for="email">Email</label>
-                <span className="helper-text" data-error="wrong">
+                <span
+                  className="helper-text"
+                  data-error="Please enter a valid email"
+                >
                   {formInputError.email?.message}
                 </span>
               </div>
@@ -62,14 +66,19 @@ const Login = () => {
                 <i className="material-icons prefix">account_circle</i>
 
                 <input
+                  className="login-form-input"
                   type="password"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   input="password"
+                  required
                 />
                 <label for="password">Password</label>
-                <span className="helper-text" data-error="wrong">
+                <span
+                  className="helper-text"
+                  data-error="Please enter your password"
+                >
                   {formInputError.password?.message}
                 </span>
                 {/* <p>{formInputError}</p> */}
