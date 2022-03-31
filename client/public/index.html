@@ -68,10 +68,17 @@
         shift: 10,
         padding: 5,
         numVisible: 3,
-
-
+        fullWidth: true
       });
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems, {
+      });
+    });
+
+
   </script>
 
 

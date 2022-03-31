@@ -29,15 +29,11 @@ const Landing = (props) => {
 
   return (
     <div className="container">
-      <div className="row container">
-        <div className="container col s12">
-          <h1>About information here</h1>
-        </div>
-      </div>
-      <div className="row container">
-        <div className="container col s12">
+      <div className="row container" id="landing-row-wrapper">
+        <div className="container col s12 ">
           <h1 className="carousel-header">Carousel Header</h1>
-          <div className="carousel">
+
+          <div className="carousel carousel-slider" id="landing-carousel">
             <a className="carousel-item" href="#one!">
               <img src={green} />
             </a>
@@ -54,6 +50,17 @@ const Landing = (props) => {
               <img href="https://lorempixel.com/250/250/nature/5" />
             </a>
           </div>
+        </div>
+      </div>
+      <div className="row container " id="landing-row-wrapper">
+        <div class="container col s4 ">
+          <h4 className="center-align">about</h4>
+        </div>
+        <div class="container col s4">
+          <h4 className="center-align">about</h4>
+        </div>
+        <div class="container col s4">
+          <h4 className="center-align">about</h4>
         </div>
       </div>
     </div>
