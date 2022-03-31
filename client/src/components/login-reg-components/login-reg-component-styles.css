@@ -90,8 +90,8 @@ a .carousel-item {
   transform: translateY(-100px);
 }
 
-.carousel carousel-item {
-  width: 7050px;
+.carousel .carousel-item {
+  width: 750px;
 }
 
 a img {

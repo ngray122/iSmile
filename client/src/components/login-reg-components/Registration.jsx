@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { HeroImg } from "./HeroImg";
 
-import style from "./login-reg-component-styles.css";
+import "./login-reg-component-styles.css";
 
 const User = (props) => {
   let [formInputError, setFormInputError] = useState({});

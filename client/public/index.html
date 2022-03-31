@@ -59,6 +59,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="../src/static/js/materialize.js"></script>
   <script type="text/javascript" src="../src/components/login-reg-components/login-reg-component.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, {
+        duration: 1000,
+        dist: 0,
+        shift: 10,
+        padding: 5,
+        numVisible: 3,
+
+
+      });
+    });
+  </script>
+
+
+
 </body>
 
 </html>
