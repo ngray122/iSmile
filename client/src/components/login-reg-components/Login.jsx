@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import style from "./login-reg-component-styles.css";
-import { HeroImg } from "../HeroImg";
+import { HeroImg } from "./HeroImg";
 
 const Login = () => {
   let [email, setEmail] = useState("");

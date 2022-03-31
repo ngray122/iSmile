@@ -1,3 +1,4 @@
+/* Form Headers */
 #signIn-header,
 #registration-header,
 .hero-img-wrapper {
@@ -7,13 +8,29 @@
   padding: 20px;
 }
 
-/* #### Registration Form input, label #### */
+/* Login and Registration Forms */
+#login-form,
+#registration-form {
+  max-width: 400px;
+}
 
+/* Hero Image Wrapper */
+.hero-img-wrapper {
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Login and Registration Form Inputs */
+.reg-form-input,
+.login-form-input {
+  color: #b6ffce;
+}
+
+/* #### Registration Form input, label #### */
 /* label color */
 .row .input-field label {
   color: #b6ffce;
 }
-
 /* label focus color */
 .row .input-field input[type="text"]:focus + label {
   color: #b6ffce;
@@ -47,7 +64,6 @@
   border-bottom: 1px solid #b6ffce;
   box-shadow: 0 1px 0 0 #b6ffce;
 }
-
 /* invalid color */
 .row .input-field input[type="password"].invalid {
   border-bottom: 1px solid red(231, 13, 13);
@@ -62,17 +78,35 @@
   box-shadow: 0 1px 0 0 red;
 }
 
-#login-form,
-#registration-form {
-  max-width: 400px;
+/* #### Landing Page #### */
+a .carousel-item {
+  height: 900px;
+  width: 650px;
 }
 
-.hero-img-wrapper {
-  margin: 20px;
-  padding: 20px;
+.carousel {
+  height: 800px;
+  perspective: 950px;
+  transform: translateY(-100px);
 }
 
-.reg-form-input,
-.login-form-input {
-  color: #b6ffce;
+.carousel carousel-item {
+  width: 7050px;
+}
+
+a img {
+  width: 100%;
+  height: 200px;
+}
+
+.carousel-header {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
 }

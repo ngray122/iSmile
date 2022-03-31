@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import Landing from "./components/Landing";
+import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
