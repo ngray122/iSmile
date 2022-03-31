@@ -30,24 +30,24 @@ const Landing = (props) => {
   return (
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
-        <div className="container col s12 ">
-          <h1 className="carousel-header">Carousel Header</h1>
+        <div className="container col s12">
+          <h1 className="carousel-header"> Header</h1>
 
-          <div className="carousel carousel-slider" id="landing-carousel">
+          <div className="carousel container" id="">
             <a className="carousel-item" href="#one!">
-              <img src={green} />
+              <img src={green} className="carousel-img" />
             </a>
             <a className="carousel-item" href="#two!">
-              <img src={chhese} />
+              <img src={chhese} className="carousel-img" />
             </a>
             <a className="carousel-item" href="#three!">
-              <img src={stop} />
+              <img src={stop} className="carousel-img" />
             </a>
             <a className="carousel-item" href="#four!">
-              <img src={smile} />
+              <img src={smile} className="carousel-img" />
             </a>
             <a className="carousel-item" href="#five!">
-              <img href="https://lorempixel.com/250/250/nature/5" />
+              <img href="#five!" className="carousel-img" src={chhese} />
             </a>
           </div>
         </div>

@@ -95,7 +95,7 @@ input:-webkit-autofill:focus {
 a .carousel-item {
   height: 900px;
   width: 650px;
-  display: flex;
+  /* display: flex; */
 }
 
 #landing-carousel {
@@ -105,7 +105,9 @@ a .carousel-item {
 }
 
 .carousel .carousel-item {
-  width: 750px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
 }
 
 a img {
@@ -114,17 +116,12 @@ a img {
 }
 
 .carousel-header {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #000;
-  box-sizing: border-box;
+  color: #b6ffce;
   padding: 10px 5px;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
 }
 
-#landing-row-wrapper {
-  flex: 1;
+.carousel-img-wrapper {
 }
