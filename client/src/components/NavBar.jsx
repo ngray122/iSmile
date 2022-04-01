@@ -47,14 +47,4 @@ const NavBar = () => {
   );
 };
 
-//     <Button
-//       component={Link}
-//       to="/signin"
-//       sx={{ fontSize: "23px", ml: "40px", mr: "20px" }}
-//       variant="text"
-//       disableRipple
-//     >
-//       Register
-//     </Button>
-//   </Box>
-// );
+export default NavBar;

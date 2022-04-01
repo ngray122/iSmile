@@ -8,9 +8,11 @@ import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import Dashboard from "./components/Dashboard";
 import { Box } from "@mui/material";
-import CreatePost from "./components/CreatePost";
+import CreatePost from "./components/formComponents/CreatePost";
 import EditPost from "./components/EditPost";
-import SignIn from "./components/";
+import Login from "./components/login-reg-components/Login";
+import NavBar from "./components/NavBar";
+import Registration from "./components/Registration";
 
 function App() {
   const siteTheme = createTheme({
@@ -42,8 +44,12 @@ function App() {
           </Route>
 
           {/* Login and Register */}
-          <Route exact path="/signin">
-            <SignIn />
+          <Route exact path="/login">
+            <Login />
+          </Route>
+
+          <Route exact path="/regsiter">
+            <Registration />
           </Route>
 
           {/* Dashboard */}

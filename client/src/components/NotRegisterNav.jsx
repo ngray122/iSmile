@@ -1,16 +1,8 @@
 import React from "react";
-import LoggedInNav from "~~";
-import NotLoggedInNav from "~~";
 
 const NavBar = () => {
   // compute if user is logged in or not
   const isLoggedIn = true;
-
-  if (isLoggedIn) {
-    return <LoggedInNav />;
-  }
-
-  return <NotLoggedInNav />;
 };
 
 export default NavBar;
