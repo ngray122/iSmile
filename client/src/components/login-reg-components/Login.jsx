@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-
-import style from "./login-reg-component-styles.css";
+import "./login-reg-component-styles.css";
+import { HeroImg } from "./HeroImg";
 
 const Login = () => {
   let [email, setEmail] = useState("");
@@ -29,58 +29,80 @@ const Login = () => {
   };
 
   return (
-    <div className="container col s6">
-      <form className="col s6 container" onSubmit={login} id="login-form">
-        <div className="row">
-          <h4 id="signIn-header">Sign In</h4>
-          <div className="input-field col s6">
-            <i class="material-icons prefix">email</i>
-
-            <input
-              id="email"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              input="email"
-              className="validate"
-            />
-            <label for="email">Email</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.email?.message}
-            </span>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
-
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              input="password"
-            />
-            <label for="password">Password</label>
-            <span className="helper-text" data-error="wrong">
-              {formInputError.password?.message}
-            </span>
-            {/* <p>{formInputError}</p> */}
-          </div>
-        </div>
-        <div>
-          <Button
-            className="btn waves-effect waves-light center"
-            type="submit"
-            name="action"
-            id="form-button"
+    <div className="container">
+      <div className="row container">
+        <div className="container col s12">
+          <form
+            className="container"
+            autoComplete="off"
+            onSubmit={login}
+            id="login-form"
           >
-            {" "}
-            Submit
-            <i className="material-icons right">send</i>
-          </Button>
+            <div className="row">
+              <h4 id="signIn-header">Sign In</h4>
+              <div className="input-field col s6">
+                <i className="material-icons prefix">email</i>
+
+                <input
+                  id="email"
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  input="email"
+                  className="login-form-input"
+                  required
+                />
+                <label for="email">Email</label>
+                <span
+                  className="helper-text"
+                  data-error="Please enter a valid email"
+                >
+                  {formInputError.email?.message}
+                </span>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="input-field col s6">
+                <i className="material-icons prefix">account_circle</i>
+
+                <input
+                  className="login-form-input"
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  input="password"
+                  required
+                />
+                <label for="password">Password</label>
+                <span
+                  className="helper-text"
+                  data-error="Please enter your password"
+                >
+                  {formInputError.password?.message}
+                </span>
+                {/* <p>{formInputError}</p> */}
+              </div>
+            </div>
+            <div>
+              <Button
+                className="btn waves-effect waves-light center"
+                type="submit"
+                name="action"
+                id="form-button"
+              >
+                {" "}
+                Submit
+                <i className="material-icons right">send</i>
+              </Button>
+            </div>
+          </form>
         </div>
-      </form>
+
+        <div className="container col s6">
+          <HeroImg />
+        </div>
+      </div>
     </div>
   );
 };

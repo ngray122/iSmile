@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import Landing from "./components/Landing";
+import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
@@ -11,12 +11,11 @@ import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
 import Login from "./components/login-reg-components/Login";
 import Registration from "./components/login-reg-components/Registration";
-import { Box } from "@mui/material";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import EditPost from "./components/formComponents/EditPost";
 import CreatePost from "./components/formComponents/CreatePost";
-import { HeroImg } from "./components/HeroImg";
 
 function App() {
   const siteTheme = createTheme({
@@ -50,7 +49,6 @@ function App() {
           {/* Login */}
           <Route exact path="/login">
             <NavBar />
-            <HeroImg />
             <Login />
           </Route>
 
