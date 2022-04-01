@@ -4,6 +4,7 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
+import NavBar from "../NavBar";
 
 const CreatePost = () => {
   let history = useHistory();
@@ -67,24 +68,30 @@ const CreatePost = () => {
   return (
     <>
       <NavBar />
-
-      <Box sx={{ bgcolor: "primary.light" }}>
+      <Paper
+        sx={{ maxWidth: "750px", p: "30px" }}
+        container
+        elevation={3}
+        align="center"
+        mx="auto"
+        variant="outlined"
+      >
         <Typography component="legend" variant="h6">
           What made you smile today, {registeredUser.firstName}?
         </Typography>
 
         <PostForm
+          sx={{ bgcolor: "primary.light" }}
+          elevation={3}
           onchangeFileSelectHandler={onchangeFileSelectHandler}
           submitHandler={submitHandler}
           formInputError={formInputError}
           setName={setName}
           setText={setText}
-          name={name}
-          text={text}
-          url={url}
           setUrl={setUrl}
+          filename={photo}
         ></PostForm>
-      </Box>
+      </Paper>
     </>
   );
 };

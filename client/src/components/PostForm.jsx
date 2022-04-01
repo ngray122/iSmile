@@ -19,7 +19,6 @@ const PostForm = (props) => {
 
   return (
     <>
-      <NavBar />
       <form encType="multipart/form-data" onSubmit={submitHandler}>
         <Paper
           align="center"

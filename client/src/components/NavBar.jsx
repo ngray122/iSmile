@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NotRegisteredNav from "./NotRegisterNav";
-import RegisteredNavBar from "./RegisteredNavBar";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";

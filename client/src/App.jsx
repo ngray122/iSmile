@@ -11,8 +11,7 @@ import { Box } from "@mui/material";
 import CreatePost from "./components/formComponents/CreatePost";
 import EditPost from "./components/EditPost";
 import Login from "./components/login-reg-components/Login";
-import NotRegisteredNav from "./components/CardPost";
-import Registration from "./components/Registration";
+import Registration from "./components/login-reg-components/Registration";
 
 function App() {
   const siteTheme = createTheme({
@@ -47,7 +46,7 @@ function App() {
             <Login />
           </Route>
 
-          <Route exact path="/regsiter">
+          <Route exact path="/register">
             <Registration />
           </Route>
 
