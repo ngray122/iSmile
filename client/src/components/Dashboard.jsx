@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
+import NavBar from "./NavBar";
 
 const Dashboard = () => {
   let history = useHistory();
@@ -27,14 +28,27 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Grid container spacing={3} m={1} p={1}>
-      <Grid item xs={12} sm={6} md={4}>
-        <Profile></Profile>
-      </Grid>
-      <Grid item xs={12} sm={6} md={8}>
-        <PostWall />
-      </Grid>
-    </Grid>
+    <>
+      <NavBar />
+      <Box container>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Paper>
+              <Profile></Profile>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={5.5}>
+            <Paper>
+              {" "}
+              <PostWall />
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2.5}>
+            <Paper>PINNED 3 col</Paper>
+          </Grid>
+        </Grid>
+      </Box>
+    </>
   );
 };
 export default Dashboard;

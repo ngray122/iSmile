@@ -65,30 +65,27 @@ const CreatePost = () => {
   };
 
   return (
-    <Paper
-      sx={{ maxWidth: "750px", p: "30px" }}
-      container
-      elevation={3}
-      align="center"
-      mx="auto"
-      variant="outlined"
-    >
-      <Typography component="legend" variant="h6">
-        What made you smile today, {registeredUser.firstName}?
-      </Typography>
+    <>
+      <NavBar />
 
-      <PostForm
-        sx={{ bgcolor: "primary.light" }}
-        elevation={3}
-        onchangeFileSelectHandler={onchangeFileSelectHandler}
-        submitHandler={submitHandler}
-        formInputError={formInputError}
-        setName={setName}
-        setText={setText}
-        setUrl={setUrl}
-        filename={photo}
-      ></PostForm>
-    </Paper>
+      <Box sx={{ bgcolor: "primary.light" }}>
+        <Typography component="legend" variant="h6">
+          What made you smile today, {registeredUser.firstName}?
+        </Typography>
+
+        <PostForm
+          onchangeFileSelectHandler={onchangeFileSelectHandler}
+          submitHandler={submitHandler}
+          formInputError={formInputError}
+          setName={setName}
+          setText={setText}
+          name={name}
+          text={text}
+          url={url}
+          setUrl={setUrl}
+        ></PostForm>
+      </Box>
+    </>
   );
 };
 

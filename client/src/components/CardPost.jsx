@@ -36,6 +36,7 @@ const CardPost = () => {
 
   return (
     <>
+      <NavBar />
       {allPosts.map((postObj, i) => {
         return (
           <Card key={i} sx={{ maxWidth: 750, p: 2, mb: 3 }} elevation={3}>
