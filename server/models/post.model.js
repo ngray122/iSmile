@@ -6,7 +6,7 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: [true, "Name cannot be left blank"],
       minlength: [3, "Name must conatain at least 3 characters"],
-      maxlength: [20, "Name cannot contain more 20 characters"],
+      maxlength: [60, "Name cannot contain more 60 characters"],
     },
 
     text: {

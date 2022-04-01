@@ -7,44 +7,45 @@ import LoggedInNav from "~~";
 import NotLoggedInNav from "~~";
 
 const NavBar = () => {
-  // compute if user is logged in or not
-  const isLoggedIn = true;
+  return (
+    //loggedIn ? loggedInNav() : notLoggedInNav()
+    <Box
+      position="static"
+      fontFamily="Raleway sans-serif"
+      mx="auto"
+      p="10px"
+      bgcolor="primary.dark"
+      width="100"
+      minHeight="75px"
+      display="flex"
+    >
+      <Typography flexGrow="1" variant="h3" mr="20px">
+        {" "}
+        iSmile
+      </Typography>
 
-  if (isLoggedIn) {
-    return <LoggedInNav />;
-  }
+      <Button
+        component={Link}
+        to="/login"
+        variant="text"
+        sx={{ fontSize: "23px" }}
+        disableRipple
+      >
+        Login
+      </Button>
 
-  return <NotLoggedInNav />;
+      <Button
+        component={Link}
+        to="/register"
+        sx={{ fontSize: "23px", ml: "40px", mr: "20px" }}
+        variant="text"
+        disableRipple
+      >
+        Register
+      </Button>
+    </Box>
+  );
 };
-
-export default NavBar;
-
-// return (
-//   //loggedIn ? loggedInNav() : notLoggedInNav()
-//   <Box
-//     position="static"
-//     fontFamily="Raleway sans-serif"
-//     mx="auto"
-//     p="10px"
-//     bgcolor="primary.dark"
-//     width="100"
-//     minHeight="75px"
-//     display="flex"
-//   >
-//     <Typography flexGrow="1" variant="h3" mr="20px">
-//       {" "}
-//       iSmile
-//     </Typography>
-
-//     <Button
-//       component={Link}
-//       to="/signin"
-//       variant="text"
-//       sx={{ fontSize: "23px" }}
-//       disableRipple
-//     >
-//       Login
-//     </Button>
 
 //     <Button
 //       component={Link}

@@ -31,33 +31,31 @@ const Profile = () => {
   }, []);
 
   return (
-    <Paper elevation={3}>
-      <Container>
-        <Card>
-          <CardMedia>
-            <Avatar
-              alt="Remy Sharp"
-              src="./client/img/duck.png"
-              sx={{ width: 75, height: 75 }}
-            />
-          </CardMedia>
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="div">
-              Welcome {registeredUser.firstName}!
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-              eveniet, et facere consequatur unde aspernatur aliquam
-              voluptatibus excepturi veniam debitis laudantium modi delectus,
-              assumenda corporis explicabo aperiam voluptatem soluta itaque.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
-      </Container>
+    <Paper elevation={3} sx={{ p: "20px", bgcolor: "primary" }}>
+      <Card>
+        <CardMedia>
+          <Avatar
+            alt="Remy Sharp"
+            src="./client/img/duck.png"
+            sx={{ width: 75, height: 75 }}
+          />
+        </CardMedia>
+        <CardContent>
+          <Typography gutterBottom variant="h6" component="div">
+            Welcome {registeredUser.firstName}!
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+            eveniet, et facere consequatur unde aspernatur aliquam voluptatibus
+            excepturi veniam debitis laudantium modi delectus, assumenda
+            corporis explicabo aperiam voluptatem soluta itaque.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
     </Paper>
   );
 };
