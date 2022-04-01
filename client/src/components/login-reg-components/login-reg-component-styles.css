@@ -109,7 +109,7 @@ a .carousel-item {
 }
 
 .carousel .carousel-item {
-  width: 600px;
+  width: 500px;
   display: flex;
   justify-content: center;
 }
