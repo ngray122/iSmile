@@ -9,24 +9,6 @@ import stop from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static
 import chhese from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-208147.jpg";
 
 const Landing = (props) => {
-  let history = useHistory();
-
-  let [registeredUser, setRegisteredUSer] = useState({});
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
-      });
-  }, []);
-
   return (
     <div className="container">
       <div className="row container" id="landing-row-wrapper">

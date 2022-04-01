@@ -11,7 +11,7 @@ import { Box } from "@mui/material";
 import CreatePost from "./components/formComponents/CreatePost";
 import EditPost from "./components/EditPost";
 import Login from "./components/login-reg-components/Login";
-import NavBar from "./components/NavBar";
+import NotRegisteredNav from "./components/CardPost";
 import Registration from "./components/Registration";
 
 function App() {
@@ -39,7 +39,6 @@ function App() {
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">
-            <NavBar />
             <Landing />
           </Route>
 
