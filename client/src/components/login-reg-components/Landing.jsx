@@ -31,7 +31,7 @@ const Landing = (props) => {
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
         <div className="container col s12">
-          <h1 className="carousel-header"> Header</h1>
+          <h2 className="carousel-header"> Header</h2>
 
           <div className="carousel container" id="">
             <a className="carousel-item" href="#one!">
@@ -53,14 +53,63 @@ const Landing = (props) => {
         </div>
       </div>
       <div className="row container " id="landing-row-wrapper">
-        <div class="container col s4 ">
-          <h4 className="center-align">about</h4>
+        <div className="container col s4 ">
+          <div className="row">
+            <div className="col s12 m7">
+              <div className="card-about">
+                <div className="card-icon center">
+                  <i className="large material-icons"> sentiment_satisfied</i>
+                </div>
+                <div className="card-content center">
+                  <p>
+                    I am a very simple card. I am good at containing small bits
+                    of information. I am convenient because I require little
+                    markup to use effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>{" "}
         </div>
-        <div class="container col s4">
-          <h4 className="center-align">about</h4>
+        <div className="container col s4">
+          {" "}
+          <div className="row">
+            <div className="col s12 m7">
+              <div className="card-about">
+                <div className="card-icon center">
+                  <i className=" large material-icons"> wb_sunny</i>
+                </div>
+                <div className="card-content center">
+                  <p>
+                    I am a very simple card. I am good at containing small bits
+                    of information. I am convenient because I require little
+                    markup to use effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="container col s4">
-          <h4 className="center-align">about</h4>
+        <div className="container col s4">
+          <div className="row">
+            <div className="col s12 m7">
+              <div className="card-about">
+                <div className="card-icon center">
+                  <i className="large material-icons">
+                    {" "}
+                    sentiment_very_satisfied
+                  </i>
+                </div>
+                <div className="card-content center">
+                  <p>
+                    I am a very simple card. I am good at containing small bits
+                    of information. I am convenient because I require little
+                    markup to use effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>{" "}
         </div>
       </div>
     </div>

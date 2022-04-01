@@ -92,10 +92,14 @@ input:-webkit-autofill:focus {
 
 /* {{ #### Landing Page #### }} */
 
+#landing-row-wrapper {
+  margin-top: 2em;
+}
+
+/* Carousel */
 a .carousel-item {
-  height: 900px;
+  height: 300px;
   width: 650px;
-  /* display: flex; */
 }
 
 #landing-carousel {
@@ -112,16 +116,17 @@ a .carousel-item {
 
 a img {
   width: 100%;
-  height: 400px;
+  height: 300px;
 }
 
 .carousel-header {
   color: #b6ffce;
-  padding: 10px 5px;
-  font-weight: bold;
-  font-size: 20px;
   text-align: center;
 }
 
-.carousel-img-wrapper {
+/* About Section */
+.card-about {
+  background-color: #6c5b7b;
+  color: #ff8080;
+  padding: 30px;
 }
