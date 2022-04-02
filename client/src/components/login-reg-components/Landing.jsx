@@ -52,6 +52,7 @@ const Landing = (props) => {
           </div>
         </div>
       </div>
+      <div className="row container" id="login-reg-button-wrapper"></div>
       <div className="row container " id="landing-row-wrapper">
         <div className="container col s4 ">
           <div className="row">
