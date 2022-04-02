@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { HeroImg } from "./HeroImg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./login-reg-component-styles.css";
 
@@ -153,6 +154,15 @@ const User = (props) => {
               >
                 Register <i class="material-icons right">send</i>
               </Button>
+              <h6>Already have an account?</h6>
+              <Link
+                to="/login"
+                className="large btn waves-effect waves-light center "
+                name="action"
+                id="form-button"
+              >
+                Login
+              </Link>
             </div>
           </form>
         </div>
