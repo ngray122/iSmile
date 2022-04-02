@@ -9,7 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import Dashboard from "./components/Dashboard";
 import { Box } from "@mui/material";
 import CreatePost from "./components/formComponents/CreatePost";
-import EditPost from "./components/EditPost";
+import EditPost from "./components/formComponents/EditPost";
 import Login from "./components/login-reg-components/Login";
 import Registration from "./components/login-reg-components/Registration";
 

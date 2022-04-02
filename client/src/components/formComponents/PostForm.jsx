@@ -18,10 +18,10 @@ const PostForm = (props) => {
 
   return (
     <form encType="multipart/form-data" onSubmit={submitHandler}>
-      <Paper align="center" variant="outlined" mx="auto" p={1}>
+      <Paper variant="outlined" mx="auto">
         <FormControl>
           {/* Form Starts */}
-          <div className="input-field" row={false} sx={{ p: "5px" }}>
+          <div className="input-field">
             {/* NAME INPUT */}
             <input
               id="name"

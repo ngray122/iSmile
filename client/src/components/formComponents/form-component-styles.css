@@ -1,40 +1,52 @@
+/* Form Buttons */
+#form-button {
+  margin: 10px;
+  background-color: #b6ffce;
+  color: #6c5b7b;
+}
+
+#form-link {
+  text-decoration: none;
+  color: #6c5b7b;
+}
+/* Input and labels */
 /* label color */
-.input-field label {
+.row .input-field label {
   color: #ff8080;
 }
 /* label focus color */
-.input-field input[type="text"]:focus + label {
+.row .input-field input[type="text"]:focus + label {
   color: #ff8080;
 }
 /* label underline focus color */
-.input-field input[type="text"]:focus {
+.row .input-field input[type="text"]:focus {
   border-bottom: 1px solid #af8eb5;
   box-shadow: 0 1px 0 0 #af8eb5;
 }
 /* valid color */
-.input-field input[type="text"].valid {
+.row .input-field input[type="text"].valid {
   border-bottom: 1px solid #af8eb5;
   box-shadow: 0 1px 0 0 #af8eb5;
 }
 /* invalid color */
-.input-field input[type="text"].invalid {
+.row .input-field input[type="text"].invalid {
   border-bottom: 1px solid #af8eb5;
   box-shadow: 0 1px 0 0 #af8eb5;
 }
 /* icon prefix focus color */
-.input-field .prefix.active {
+.row .input-field .prefix.active {
+  color: #ff8080;
+}
+/* input */
+.row .input-field {
   color: #ff8080;
 }
 
-.input-field {
-  color: #ff8080;
-}
-#form-link {
-  text-decoration: none;
-  color: black;
-}
-
-#form-button {
-  margin: 10px;
-  background-color: #b6ffce;
+/* Wrappers */
+.create-post-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 600px;
+  padding: 40px;
 }

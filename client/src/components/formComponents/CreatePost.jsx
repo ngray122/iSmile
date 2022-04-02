@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
 import NavBar from "../NavBar";
+import Profile from "../Profile";
+import styles from "./form-component-styles.css";
 
 const CreatePost = () => {
   let history = useHistory();
@@ -68,30 +70,39 @@ const CreatePost = () => {
   return (
     <>
       <NavBar />
-      <Paper
-        sx={{ maxWidth: "750px", p: "30px" }}
-        container
-        elevation={3}
-        align="center"
-        mx="auto"
-        variant="outlined"
-      >
-        <Typography component="legend" variant="h6">
-          What made you smile today, {registeredUser.firstName}?
-        </Typography>
+      <div className="row">
+        <div className="container create-post-wrapper ">
+          <div className="col s6">
+            <Profile />
+          </div>
 
-        <PostForm
-          sx={{ bgcolor: "primary.light" }}
-          elevation={3}
-          onchangeFileSelectHandler={onchangeFileSelectHandler}
-          submitHandler={submitHandler}
-          formInputError={formInputError}
-          setName={setName}
-          setText={setText}
-          setUrl={setUrl}
-          filename={photo}
-        ></PostForm>
-      </Paper>
+          <div className="col s6">
+            <Paper
+              sx={{ p: "30px" }}
+              container
+              elevation={3}
+              align="center"
+              variant="outlined"
+            >
+              <Typography component="legend" variant="h6">
+                What made you smile today, {registeredUser.firstName}?
+              </Typography>
+
+              <PostForm
+                sx={{ bgcolor: "primary.light" }}
+                elevation={3}
+                onchangeFileSelectHandler={onchangeFileSelectHandler}
+                submitHandler={submitHandler}
+                formInputError={formInputError}
+                setName={setName}
+                setText={setText}
+                setUrl={setUrl}
+                filename={photo}
+              ></PostForm>
+            </Paper>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

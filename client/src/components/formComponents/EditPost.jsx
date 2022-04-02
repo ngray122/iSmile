@@ -9,6 +9,7 @@ import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import NavBar from "../NavBar";
+import Profile from "../Profile";
 
 const EditPost = (props) => {
   let history = useHistory();
@@ -86,130 +87,139 @@ const EditPost = (props) => {
   return (
     <>
       <NavBar />
-      <Paper
-        align="center"
-        mx="auto"
-        variant="outlined"
-        container
-        elevation={3}
-        sx={{ p: "30px", maxWidth: "750px" }}
-      >
-        <Typography component="legend" variant="h6">
-          Edit your post
-        </Typography>
+      <div className="row  container">
+        <div className="col s6  create-post-wrapper">
+          <Profile />
+        </div>
+        <div className="col s6  create-post-wrapper">
+          <Paper
+            align="center"
+            mx="auto"
+            variant="outlined"
+            container
+            elevation={3}
+            sx={{ p: "30px", maxWidth: "750px" }}
+          >
+            <Typography component="legend" variant="h6">
+              Edit your post
+            </Typography>
 
-        <form encType="multipart/form-data" onSubmit={submitHandler}>
-          <Paper align="center" variant="outlined" mx="auto" p={1}>
-            <FormControl>
-              {/* Form Starts */}
-              <div className="input-field" row={false} sx={{ p: "5px" }}>
-                {/* NAME INPUT */}
-                <input
-                  value={onePost.name}
-                  // error
-                  onChange={onChangeHandler}
-                  label="Name of your post"
-                  input="name"
-                  name="name"
-                />
-                <label for="name"></label>
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  {formInputError.name?.message}
-                </span>
-              </div>
+            <form encType="multipart/form-data" onSubmit={submitHandler}>
+              <Paper align="center" variant="outlined" mx="auto" p={1}>
+                <FormControl>
+                  {/* Form Starts */}
+                  <div className="input-field" row={false} sx={{ p: "5px" }}>
+                    {/* NAME INPUT */}
+                    <input
+                      value={onePost.name}
+                      // error
+                      onChange={onChangeHandler}
+                      label="Name of your post"
+                      input="name"
+                      name="name"
+                    />
+                    <label for="name"></label>
+                    <span
+                      class="helper-text"
+                      data-error="wrong"
+                      data-success="right"
+                    >
+                      {formInputError.name?.message}
+                    </span>
+                  </div>
 
-              {/*  TEXT INPUT */}
-              <div className="input-field" sx={{ p: "5px" }}>
-                <textarea
-                  id="text"
-                  value={onePost.text}
-                  maxRows="6"
-                  name="text"
-                  onChange={onChangeHandler}
-                  className="materialize-textarea"
-                />
-                <label for="text"></label>
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  {formInputError.text?.message}
-                </span>
-              </div>
+                  {/*  TEXT INPUT */}
+                  <div className="input-field" sx={{ p: "5px" }}>
+                    <textarea
+                      id="text"
+                      value={onePost.text}
+                      maxRows="6"
+                      name="text"
+                      onChange={onChangeHandler}
+                      className="materialize-textarea"
+                    />
+                    <label for="text"></label>
+                    <span
+                      class="helper-text"
+                      data-error="wrong"
+                      data-success="right"
+                    >
+                      {formInputError.text?.message}
+                    </span>
+                  </div>
 
-              {/* URL INPUT */}
-              <div className="input-field" row={false} sx={{ p: "5px" }}>
-                <input
-                  id="url"
-                  value={onePost.url}
-                  onChange={onChangeHandler}
-                  name="url"
-                />
-                <label for="url"></label>
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  {formInputError.url?.message}
-                </span>
-              </div>
+                  {/* URL INPUT */}
+                  <div className="input-field" row={false} sx={{ p: "5px" }}>
+                    <input
+                      id="url"
+                      value={onePost.url}
+                      onChange={onChangeHandler}
+                      name="url"
+                    />
+                    <label for="url"></label>
+                    <span
+                      class="helper-text"
+                      data-error="wrong"
+                      data-success="right"
+                    >
+                      {formInputError.url?.message}
+                    </span>
+                  </div>
 
-              {/* IMAGE UPLOAD */}
-              <div
-                className="file-field input-field"
-                row={false}
-                sx={{ p: "5px" }}
-              >
-                <div className="btn">
-                  <i className="material-icons large prefix">photo_camera</i>
-                  <input
-                    className="photo"
-                    type="file"
-                    onChange={onchangeFileSelectHandler}
-                    id="photo"
-                    value=""
-                    filename="photo"
-                    accept=".png, .jpg, .jpeg"
-                    name="photo"
-                  />
-                </div>
+                  {/* IMAGE UPLOAD */}
+                  <div
+                    className="file-field input-field"
+                    row={false}
+                    sx={{ p: "5px" }}
+                  >
+                    <div className="btn">
+                      <i className="material-icons large prefix">
+                        photo_camera
+                      </i>
+                      <input
+                        className="photo"
+                        type="file"
+                        onChange={onchangeFileSelectHandler}
+                        id="photo"
+                        value=""
+                        filename="photo"
+                        accept=".png, .jpg, .jpeg"
+                        name="photo"
+                      />
+                    </div>
 
-                <div className="file-path-wrapper">
-                  <input className="file-path validate" type="text" />
-                </div>
-                <span className="helper-text" data-error="wrong">
-                  {formInputError.photo?.message}
-                </span>
-              </div>
-              <div>
-                <button
-                  className="btn waves-effect waves-light"
-                  type="submit"
-                  name="action"
-                  id="form-button"
-                >
-                  Submit
-                  <i className="material-icons right">send</i>
-                </button>
-                <button
-                  className="btn waves-effect waves-light"
-                  id="form-button"
-                >
-                  <Link id="form-link" to={"/dashboard"}>
-                    Cancel
-                  </Link>
-                </button>
-              </div>
-            </FormControl>
+                    <div className="file-path-wrapper">
+                      <input className="file-path validate" type="text" />
+                    </div>
+                    <span className="helper-text" data-error="wrong">
+                      {formInputError.photo?.message}
+                    </span>
+                  </div>
+                  <div>
+                    <button
+                      className="btn waves-effect waves-light"
+                      type="submit"
+                      name="action"
+                      id="form-button"
+                    >
+                      Submit
+                      <i className="material-icons right">send</i>
+                    </button>
+                    <button
+                      className="btn waves-effect waves-light"
+                      id="form-button"
+                    >
+                      <Link id="form-link" to={"/dashboard"}>
+                        Cancel
+                      </Link>
+                    </button>
+                  </div>
+                </FormControl>
+              </Paper>
+            </form>
           </Paper>
-        </form>
-      </Paper>
+        </div>
+      </div>
     </>
   );
 };
