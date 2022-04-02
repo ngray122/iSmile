@@ -72,13 +72,13 @@ const CreatePost = () => {
       <NavBar />
       <div className="row">
         <div className="container create-post-wrapper ">
-          <div className="col s6">
+          <div className="col s12 m4 l3">
             <Profile />
           </div>
 
-          <div className="col s6">
+          <div className="col s12 m6 l3">
             <Paper
-              sx={{ p: "30px" }}
+              sx={{ p: "30px", maxWidth: "750px" }}
               container
               elevation={3}
               align="center"
