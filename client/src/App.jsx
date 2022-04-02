@@ -42,7 +42,6 @@ function App() {
         <BrowserRouter>
           {/* Landing Page */}
           <Route exact path="/">
-            <NavBar />
             <Landing />
           </Route>
 
