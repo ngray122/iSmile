@@ -7,6 +7,7 @@ import smile from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/stati
 import green from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-208147.jpg";
 import stop from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-264196.jpg";
 import chhese from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-208147.jpg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Landing = (props) => {
   let history = useHistory();
@@ -52,7 +53,14 @@ const Landing = (props) => {
           </div>
         </div>
       </div>
-      <div className="row container" id="login-reg-button-wrapper"></div>
+      <div className="row container" id="login-reg-button-wrapper">
+        <Link to="/login" className="waves-effect waves-light btn-large">
+          Sign In
+        </Link>
+        <Link to="/register" className="waves-effect waves-light btn-large">
+          Sign Up
+        </Link>
+      </div>
       <div className="row container " id="landing-row-wrapper">
         <div className="container col s4 ">
           <div className="row">
