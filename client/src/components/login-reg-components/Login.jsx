@@ -109,7 +109,7 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="container col s6">
+        <div className="container col s12">
           <HeroImg />
         </div>
       </div>
