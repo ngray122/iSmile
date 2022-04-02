@@ -38,7 +38,6 @@ const CreatePost = () => {
     let base64String;
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      setPhoto(base64String);
       console.log("base64log -> " + base64String);
     };
     reader.readAsDataURL(fileInput);
