@@ -2,7 +2,7 @@
 
 **iSmile** is a feel-good, blog-style platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources.
 
-## MERN :six_pointed_star:
+## MERN
 
 **iSmile** was developed utilizing MongoDB Express React and NodeJS, the MERN Stack. Styled with the Materialize CSS library
 
