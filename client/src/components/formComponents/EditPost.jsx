@@ -151,14 +151,14 @@ const EditPost = (props) => {
             <div row={false}>
               <div className="file-field input-field">
                 <div className="btn">
-                  <span> File</span>
                   <i className="material-icons small prefix">photo_camera</i>
 
                   <input
+                    filename="photo"
                     onChange={onChangeFileSelectHandler}
                     type="file"
                     accept=".png, .jpg, .jpeg"
-                    name="photo"
+                    className="photo"
                   ></input>
                 </div>
                 <div className="file-path-wrapper">
