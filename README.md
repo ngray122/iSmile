@@ -1,10 +1,6 @@
-Adapted from https://www.makeareadme.com/
-
 # iSmile
 
-## Description
-
-briefly describe wtf users do with the app :gem: don't list specific functionality: this is a 1-2 sentenence "elevator pitch" of a description.
+**iSmile** is a feel-good platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources
 
 ## Tech Used
 
