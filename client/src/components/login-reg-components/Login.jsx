@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import "./login-reg-component-styles.css";
 import { HeroImg } from "./HeroImg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Login = () => {
   let [email, setEmail] = useState("");
@@ -86,20 +87,29 @@ const Login = () => {
             </div>
             <div>
               <Button
-                className="btn waves-effect waves-light center"
+                className="large btn waves-effect waves-light center "
                 type="submit"
                 name="action"
                 id="form-button"
               >
                 {" "}
-                Submit
+                Login
                 <i className="material-icons right">send</i>
               </Button>
+              <h4>Don't have an account yet?</h4>
+              <Link
+                to="/register"
+                className="large btn waves-effect waves-light center "
+                name="action"
+                id="form-button"
+              >
+                Click here to Register
+              </Link>
             </div>
           </form>
         </div>
 
-        <div className="container col s6">
+        <div className="container col s12">
           <HeroImg />
         </div>
       </div>
