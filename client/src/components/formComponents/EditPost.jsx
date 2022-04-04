@@ -37,7 +37,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data.result);
-        // console.log("one post log -> " + res.data.result);
+        console.log("one post log -> " + res);
       })
       .catch((err) => {
         history.push("/");
@@ -45,11 +45,13 @@ const EditPost = (props) => {
       });
   }, []);
 
-  const onchangeFileSelectHandler = (e) => {
+  const onChangeFileSelectHandler = (e) => {
     e.preventDefault();
     const fileInput = e.target.files[0];
     const reader = new FileReader();
     let base64String;
+    console.log("Phtot click");
+
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
@@ -146,32 +148,31 @@ const EditPost = (props) => {
             </div>
 
             {/* IMAGE UPLOAD */}
-            <div
-              className="file-field input-field"
-              row={false}
-              sx={{ p: "5px" }}
-            >
-              <div className="btn">
-                <i className="material-icons large prefix">photo_camera</i>
-                <input
-                  className="photo"
-                  type="file"
-                  onChange={onchangeFileSelectHandler}
-                  id="photo"
-                  value=""
-                  filename="photo"
-                  accept=".png, .jpg, .jpeg"
-                  name="photo"
-                />
-              </div>
+            <div row={false}>
+              <div className="file-field input-field">
+                <div className="btn">
+                  <span> File</span>
+                  <i className="material-icons small prefix">photo_camera</i>
 
-              <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
+                  <input
+                    onChange={onChangeFileSelectHandler}
+                    type="file"
+                    accept=".png, .jpg, .jpeg"
+                    name="photo"
+                  ></input>
+                </div>
+                <div className="file-path-wrapper">
+                  <input className="file-path validate"></input>
+                </div>
               </div>
-              <span className="helper-text" data-error="wrong">
-                {formInputError.photo?.message}
-              </span>
             </div>
+
+            {/* <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div> */}
+            <span className="helper-text" data-error="wrong">
+              {formInputError.photo?.message}
+            </span>
             <div>
               <button
                 className="btn waves-effect waves-light"
