@@ -1,6 +1,6 @@
 # iSmile
 
-**iSmile** is a feel-good platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources
+**iSmile** is a feel-good post-style platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources
 
 ## Tech Used
 
