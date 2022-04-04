@@ -162,9 +162,6 @@ const EditPost = (props) => {
                   <i className="material-icons small prefix">photo_camera</i>
                 </div>
               </div>
-              <div className="file-path-wrapper">
-                <input className="file-path validate"></input>
-              </div>
             </div>
 
             {/* <div className="file-path-wrapper">
