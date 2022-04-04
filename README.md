@@ -1,4 +1,4 @@
-:star2: #iSmile :star2:
+# iSmile :star2:
 
 **iSmile** is a feel-good post-style platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources
 
