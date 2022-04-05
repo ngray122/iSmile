@@ -47,7 +47,7 @@ const EditPost = (props) => {
 
   const onChangeFileSelectHandler = (e) => {
     e.preventDefault();
-    const fileInput = e.target.files[0];
+    const fileInput = e.target.file[0];
     const reader = new FileReader();
     let base64String;
     console.log("Phtot click");
@@ -111,7 +111,7 @@ const EditPost = (props) => {
                 input="name"
                 name="name"
               />
-              <label for="name"></label>
+              <label htmlFor="name"></label>
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -131,7 +131,7 @@ const EditPost = (props) => {
                 onChange={onChangeHandler}
                 className="materialize-textarea"
               />
-              <label for="text"></label>
+              <label htmlFor="text">Edit entry:</label>
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -149,7 +149,7 @@ const EditPost = (props) => {
                 onChange={onChangeHandler}
                 name="url"
               />
-              <label for="url"></label>
+              <label htmlFor="url">Edit URL:</label>
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -171,6 +171,7 @@ const EditPost = (props) => {
                     type="file"
                     // filename="photo"
                     // id="photo"
+                    value=""
                     onChange={onChangeFileSelectHandler}
                     accept=".png, .jpg, .jpeg"
                     // className="photo"
