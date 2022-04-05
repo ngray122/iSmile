@@ -33,7 +33,8 @@ const CreatePost = () => {
 
   const onchangeFileSelectHandler = (e) => {
     e.preventDefault();
-    const fileInput = e.target.files[0];
+    console.log("picture icon clicked");
+    const fileInput = e.target.file[0];
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
@@ -46,6 +47,7 @@ const CreatePost = () => {
   // Creates new post for user
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log("submitHandler working");
     const formData = new FormData();
     formData.append("name", name);
     formData.append("text", text);
