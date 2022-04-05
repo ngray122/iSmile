@@ -101,7 +101,7 @@ const EditPost = (props) => {
         <Paper align="center" variant="outlined" mx="auto" p={1}>
           <FormControl>
             {/* Form Starts */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               {/* NAME INPUT */}
               <input
                 value={onePost.name}
@@ -112,7 +112,11 @@ const EditPost = (props) => {
                 name="name"
               />
               <label for="name"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.name?.message}
               </span>
             </div>
@@ -128,7 +132,11 @@ const EditPost = (props) => {
                 className="materialize-textarea"
               />
               <label for="text"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.text?.message}
               </span>
             </div>
@@ -142,7 +150,11 @@ const EditPost = (props) => {
                 name="url"
               />
               <label for="url"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.url?.message}
               </span>
             </div>
@@ -150,23 +162,26 @@ const EditPost = (props) => {
             {/* IMAGE UPLOAD */}
             <div row={false}>
               <div className="file-field input-field">
-                <input
-                  filename="photo"
-                  id="photo"
-                  onChange={onChangeFileSelectHandler}
-                  type="file"
-                  accept=".png, .jpg, .jpeg"
-                  className="photo"
-                ></input>
                 <div className="btn">
-                  <i className="material-icons small prefix">photo_camera</i>
+                  <span>
+                    <i className="material-icons small prefix">photo_camera</i>
+                  </span>
+
+                  <input
+                    type="file"
+                    // filename="photo"
+                    // id="photo"
+                    onChange={onChangeFileSelectHandler}
+                    accept=".png, .jpg, .jpeg"
+                    // className="photo"
+                  />
                 </div>
+                {/* <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div> */}
               </div>
             </div>
 
-            {/* <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-              </div> */}
             <span className="helper-text" data-error="wrong">
               {formInputError.photo?.message}
             </span>
