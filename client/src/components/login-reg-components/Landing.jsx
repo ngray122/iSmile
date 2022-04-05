@@ -3,10 +3,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./login-reg-component-styles.css";
-import smile from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-juan-pablo-serrano-arenas-967016.jpg";
-import green from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-208147.jpg";
-import stop from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-264196.jpg";
-import chhese from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/pexels-pixabay-208147.jpg";
+import smile from "../../static/static-imgs/pexels-juan-pablo-serrano-arenas-967016.jpg";
+import green from "../../static/static-imgs/pexels-pixabay-208147.jpg";
+import stop from "../../static/static-imgs/pexels-pixabay-264196.jpg";
+import chhese from "../../static/static-imgs/pexels-pixabay-208147.jpg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Landing = (props) => {
