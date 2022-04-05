@@ -160,7 +160,7 @@ const EditPost = (props) => {
             </div>
 
             {/* IMAGE UPLOAD */}
-            <div row={false}>
+            <div>
               <div className="file-field input-field">
                 <div className="btn">
                   <span>
