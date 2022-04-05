@@ -139,7 +139,8 @@ const CreatePost = (props) => {
                 <i className="material-icons large prefix">photo_camera</i>
 
                 <input
-                  onChange={onChangeFileSelectHandler}
+                  onChange={(e) => onChangeFileSelectHandler}
+                  // onClick={(e) => console.log("clicking file upload")}
                   accept=".png, .jpg, .jpeg"
                   // className="photo"
                   type="file"
