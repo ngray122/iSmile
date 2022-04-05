@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 module.exports = (app) => {
   const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-      callback(null, "/client/public/uploads");
+      callback(null, "uploads");
     },
     filename: (req, file, callback) => {
       const fileName = file.originalname.toLowerCase().split(" ").join("-");
