@@ -1,5 +1,5 @@
 import React from "react";
-import imgs from "/Users/Nicole/Desktop/projects/iSmile/client/src/static/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg";
+import imgs from "../../static/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg";
 
 export const HeroImg = () => {
   return (
