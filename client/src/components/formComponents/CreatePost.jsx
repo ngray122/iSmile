@@ -37,6 +37,7 @@ const CreatePost = (props) => {
     e.preventDefault();
     console.log("picture icon clicked");
     const fileInput = e.target.files[0];
+    console.log(fileInput);
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
@@ -139,13 +140,13 @@ const CreatePost = (props) => {
 
                 <input
                   onChange={onChangeFileSelectHandler}
+                  accept=".png, .jpg, .jpeg"
                   // className="photo"
                   type="file"
                   id="photo"
                   name="photo"
                   // value=""
                   // filename="photo"
-                  accept=".png, .jpg, .jpeg"
                 />
               </div>
             </div>
