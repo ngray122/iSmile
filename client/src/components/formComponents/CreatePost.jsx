@@ -44,8 +44,8 @@ const CreatePost = (props) => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
       console.log("base64log -> " + base64String);
-      reader.readAsDataURL(fileInput);
     };
+    reader.readAsDataURL(fileInput);
   };
 
   // Creates new post for user
@@ -141,34 +141,43 @@ const CreatePost = (props) => {
               </span>
             </div>
             {/* IMAGE UPLOAD */}
-            <div className="file-field" sx={{ p: "5px" }}>
+            {/* <div className="file-field" sx={{ p: "5px" }}>
               <div className="btn">
-                <i className="material-icons large prefix">photo_camera</i>
-
-                <input
-                  // onClick={(e) => onChangeFileSelectHandler(e)}
-                  // onChange={(e) => onChangeFileSelectHandler(e)}
-                  onChange={onChangeFileSelectHandler}
-                  // onClick={(e) => console.log("clicking file upload")}
-                  accept=".png, .jpg, .jpeg"
-                  // className="photo"
-                  type="file"
-                  id="photo"
-                  name="photo"
-                  // value=""
-                  // filename="photo"
-                />
-              </div>
-            </div>
-            <div className="file-path-wrapper">
+                <i className="material-icons large prefix">photo_camera</i> */}
+            {/* 
+            <input
+              // onChange={(e) => onChangeFileSelectHandler(e)}
+              // onChange={onChangeFileSelectHandler}
+              // onClick={(e) => console.log("clicking file upload")}
+              accept=".png, .jpg, .jpeg"
+              // className="photo"
+              type="file"
+              id="photo"
+              name="photo" */}
+            {/* // value={photo}
+              // filename="photo"
+            /> */}
+            {/* </div> */}
+            {/* </div> */}
+            {/* <div className="file-path-wrapper">
               <input className="file-path validate" type="text" />
             </div>
             <span className="helper-text" data-error="wrong">
               {formInputError.photo?.message}
-            </span>
+            </span> */}
             {/* </div> */}
+            <div>
+              <input
+                onChange={onChangeFileSelectHandler}
+                type="file"
+                accept=".png, .jpg, .jpeg"
+                // onChange={(e) => setPhoto(e.target.value)}
+                name="photo"
+              ></input>
+            </div>
 
             {/* Submit Button */}
+
             <div>
               <button
                 className="btn waves-effect waves-light"

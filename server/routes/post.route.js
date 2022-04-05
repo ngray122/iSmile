@@ -2,36 +2,34 @@ const PostController = require("../controllers/post.contoller");
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, "uploads");
+  },
+  filename: (req, file, callback) => {
+    const fileName = file.originalname.toLowerCase().split(" ").join("-");
+    callback(null, uuidv4() + "-" + fileName);
+  },
+});
+
+const fileFilter = (req, file, cb) => {
+  const allowedFileTypes = ["image/jpeg", "image/jpg", "image/png"];
+  if (allowedFileTypes.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
+let upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+  limits: { fieldSize: 25 * 1024 * 1024 },
+});
+
+// console.log(upload);
+
 module.exports = (app) => {
-  const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-      callback(null, "uploads");
-    },
-    filename: (req, file, callback) => {
-      const fileName = file.originalname.toLowerCase().split(" ").join("-");
-      callback(null, uuidv4() + "-" + fileName);
-    },
-  });
-
-  const fileFilter = (req, file, cb) => {
-    const allowedFileTypes = [
-      "image/jpeg",
-      "image/jpg",
-      "image/png",
-      "image/JPG",
-    ];
-    if (allowedFileTypes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(null, false);
-    }
-  };
-
-  let upload = multer({
-    storage: storage,
-    fileFilter: fileFilter,
-    limits: { fieldSize: 25 * 1024 * 1024 },
-  });
   // ========>> IF HAVING TROUBLE WITH ROUTES:
   //1. "/" at START of API call after the first  \\'// ,
   //2. verify http, https
