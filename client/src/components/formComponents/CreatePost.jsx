@@ -32,7 +32,7 @@ const CreatePost = () => {
   }, []);
 
   const onchangeFileSelectHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("picture icon clicked");
     const fileInput = e.target.file[0];
     const reader = new FileReader();
@@ -81,13 +81,13 @@ const CreatePost = () => {
       <PostForm
         sx={{ bgcolor: "primary.light" }}
         elevation={3}
-        onchangeFileSelectHandler={onchangeFileSelectHandler}
+        fakefunct={onchangeFileSelectHandler}
         submitHandler={submitHandler}
         formInputError={formInputError}
         setName={setName}
         setText={setText}
         setUrl={setUrl}
-        filename={photo}
+        filename={setPhoto}
       ></PostForm>
     </Paper>
   );

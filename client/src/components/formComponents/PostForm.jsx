@@ -4,6 +4,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
+  console.log("read here ->", props);
+
   const {
     submitHandler,
     onchangeFileSelectHandler,
