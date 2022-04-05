@@ -19,19 +19,19 @@ const CreatePost = (props) => {
   let [photo, setPhoto] = useState("");
 
   // Users can only access this page while they are logged in
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+  //     .then((res) => {
+  //       if (res.data) {
+  //         setRegisteredUSer(res.data);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       history.push("/");
+  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
+  //     });
+  // }, []);
 
   const onChangeFileSelectHandler = (e) => {
     e.preventDefault();
@@ -44,8 +44,8 @@ const CreatePost = (props) => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
       console.log("base64log -> " + base64String);
+      reader.readAsDataURL(fileInput);
     };
-    reader.readAsDataURL(fileInput);
   };
 
   // Creates new post for user
@@ -73,7 +73,7 @@ const CreatePost = (props) => {
     <Paper
       sx={{ maxWidth: "750px", p: "30px" }}
       container
-      elevation={3}
+      // elevation={3}s
       align="center"
       mx="auto"
       variant="outlined"
@@ -81,15 +81,11 @@ const CreatePost = (props) => {
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
-      <form
-        enctype="multipart/form-data"
-        onSubmit={submitHandler}
-        method="POST"
-      >
+      <form encType="multipart/form-data" onSubmit={submitHandler}>
         <Paper align="center" variant="outlined" mx="auto" p={1}>
           <FormControl>
             {/* Form Starts */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               {/* NAME INPUT */}
               <input
                 id="name"
@@ -98,8 +94,12 @@ const CreatePost = (props) => {
                 onChange={(e) => setName(e.target.value)}
                 type="text"
               />
-              <label for="name">Title</label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="name">Title</label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.name?.message}
               </span>
             </div>
@@ -109,12 +109,15 @@ const CreatePost = (props) => {
               <textarea
                 id="text"
                 value={text}
-                maxRows="6"
                 onChange={(e) => setText(e.target.value)}
                 className="materialize-textarea"
               />
-              <label for="text">What would you like to say?</label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="text">What would you like to say?</label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.text?.message}
               </span>
             </div>
@@ -128,8 +131,12 @@ const CreatePost = (props) => {
                 type="url"
                 // input="url"
               />
-              <label for="url">Add link - optional</label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="url">Add link - optional</label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.url?.message}
               </span>
             </div>
@@ -139,7 +146,9 @@ const CreatePost = (props) => {
                 <i className="material-icons large prefix">photo_camera</i>
 
                 <input
-                  onChange={(e) => onChangeFileSelectHandler}
+                  // onClick={(e) => onChangeFileSelectHandler(e)}
+                  // onChange={(e) => onChangeFileSelectHandler(e)}
+                  onChange={onChangeFileSelectHandler}
                   // onClick={(e) => console.log("clicking file upload")}
                   accept=".png, .jpg, .jpeg"
                   // className="photo"
