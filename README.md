@@ -2,9 +2,9 @@
 
 > **iSmile** is a blog-style platform developed with the MERN stack
 
-# Installation
+## Installation
 
-## Env Variables
+### Env Variables
 
 Create a .env file in your root folder and add the following:
 
@@ -13,12 +13,15 @@ db_name = "your_database_here"
 SECRET_KEY = "santa_is_real"
 ```
 
-## Install dependencies
+### Install dependencies
 
 Back-End
 
-1. In the root folder ~
-   `npm install`
+In the root folder:
+
+```
+npm install
+```
 
 Front-End
 
@@ -27,10 +30,26 @@ cd client
 npm install
 ```
 
-## Visuals
+### DB
 
-Screenshots or short GIFs showing off how dope your UI is and/or how slick your UX is. Don't go overboard here.
+In config.js, `"your_database_here"` needs to be your mongo database name.
 
-## Roadmap :new:
+`mongoose.connect()` is your cluster name in the Mongodb cloud.
 
-What are 'bigger' things that are coming for this project? :eyes: If you want to be hella organized, link each item in this list to a GH issue or milestone.
+> Feel free to use an alternate database connection
+
+### Run
+
+```
+# front-end runs on port 3000
+npm start
+
+# back-end runs on port 8000
+npm run server.js
+```
+
+## Things in progress :new:
+
+- Bookmark/pin favorite posts
+- External APIs
+- Like, Comment and Share
