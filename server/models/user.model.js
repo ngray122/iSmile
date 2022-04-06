@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
     firstName: {
       type: String,
       required: [true, "First name cannot be left blank"],
-      minlength: [1, "First name must have at least character"],
+      minlength: [1, "First name must have at least 1 character"],
     },
     lastName: {
       type: String,
@@ -21,8 +21,8 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: mongoose.SchemaTypes.Email,
-      correctTld: [true, "Email is not vaild"],
-      required: [true, "Email is not valid"],
+      correctTld: [true, "Email is not in a valid format"],
+      required: [true, "Email cannot be left blank"],
       minlength: [5, "Email must have at least 5 characters"],
       unique: [true, "This email is already in use, please choose another"],
     },
