@@ -12,12 +12,12 @@ const UserSchema = new mongoose.Schema(
     firstName: {
       type: String,
       required: [true, "First name cannot be left blank"],
-      minlength: [3, "First name must have at least 3 characters"],
+      minlength: [1, "First name must have at least character"],
     },
     lastName: {
       type: String,
       required: [true, "Last Name cannot be left blank"],
-      minlength: [3, "Last Name must have at least 3 characters"],
+      minlength: [1, "Last Name must have at least 1 character"],
     },
     email: {
       type: mongoose.SchemaTypes.Email,
