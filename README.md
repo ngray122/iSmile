@@ -1,15 +1,31 @@
 # iSmile :star2:
 
-**iSmile** is a feel-good, blog-style platform where users share what makes them smile. Users have CRUD functionality and can add images and urls to external sources.
+> **iSmile** is a blog-style platform developed with the MERN stack
 
-## MERN
+# Installation
 
-**iSmile** was developed utilizing MongoDB Express React and NodeJS, the MERN Stack. Styled with the Materialize CSS library
+## Env Variables
 
-## Installation
+Create a .env file in your root folder and add the following:
 
-What steps do I need to take to get this application running locally?
-What are the critical config values that need to be set?
+```
+db_name = "your_database_here"
+SECRET_KEY = "santa_is_real"
+```
+
+## Install dependencies
+
+Back-End
+
+1. In the root folder ~
+   `npm install`
+
+Front-End
+
+```
+cd client
+npm install
+```
 
 ## Visuals
 
