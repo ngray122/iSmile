@@ -86,8 +86,7 @@ const EditPost = (props) => {
     <Paper
       align="center"
       mx="auto"
-      variant="outlined"
-      container
+      // variant="outlined"
       elevation={3}
       sx={{ p: "30px", maxWidth: "750px" }}
     >
@@ -99,7 +98,7 @@ const EditPost = (props) => {
         <Paper align="center" variant="outlined" mx="auto" p={1}>
           <FormControl>
             {/* Form Starts */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               {/* NAME INPUT */}
               <input
                 value={onePost.name}
@@ -109,8 +108,12 @@ const EditPost = (props) => {
                 input="name"
                 name="name"
               />
-              <label for="name"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="name"></label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.name?.message}
               </span>
             </div>
@@ -120,37 +123,40 @@ const EditPost = (props) => {
               <textarea
                 id="text"
                 value={onePost.text}
-                maxRows="6"
                 name="text"
                 onChange={onChangeHandler}
                 className="materialize-textarea"
               />
-              <label for="text"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="text"></label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.text?.message}
               </span>
             </div>
 
             {/* URL INPUT */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               <input
                 id="url"
                 value={onePost.url}
                 onChange={onChangeHandler}
                 name="url"
               />
-              <label for="url"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="url"></label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.url?.message}
               </span>
             </div>
 
             {/* IMAGE UPLOAD */}
-            <div
-              className="file-field input-field"
-              row={false}
-              sx={{ p: "5px" }}
-            >
+            <div className="file-field input-field" sx={{ p: "5px" }}>
               <div className="btn">
                 <i className="material-icons large prefix">photo_camera</i>
                 <input
