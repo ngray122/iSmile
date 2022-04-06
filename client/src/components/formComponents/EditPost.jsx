@@ -161,7 +161,7 @@ const EditPost = (props) => {
 
             {/* IMAGE UPLOAD */}
             <div>
-              <div className="file-field input-field">
+              <div className="file-field">
                 <div className="btn">
                   <span>
                     <i className="material-icons small prefix">photo_camera</i>
@@ -169,7 +169,7 @@ const EditPost = (props) => {
 
                   <input
                     type="file"
-                    // filename="photo"
+                    name="photo"
                     // id="photo"
                     value=""
                     onChange={onChangeFileSelectHandler}
