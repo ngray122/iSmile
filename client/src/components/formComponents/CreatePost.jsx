@@ -18,21 +18,6 @@ const CreatePost = (props) => {
   let [url, setUrl] = useState("");
   let [photo, setPhoto] = useState("");
 
-  // Users can only access this page while they are logged in
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-  //     .then((res) => {
-  //       if (res.data) {
-  //         setRegisteredUSer(res.data);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       history.push("/");
-  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
-  //     });
-  // }, []);
-
   const onChangeFileSelectHandler = (e) => {
     e.preventDefault();
     console.log("picture icon clicked");
@@ -72,7 +57,6 @@ const CreatePost = (props) => {
   return (
     <Paper
       sx={{ maxWidth: "750px", p: "30px" }}
-      container
       // elevation={3}s
       align="center"
       mx="auto"
