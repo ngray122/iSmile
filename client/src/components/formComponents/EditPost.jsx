@@ -11,7 +11,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const EditPost = (props) => {
   let history = useHistory();
-  let [formInputError, setFormInputError] = useState({});
+  let [formInputError, setFormInputError] = useState([]);
   let [registeredUser, setRegisteredUSer] = useState({});
   let [onePost, setOnePost] = useState({});
   let [photo, setPhoto] = useState("");
@@ -64,7 +64,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.photo]: photo,
     });
-    console.log("onePost.photo collected from edit form -> " + onePost.photo);
+    // console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
 
   const submitHandler = (e) => {
@@ -72,9 +72,11 @@ const EditPost = (props) => {
     axios
       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
-        console.log("Edit put -> ", res.data.result);
+        console.log("res.data", res.data);
+        // console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
-          setFormInputError(res.data.errors);
+          setFormInputError(res.data.error.errors);
+          console.log("form input err in submit", formInputError);
         } else {
           history.push("/dashboard");
         }
@@ -82,6 +84,7 @@ const EditPost = (props) => {
       .catch((err) => console.log("error in submitting post request", err));
   };
 
+  console.log("form input error -> ", formInputError);
   return (
     <Paper
       align="center"
@@ -109,11 +112,7 @@ const EditPost = (props) => {
                 name="name"
               />
               <label htmlFor="name"></label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.name?.message}
               </span>
             </div>
@@ -128,11 +127,7 @@ const EditPost = (props) => {
                 className="materialize-textarea"
               />
               <label htmlFor="text"></label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.text?.message}
               </span>
             </div>
@@ -146,11 +141,7 @@ const EditPost = (props) => {
                 name="url"
               />
               <label htmlFor="url"></label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.url?.message}
               </span>
             </div>
