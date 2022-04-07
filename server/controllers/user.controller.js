@@ -45,14 +45,22 @@ class UserController {
   login = async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user === null) {
-      return res.json({ error: "Email not found, please try again" });
+      return res.json({
+        errors: { email: { message: "Email not found, please try again" } },
+      });
     }
     const correctPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
     if (!correctPassword) {
-      return res.json({ error: "Password incorrect, try again" });
+      return res.json({
+        errors: {
+          password: {
+            message: "Password and email do not match, please try again",
+          },
+        },
+      });
     }
     const userToken = jwt.sign(
       {

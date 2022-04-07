@@ -28,6 +28,7 @@ const User = (props) => {
       })
       .then((res) => {
         if (res.data.errors) {
+          console.log(res.data.errors);
           setFormInputError(res.data.errors);
         } else {
           history.push("/dashboard");
@@ -57,7 +58,6 @@ const User = (props) => {
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   type="text"
-                  required
                 />
                 <label for="first-name-form">First Name</label>
                 <span className="helper-text" data-error="wrong">
@@ -75,7 +75,6 @@ const User = (props) => {
                   id="last-name-form"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  required
                 />
                 <label for="last-name-form">Last Name</label>
                 <span className="helper-text" data-error="wrong">
@@ -93,7 +92,6 @@ const User = (props) => {
                   id="email-reg-form"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                   errorText={formInputError.email?.message}
                 />
                 <label for="email-reg-form">Email</label>
@@ -114,7 +112,6 @@ const User = (props) => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   input="password"
-                  required
                 />
                 <label for="password-reg-form">Password</label>
                 <span className="helper-text" data-error="wrong">
@@ -135,7 +132,6 @@ const User = (props) => {
                   value={verifyPassword}
                   onChange={(e) => setVerifyPassword(e.target.value)}
                   input="password"
-                  required
                 />
                 <label for="confirm-password-reg-form">Confirm Password</label>
                 <span className="helper-text" data-error="wrong">
