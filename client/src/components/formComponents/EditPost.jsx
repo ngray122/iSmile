@@ -74,7 +74,7 @@ const EditPost = (props) => {
       .then((res) => {
         console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
-          setFormInputError(res.data.errors);
+          setFormInputError(res.data.error.errors);
         } else {
           history.push("/dashboard");
         }
@@ -109,8 +109,8 @@ const EditPost = (props) => {
                 input="name"
                 name="name"
               />
-              <label for="name"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="name"></label>
+              <span className="helper-text" data-error="wrong">
                 {formInputError.name?.message}
               </span>
             </div>
@@ -125,8 +125,12 @@ const EditPost = (props) => {
                 onChange={onChangeHandler}
                 className="materialize-textarea"
               />
-              <label for="text"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <label htmlFor="text"></label>
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.text?.message}
               </span>
             </div>
@@ -140,7 +144,11 @@ const EditPost = (props) => {
                 name="url"
               />
               <label for="url"></label>
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 {formInputError.url?.message}
               </span>
             </div>
