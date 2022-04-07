@@ -14,7 +14,7 @@ const EditPost = (props) => {
   let [formInputError, setFormInputError] = useState([]);
   let [registeredUser, setRegisteredUSer] = useState({});
   let [onePost, setOnePost] = useState({});
-  let [photo, setPhoto] = useState("");
+  let [photo, setPhoto] = useState({});
   let { id } = useParams();
 
   //
@@ -59,36 +59,49 @@ const EditPost = (props) => {
     reader.readAsDataURL(fileInput);
   };
 
-  // const onChangeHandler = (e) => {
-  //   if (e.target.type === "file") {
-  //     // console.log("e.target.name", [e.target.name]);
-  //     onChangeFileSelectHandler(e);
-  //     // setOnePost({
-  //     //   ...onePost,
-  //     //   [onePost.photo]: photo,
-  //     // });
-  //   } else {
+  const onChangeHandler = (e) => {
+    e.preventDefault();
+
+    setOnePost({
+      ...onePost,
+      [e.target.name]: e.target.value,
+      photo: photo,
+    });
+    console.log("photo log inside onChange-> ", photo);
+    console.log("onePost.photo log inside onChange-> ", onePost.photo);
+  };
+
+  // const onChangeFileSelectHandler = useCallback(
+  //   (e) => {
+  //     const fileInput = e.target.files[0];
+  //     const reader = new FileReader();
+  //     let base64String;
+  //     // console.log("From onChangeFileSelect");s
+
+  //     reader.onloadend = () => {
+  //       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+  //       setPhoto(base64String);
+  //       console.log("base64log edit-> " + base64String);
+  //     };
+  //     reader.readAsDataURL(fileInput);
+  //   },
+  //   [onChangeHandler]
+  // );
+
+  // const onChangeHandler = useCallback(
+  //   (e) => {
+  //     e.preventDefault();
+
   //     setOnePost({
   //       ...onePost,
   //       [e.target.name]: e.target.value,
+  //       [e.target.photo]: photo,
   //     });
-  //   }
-  // };
-
-  const onChangeHandler = useCallback(
-    (e) => {
-      e.preventDefault();
-
-      setOnePost({
-        ...onePost,
-        [e.target.name]: e.target.value,
-        [onePost.photo]: photo,
-      });
-      console.log("photo log inside onChange-> ", photo);
-      console.log("onePost.photo log inside onChange-> ", onePost.photo);
-    },
-    [onChangeFileSelectHandler]
-  );
+  //     console.log("photo log inside onChange-> ", photo);
+  //     console.log("onePost.photo log inside onChange-> ", onePost.photo);
+  //   },
+  //   [photo]
+  // );
 
   const submitHandler = (e) => {
     e.preventDefault();
