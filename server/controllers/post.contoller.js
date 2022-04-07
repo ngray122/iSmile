@@ -29,10 +29,11 @@ class PostController {
     )
       .then((post) => res.json({ result: post }))
       .catch((err) =>
-        res.json({ message: "ERROR with update ===> ", error: err })
+        res.json({ errors: "ERROR with update ===> ", error: err })
       );
   };
 
+  // res.json({ message: "ERROR with update ===> ", error: err })
   findAllPosts = (req, res) => {
     Post.find()
       .populate("user_id")

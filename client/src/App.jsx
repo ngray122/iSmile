@@ -47,13 +47,11 @@ function App() {
 
           {/* Login */}
           <Route exact path="/login">
-            <NavBar />
             <Login />
           </Route>
 
           {/* Register */}
           <Route exact path="/register">
-            <NavBar />
             <Registration />
           </Route>
 

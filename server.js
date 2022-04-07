@@ -17,18 +17,18 @@ app.use(express.urlencoded({ extended: true, limit: "25mb" }));
 const cookies = require("cookie-parser");
 app.use(cookieParser());
 
-var fs = require("fs");
-var path = require("path");
-require("dotenv/config");
-
 // tells the server where to upload images
-app.use(express.static("images"));
+app.use(express.static("uploads"));
 app.use(
   cors(
     // accept information from =>
     { credentials: true, origin: "http://localhost:3000" }
   )
 );
+
+var fs = require("fs");
+var path = require("path");
+require("dotenv/config");
 
 // mongoose config
 require("./server/config/config");
