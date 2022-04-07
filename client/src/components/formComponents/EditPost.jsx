@@ -37,7 +37,7 @@ const EditPost = (props) => {
       .get(`http://localhost:8000/api/posts/getone/${id}`)
       .then((res) => {
         setOnePost(res.data.result);
-        console.log("one post log -> " + res);
+        // console.log("one post log -> " + res);
       })
       .catch((err) => {
         history.push("/");
@@ -46,11 +46,10 @@ const EditPost = (props) => {
   }, []);
 
   const onChangeFileSelectHandler = (e) => {
-    e.preventDefault();
-    const fileInput = e.target.file[0];
+    const fileInput = e.target.files[0];
     const reader = new FileReader();
     let base64String;
-    console.log("Phtot click");
+    console.log("From onChangeFileSelect");
 
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
@@ -61,11 +60,20 @@ const EditPost = (props) => {
   };
 
   const onChangeHandler = (e) => {
-    setOnePost({
-      ...onePost,
-      [e.target.name]: e.target.value,
-      [e.target.photo]: photo,
-    });
+    if (e.target.type === "file") {
+      // console.log("e.target.name", [e.target.name]);
+      onChangeFileSelectHandler(e);
+      // setOnePost({
+      //   ...onePost,
+      //   [onePost.photo]: photo,
+      // });
+    } else {
+      setOnePost({
+        ...onePost,
+        [e.target.name]: e.target.value,
+      });
+    }
+
     // console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
 
@@ -85,7 +93,6 @@ const EditPost = (props) => {
       .catch((err) => console.log("error in submitting post request", err));
   };
 
-  console.log("form input error -> ", formInputError);
   return (
     <Paper
       align="center"
@@ -148,7 +155,7 @@ const EditPost = (props) => {
             </div>
 
             {/* IMAGE UPLOAD */}
-            <div className="file-field input-field" sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               <div className="btn">
                 <i className="material-icons large prefix">photo_camera</i>
                 <input
@@ -156,7 +163,7 @@ const EditPost = (props) => {
                   name="photo"
                   // id="photo"
                   value=""
-                  onChange={onChangeFileSelectHandler}
+                  onChange={onChangeHandler}
                   accept=".png, .jpg, .jpeg"
                   // className="photo"
                 />
