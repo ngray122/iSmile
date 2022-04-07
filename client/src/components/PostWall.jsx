@@ -11,20 +11,20 @@ const PostWall = () => {
 
   let [registeredUser, setRegisteredUSer] = useState({});
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        console.log("RESULT on load, GETONE => ", res);
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+  //     .then((res) => {
+  //       console.log("RESULT on load, GETONE => ", res);
+  //       if (res.data) {
+  //         setRegisteredUSer(res.data);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       history.push("/");
+  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
+  //     });
+  // }, []);
 
   return <CardPost elevation={6}></CardPost>;
 };

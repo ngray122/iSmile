@@ -20,8 +20,9 @@ const Login = () => {
         withCredentials: true,
       })
       .then((res) => {
-        if (res.data.error) {
-          setFormInputError(res.data.error);
+        if (res.data.errors) {
+          console.log("res.data.errors -> ", res.data.errors);
+          setFormInputError(res.data.errors);
         } else {
           history.push("/dashboard");
         }
@@ -29,6 +30,7 @@ const Login = () => {
       .catch((err) => console.log("ERROR WHEN LOGGING IN ===> ", err));
   };
 
+  // console.log("Form input err log -> ", formInputError);
   return (
     <div className="container">
       <div className="row container">
@@ -46,17 +48,14 @@ const Login = () => {
 
                 <input
                   id="email"
-                  type="email"
+                  type="text"
                   onChange={(e) => setEmail(e.target.value)}
                   input="email"
                   className="login-form-input"
-                  required
+                  value={email}
                 />
-                <label for="email">Email</label>
-                <span
-                  className="helper-text"
-                  data-error="Please enter a valid email"
-                >
+                <label htmlFor="email">Email</label>
+                <span className="helper-text" data-error="wrong">
                   {formInputError.email?.message}
                 </span>
               </div>
@@ -69,20 +68,15 @@ const Login = () => {
                 <input
                   className="login-form-input"
                   type="password"
-                  id="password"
+                  id="password-login-form"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   input="password"
-                  required
                 />
-                <label for="password">Password</label>
-                <span
-                  className="helper-text"
-                  data-error="Please enter your password"
-                >
+                <label htmlFor="password">Password</label>
+                <span className="helper-text" data-error="wrong">
                   {formInputError.password?.message}
                 </span>
-                {/* <p>{formInputError}</p> */}
               </div>
             </div>
             <div>

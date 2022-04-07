@@ -28,6 +28,7 @@ const User = (props) => {
       })
       .then((res) => {
         if (res.data.errors) {
+          console.log(res.data.errors);
           setFormInputError(res.data.errors);
         } else {
           history.push("/dashboard");
@@ -91,7 +92,6 @@ const User = (props) => {
                   id="email-reg-form"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                />
                 <label htmlFor="email-reg-form">Email</label>
                 <span className="helper-text" data-error="wrong">
                   {formInputError.email?.message}
