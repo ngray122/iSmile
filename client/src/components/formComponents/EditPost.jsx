@@ -76,7 +76,6 @@ const EditPost = (props) => {
         // console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
           setFormInputError(res.data.error.errors);
-          console.log("form input err in submit", formInputError);
         } else {
           history.push("/dashboard");
         }

@@ -11,20 +11,20 @@ const Dashboard = () => {
 
   let [registeredUser, setRegisteredUSer] = useState({});
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        // console.log("RESULT ON DASH after login , => ", res);
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+  //     .then((res) => {
+  //       // console.log("RESULT ON DASH after login , => ", res);
+  //       if (res.data) {
+  //         setRegisteredUSer(res.data);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       history.push("/");
+  //       console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
+  //     });
+  // }, []);
 
   return (
     <Grid container spacing={3} m={1} p={1}>

@@ -16,19 +16,19 @@ const Profile = () => {
 
   let [registeredUser, setRegisteredUSer] = useState({});
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+  //     .then((res) => {
+  //       if (res.data) {
+  //         setRegisteredUSer(res.data);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       history.push("/");
+  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
+  //     });
+  // }, []);
 
   return (
     <Paper elevation={3} sx={{ p: "20px", bgcolor: "primary" }}>
