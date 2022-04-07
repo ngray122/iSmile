@@ -36,7 +36,7 @@ const CreatePost = (props) => {
   // Creates new post for user
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("submitHandler working");
+    // console.log("submitHandler working");
     const formData = new FormData();
     formData.append("name", name);
     formData.append("text", text);
@@ -45,8 +45,9 @@ const CreatePost = (props) => {
     axios
       .post("http://localhost:8000/api/posts/create", formData)
       .then((res) => {
-        if (res.data.errors) {
-          setFormInputError(res.data.errors);
+        if (res.data.error) {
+          console.log(res);
+          setFormInputError(res.data.error.errors);
         } else {
           history.push("/dashboard");
         }
@@ -77,6 +78,7 @@ const CreatePost = (props) => {
                 // error
                 onChange={(e) => setName(e.target.value)}
                 type="text"
+                name="name"
               />
               <label htmlFor="name">Title</label>
               <span
@@ -95,6 +97,7 @@ const CreatePost = (props) => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 className="materialize-textarea"
+                name="text"
               />
               <label htmlFor="text">What would you like to say?</label>
               <span
