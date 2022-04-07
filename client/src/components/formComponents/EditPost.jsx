@@ -85,7 +85,7 @@ const EditPost = (props) => {
   //     };
   //     reader.readAsDataURL(fileInput);
   //   },
-  //   [onChangeHandler]
+  //   [photo]
   // );
 
   // const onChangeHandler = useCallback(
