@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import {
   useHistory,
@@ -49,7 +49,7 @@ const EditPost = (props) => {
     const fileInput = e.target.files[0];
     const reader = new FileReader();
     let base64String;
-    console.log("From onChangeFileSelect");
+    // console.log("From onChangeFileSelect");s
 
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
@@ -59,23 +59,36 @@ const EditPost = (props) => {
     reader.readAsDataURL(fileInput);
   };
 
-  const onChangeHandler = (e) => {
-    if (e.target.type === "file") {
-      // console.log("e.target.name", [e.target.name]);
-      onChangeFileSelectHandler(e);
-      // setOnePost({
-      //   ...onePost,
-      //   [onePost.photo]: photo,
-      // });
-    } else {
+  // const onChangeHandler = (e) => {
+  //   if (e.target.type === "file") {
+  //     // console.log("e.target.name", [e.target.name]);
+  //     onChangeFileSelectHandler(e);
+  //     // setOnePost({
+  //     //   ...onePost,
+  //     //   [onePost.photo]: photo,
+  //     // });
+  //   } else {
+  //     setOnePost({
+  //       ...onePost,
+  //       [e.target.name]: e.target.value,
+  //     });
+  //   }
+  // };
+
+  const onChangeHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+
       setOnePost({
         ...onePost,
         [e.target.name]: e.target.value,
+        [onePost.photo]: photo,
       });
-    }
-
-    // console.log("onePost.photo collected from edit form -> " + onePost.photo);
-  };
+      console.log("photo log inside onChange-> ", photo);
+      console.log("onePost.photo log inside onChange-> ", onePost.photo);
+    },
+    [onChangeFileSelectHandler]
+  );
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -163,7 +176,7 @@ const EditPost = (props) => {
                   name="photo"
                   // id="photo"
                   value=""
-                  onChange={onChangeHandler}
+                  onChange={onChangeFileSelectHandler}
                   accept=".png, .jpg, .jpeg"
                   // className="photo"
                 />
