@@ -11,7 +11,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const EditPost = (props) => {
   let history = useHistory();
-  let [formInputError, setFormInputError] = useState({});
+  let [formInputError, setFormInputError] = useState([]);
   let [registeredUser, setRegisteredUSer] = useState({});
   let [onePost, setOnePost] = useState({});
   let [photo, setPhoto] = useState("");
@@ -64,7 +64,7 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       [e.target.photo]: photo,
     });
-    console.log("onePost.photo collected from edit form -> " + onePost.photo);
+    // console.log("onePost.photo collected from edit form -> " + onePost.photo);
   };
 
   const submitHandler = (e) => {
@@ -72,7 +72,8 @@ const EditPost = (props) => {
     axios
       .put(`http://localhost:8000/api/posts/edit/${id}`, onePost)
       .then((res) => {
-        console.log("Edit put -> ", res.data.result);
+        console.log("res.data", res.data);
+        // console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
           setFormInputError(res.data.error.errors);
         } else {
@@ -82,12 +83,12 @@ const EditPost = (props) => {
       .catch((err) => console.log("error in submitting post request", err));
   };
 
+  console.log("form input error -> ", formInputError);
   return (
     <Paper
       align="center"
       mx="auto"
-      variant="outlined"
-      container
+      // variant="outlined"
       elevation={3}
       sx={{ p: "30px", maxWidth: "750px" }}
     >
@@ -99,7 +100,7 @@ const EditPost = (props) => {
         <Paper align="center" variant="outlined" mx="auto" p={1}>
           <FormControl>
             {/* Form Starts */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               {/* NAME INPUT */}
               <input
                 value={onePost.name}
@@ -120,45 +121,32 @@ const EditPost = (props) => {
               <textarea
                 id="text"
                 value={onePost.text}
-                maxRows="6"
                 name="text"
                 onChange={onChangeHandler}
                 className="materialize-textarea"
               />
               <label htmlFor="text"></label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.text?.message}
               </span>
             </div>
 
             {/* URL INPUT */}
-            <div className="input-field" row={false} sx={{ p: "5px" }}>
+            <div className="input-field" sx={{ p: "5px" }}>
               <input
                 id="url"
                 value={onePost.url}
                 onChange={onChangeHandler}
                 name="url"
               />
-              <label for="url"></label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <label htmlFor="url"></label>
+              <span className="helper-text" data-error="wrong">
                 {formInputError.url?.message}
               </span>
             </div>
 
             {/* IMAGE UPLOAD */}
-            <div
-              className="file-field input-field"
-              row={false}
-              sx={{ p: "5px" }}
-            >
+            <div className="file-field input-field" sx={{ p: "5px" }}>
               <div className="btn">
                 <i className="material-icons large prefix">photo_camera</i>
                 <input
