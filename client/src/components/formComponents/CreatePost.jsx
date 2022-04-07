@@ -75,7 +75,6 @@ const CreatePost = (props) => {
               <input
                 id="name"
                 value={name}
-                // error
                 onChange={(e) => setName(e.target.value)}
                 type="text"
                 name="name"
@@ -100,11 +99,7 @@ const CreatePost = (props) => {
                 name="text"
               />
               <label htmlFor="text">What would you like to say?</label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.text?.message}
               </span>
             </div>
@@ -119,11 +114,7 @@ const CreatePost = (props) => {
                 // input="url"
               />
               <label htmlFor="url">Add link - optional</label>
-              <span
-                className="helper-text"
-                data-error="wrong"
-                data-success="right"
-              >
+              <span className="helper-text" data-error="wrong">
                 {formInputError.url?.message}
               </span>
             </div>
