@@ -62,6 +62,7 @@ const CardPost = () => {
                 {/* 
                 window.location.href. 
                 XMLHttpRequest() 
+                 window.location.replace(`https://${url}`
                 */}
               </CardContent>
             </CardActionArea>
