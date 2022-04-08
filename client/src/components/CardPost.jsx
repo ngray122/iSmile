@@ -55,15 +55,9 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <Button>{postObj.url}</Button>
-                <Link to={postObj.url} variant="body2" color="text.secondary">
+                <a href={postObj.url} variant="body2" color="text.secondary">
                   {postObj.url}
-                </Link>
-                {/* 
-                window.location.href. 
-                XMLHttpRequest() 
-                 window.location.replace(`https://${url}`
-                */}
+                </a>
               </CardContent>
             </CardActionArea>
             <CardActions>
