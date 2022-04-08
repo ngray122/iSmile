@@ -55,7 +55,12 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <a href={postObj.url} variant="body2" color="text.secondary">
+                <a
+                  href={postObj.url}
+                  variant="body2"
+                  color="text.secondary"
+                  target="_blank"
+                >
                   {postObj.url}
                 </a>
               </CardContent>
