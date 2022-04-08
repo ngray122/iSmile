@@ -55,9 +55,14 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <CardText variant="body2" color="text.secondary">
+                <Button>{postObj.url}</Button>
+                <Link to={postObj.url} variant="body2" color="text.secondary">
                   {postObj.url}
-                </CardText>
+                </Link>
+                {/* 
+                window.location.href. 
+                XMLHttpRequest() 
+                */}
               </CardContent>
             </CardActionArea>
             <CardActions>
