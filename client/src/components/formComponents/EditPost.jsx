@@ -145,7 +145,7 @@ const EditPost = (props) => {
                 input="name"
                 name="name"
               />
-              <label htmlFor="name"></label>
+              <label htmlFor="name" className="active"></label>
               <span className="helper-text" data-error="wrong">
                 {formInputError.name?.message}
               </span>
@@ -160,7 +160,7 @@ const EditPost = (props) => {
                 onChange={onChangeHandler}
                 className="materialize-textarea"
               />
-              <label htmlFor="text"></label>
+              <label htmlFor="text" className="active"></label>
               <span className="helper-text" data-error="wrong">
                 {formInputError.text?.message}
               </span>
@@ -174,7 +174,7 @@ const EditPost = (props) => {
                 onChange={onChangeHandler}
                 name="url"
               />
-              <label htmlFor="url"></label>
+              <label htmlFor="url" className="active"></label>
               <span className="helper-text" data-error="wrong">
                 {formInputError.url?.message}
               </span>
