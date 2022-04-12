@@ -51,7 +51,6 @@ const EditPost = (props) => {
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
-      console.log("base64log edit-> " + base64String);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -64,8 +63,6 @@ const EditPost = (props) => {
       [e.target.name]: e.target.value,
       photo: photo,
     });
-    console.log("photo log inside onChange-> ", photo);
-    // console.log("onePost.photo log inside onChange-> ", onePost.photo);
   };
 
   const submitHandler = (e) => {
@@ -73,8 +70,6 @@ const EditPost = (props) => {
     axios
       .put(`http://localhost:8000/api/posts/edit/${id}`, formInfo)
       .then((res) => {
-        console.log("res.data", res.data);
-        // console.log("Edit put -> ", res.data.result);
         if (res.data.error) {
           setFormInputError(res.data.error.errors);
         } else {
