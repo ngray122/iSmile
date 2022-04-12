@@ -72,8 +72,8 @@ const PostForm = (props) => {
                 type="file"
                 id="photo"
                 name="photo"
-                // value={photo}
-                filename="photo"
+                value=""
+                // filename="photo"
                 // value=""
               />
             </div>
