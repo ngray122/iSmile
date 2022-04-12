@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
@@ -44,26 +44,29 @@ const CreatePost = (props) => {
   };
 
   // Creates new post for user
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log("formInfo in submitHandler -> ", formInfo);
-    console.log("submitHandler working");
-    const formData = new FormData();
-    formData.append("formInfo", formInfo);
-    formData.append("photo", photo);
-    axios
-      .post("http://localhost:8000/api/posts/create", formData)
-      .then((res) => {
-        console.log("formData in submitHandler -> ", formData);
+  const submitHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+      console.log("formInfo in submitHandler -> ", formInfo);
+      console.log("submitHandler working");
+      const formData = new FormData();
+      formData.append("formInfo", formInfo);
+      formData.append("photo", photo);
+      axios
+        .post("http://localhost:8000/api/posts/create", formData)
+        .then((res) => {
+          console.log("formData in submitHandler -> ", formData);
 
-        if (res.data.error) {
-          setFormInputError(res.data.error.errors);
-        } else {
-          history.push("/dashboard");
-        }
-      })
-      .catch((err) => console.log("error in submitting post request", err));
-  };
+          if (res.data.error) {
+            setFormInputError(res.data.error.errors);
+          } else {
+            history.push("/dashboard");
+          }
+        })
+        .catch((err) => console.log("error in submitting post request", err));
+    },
+    [formInfo, photo]
+  );
 
   return (
     <Paper
