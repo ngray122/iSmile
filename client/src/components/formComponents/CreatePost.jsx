@@ -8,10 +8,8 @@ import PostForm from "./PostForm";
 const CreatePost = (props) => {
   let history = useHistory();
   let [formInputError, setFormInputError] = useState({});
-
   let [registeredUser, setRegisteredUSer] = useState({});
   let [photo, setPhoto] = useState("");
-
   let [formInfo, setFormInfo] = useState({
     name: "",
     text: "",
@@ -20,9 +18,7 @@ const CreatePost = (props) => {
 
   const onChangeFileSelectHandler = (e) => {
     e.preventDefault();
-    console.log("picture icon clicked");
     const fileInput = e.target.files[0];
-    console.log(fileInput);
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
@@ -39,11 +35,9 @@ const CreatePost = (props) => {
     });
   };
 
-  // Creates new post for user
   const submitHandler = useCallback(
     (e) => {
       e.preventDefault();
-
       formInfo = {
         ...formInfo,
         photo: photo,
