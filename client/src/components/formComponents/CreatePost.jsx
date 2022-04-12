@@ -49,13 +49,17 @@ const CreatePost = (props) => {
       e.preventDefault();
       console.log("formInfo in submitHandler -> ", formInfo);
       console.log("submitHandler working");
-      const formData = new FormData();
-      formData.append("formInfo", formInfo);
-      formData.append("photo", photo);
+      // const formData = new FormData();
+      // formData.append("formInfo", formInfo);
+      // formData.append("photo", photo);
+      formInfo = {
+        ...formInfo,
+        photo: photo,
+      };
       axios
-        .post("http://localhost:8000/api/posts/create", formData)
+        .post("http://localhost:8000/api/posts/create", formInfo)
         .then((res) => {
-          console.log("formData in submitHandler -> ", formData);
+          // console.log("formData in submitHandler -> ", formData);
 
           if (res.data.error) {
             setFormInputError(res.data.error.errors);
