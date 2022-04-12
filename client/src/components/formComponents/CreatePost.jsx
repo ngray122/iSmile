@@ -27,9 +27,7 @@ const CreatePost = (props) => {
     let base64String;
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
-      // setFormInfo(base64String);
       setPhoto(base64String);
-      // console.log("base64log -> " + base64String);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -39,19 +37,13 @@ const CreatePost = (props) => {
       ...formInfo,
       [e.target.name]: e.target.value,
     });
-    console.log("e.target.value ->", e.target.value);
-    console.log("formInfo -> ", formInfo);
   };
 
   // Creates new post for user
   const submitHandler = useCallback(
     (e) => {
       e.preventDefault();
-      console.log("formInfo in submitHandler -> ", formInfo);
-      console.log("submitHandler working");
-      // const formData = new FormData();
-      // formData.append("formInfo", formInfo);
-      // formData.append("photo", photo);
+
       formInfo = {
         ...formInfo,
         photo: photo,
@@ -59,8 +51,6 @@ const CreatePost = (props) => {
       axios
         .post("http://localhost:8000/api/posts/create", formInfo)
         .then((res) => {
-          // console.log("formData in submitHandler -> ", formData);
-
           if (res.data.error) {
             setFormInputError(res.data.error.errors);
           } else {
