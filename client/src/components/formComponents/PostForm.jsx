@@ -6,7 +6,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
-
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
       <Paper align="center" variant="outlined" mx="auto" p={1}>
@@ -76,12 +75,15 @@ const PostForm = (props) => {
                 // value=""
               />
             </div>
+            <div className="file-path-wrapper " htmlFor="photo">
+              <input
+                className="file-path validate"
+                type="text"
+                placeholder="Upload image"
+              />
+            </div>
           </div>
 
-          <div className="file-path-wrapper " htmlFor="photo">
-
-            <input className="file-path validate" type="text" />
-          </div>
           <span className="helper-text" data-error="wrong">
             {props.formInputError.photo?.message}
           </span>

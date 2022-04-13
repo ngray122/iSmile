@@ -17,6 +17,7 @@ const CreatePost = (props) => {
   });
 
   const onChangeFileSelectHandler = (e) => {
+    console.log("file handler clicked");
     e.preventDefault();
     const fileInput = e.target.files[0];
     const reader = new FileReader();
@@ -29,6 +30,7 @@ const CreatePost = (props) => {
   };
 
   const onChangeHandler = (e) => {
+    console.log(e.target.value);
     setFormInfo({
       ...formInfo,
       [e.target.name]: e.target.value,
