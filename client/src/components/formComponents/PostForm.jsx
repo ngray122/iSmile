@@ -70,7 +70,7 @@ const PostForm = (props) => {
                 type="file"
                 id="photo"
                 name="photo"
-                value=""
+                value={props.formInfo.photo}
                 // filename="photo"
                 // value=""
               />
@@ -79,7 +79,7 @@ const PostForm = (props) => {
               <input
                 className="file-path validate"
                 type="text"
-                placeholder="Upload image"
+                placeholder={props.formInfo.photo}
               />
             </div>
           </div>
