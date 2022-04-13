@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
+  const clickHandler = (e) => {};
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
       <Paper align="center" variant="outlined" mx="auto" p={1}>
@@ -65,12 +66,15 @@ const PostForm = (props) => {
               <i className="material-icons large prefix">photo_camera</i>
 
               <input
+                ref={props.imgFile}
                 onChange={props.onChangeFileSelectHandler}
                 accept=".png, .jpg, .jpeg"
                 type="file"
                 id="photo"
                 name="photo"
-                value={props.formInfo.photo}
+                value=""
+                onClick={clickHandler}
+
                 // filename="photo"
                 // value=""
               />
@@ -79,8 +83,9 @@ const PostForm = (props) => {
               <input
                 className="file-path validate"
                 type="text"
-                placeholder={props.formInfo.photo}
+                placeholder="Upload Photo"
               />
+              {/* {props.imgFile.current} */}
             </div>
           </div>
 

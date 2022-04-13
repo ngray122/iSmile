@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
@@ -15,6 +15,7 @@ const CreatePost = (props) => {
     text: "",
     url: "",
   });
+  let imgFile = useRef(null);
 
   const onChangeFileSelectHandler = (e) => {
     console.log("file handler clicked");
@@ -25,6 +26,8 @@ const CreatePost = (props) => {
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
+      imgFile = imgFile.current.files[0];
+      console.log(imgFile);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -76,6 +79,7 @@ const CreatePost = (props) => {
         submitHandler={submitHandler}
         formInfo={formInfo}
         formInputError={formInputError}
+        imgFile={imgFile}
       ></PostForm>
     </Paper>
   );
