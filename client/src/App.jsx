@@ -3,6 +3,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
+import EditPost from "./components/formComponents/EditPost";
+import CreatePost from "./components/formComponents/CreatePost";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
@@ -14,8 +16,6 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import EditPost from "./components/formComponents/EditPost";
-import CreatePost from "./components/formComponents/CreatePost";
 
 function App() {
   const siteTheme = createTheme({

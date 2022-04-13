@@ -21,7 +21,7 @@ class PostController {
     // //
     Post.findOneAndUpdate(
       { _id: req.params.id },
-      { ...req.body, photo: req.file },
+      { ...req.body },
       {
         new: true,
         runValidators: true,
