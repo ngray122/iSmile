@@ -1,9 +1,12 @@
+import React, { useState } from "react";
+
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
+
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
       <Paper align="center" variant="outlined" mx="auto" p={1}>
@@ -74,7 +77,9 @@ const PostForm = (props) => {
               />
             </div>
           </div>
+
           <div className="file-path-wrapper " htmlFor="photo">
+
             <input className="file-path validate" type="text" />
           </div>
           <span className="helper-text" data-error="wrong">

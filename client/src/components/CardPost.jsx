@@ -1,13 +1,13 @@
 import Card from "@mui/material/Card";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Avatar, CardActionArea, CardHeader } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import { CardTitle, CardSubtitle, CardImg, CardText } from "reactstrap";
+import { CardImg, CardText } from "reactstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -47,7 +47,7 @@ const CardPost = () => {
                 width="100%"
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
-              ></CardImg>
+              />
               <CardContent sx={{ bgcolor: "primary.light" }}>
                 <Typography gutterBottom variant="h5" component="div">
                   {postObj.name}
@@ -55,9 +55,14 @@ const CardPost = () => {
                 <CardText variant="body2" color="text.secondary">
                   {postObj.text}
                 </CardText>
-                <CardText variant="body2" color="text.secondary">
+                <a
+                  href={postObj.url}
+                  variant="body2"
+                  color="text.secondary"
+                  target="_blank"
+                >
                   {postObj.url}
-                </CardText>
+                </a>
               </CardContent>
             </CardActionArea>
             <CardActions>
@@ -80,7 +85,7 @@ const CardPost = () => {
                   textDecoration="none"
                 >
                   {" "}
-                  <i class="material-icons">edit</i>
+                  <i className="material-icons">edit</i>
                 </Button>
               </Link>
               <IconButton
