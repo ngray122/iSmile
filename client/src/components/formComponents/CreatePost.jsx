@@ -15,7 +15,6 @@ const CreatePost = (props) => {
     text: "",
     url: "",
   });
-  let imgFile = useRef(null);
 
   const onChangeFileSelectHandler = (e) => {
     console.log("file handler clicked");
@@ -79,7 +78,6 @@ const CreatePost = (props) => {
         submitHandler={submitHandler}
         formInfo={formInfo}
         formInputError={formInputError}
-        imgFile={imgFile}
       ></PostForm>
     </Paper>
   );

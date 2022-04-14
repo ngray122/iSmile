@@ -6,7 +6,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
-  const clickHandler = (e) => {};
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
       <Paper align="center" variant="outlined" mx="auto" p={1}>
@@ -64,9 +63,7 @@ const PostForm = (props) => {
           <div className="file-field" sx={{ p: "5px" }}>
             <div className="btn">
               <i className="material-icons large prefix">photo_camera</i>
-
               <input
-                ref={props.imgFile}
                 onChange={props.onChangeFileSelectHandler}
                 accept=".png, .jpg, .jpeg"
                 type="file"
@@ -85,7 +82,6 @@ const PostForm = (props) => {
                 type="text"
                 placeholder="Upload Photo"
               />
-              {/* {props.imgFile.current} */}
             </div>
           </div>
 
