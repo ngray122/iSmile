@@ -25,8 +25,6 @@ const CreatePost = (props) => {
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
-      imgFile = imgFile.current.files[0];
-      console.log(imgFile);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -71,7 +69,6 @@ const CreatePost = (props) => {
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
-
       <PostForm
         onChangeHandler={onChangeHandler}
         onChangeFileSelectHandler={onChangeFileSelectHandler}
@@ -79,6 +76,7 @@ const CreatePost = (props) => {
         formInfo={formInfo}
         formInputError={formInputError}
       ></PostForm>
+      console.log(file)
     </Paper>
   );
 };

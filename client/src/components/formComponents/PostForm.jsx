@@ -70,10 +70,6 @@ const PostForm = (props) => {
                 id="photo"
                 name="photo"
                 value=""
-                onClick={clickHandler}
-
-                // filename="photo"
-                // value=""
               />
             </div>
             <div className="file-path-wrapper " htmlFor="photo">
