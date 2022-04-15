@@ -15,6 +15,7 @@ const EditPost = (props) => {
   let [formInfo, setFormInfo] = useState({});
   let [photo, setPhoto] = useState({});
   let { id } = useParams();
+  let [fileName, setFileName] = useState({});
 
   //
   useEffect(() => {
@@ -45,19 +46,19 @@ const EditPost = (props) => {
 
   const onChangeFileSelectHandler = (e) => {
     const fileInput = e.target.files[0];
+    // console.log(fileInput);
     const reader = new FileReader();
     let base64String;
 
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
+      setFileName(fileInput.name);
     };
     reader.readAsDataURL(fileInput);
   };
 
   const onChangeHandler = (e) => {
-    e.preventDefault();
-
     setFormInfo({
       ...formInfo,
       [e.target.name]: e.target.value,
@@ -78,7 +79,9 @@ const EditPost = (props) => {
       })
       .catch((err) => console.log("error in submitting post request", err));
   };
-
+  // const handleChange = (e) => {
+  //   [e.target.value] = props.fileName;
+  // };
   return (
     <Paper
       align="center"
@@ -96,6 +99,8 @@ const EditPost = (props) => {
         onChangeFileSelectHandler={onChangeFileSelectHandler}
         formInputError={formInputError}
         formInfo={formInfo}
+        // handleChange={handleChange}
+        fileName={fileName}
       />
     </Paper>
   );
