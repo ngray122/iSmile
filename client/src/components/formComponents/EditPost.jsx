@@ -80,9 +80,17 @@ const EditPost = (props) => {
       .catch((err) => console.log("error in submitting post request", err));
   };
 
+  // const handleChange = (e) => {
+  //   if (e.target.value.length === 0) {
+  //     [e.target.value] = "";
+  //   } else {
+  //     [e.target.value] = props.fileName;
+  //   }
+  // };
   const handleChange = (e) => {
     [e.target.value] = props.fileName;
   };
+
   return (
     <Paper
       align="center"
