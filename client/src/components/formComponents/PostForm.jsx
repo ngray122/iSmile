@@ -96,6 +96,7 @@ const PostForm = (props) => {
               type="submit"
               name="action"
               id="form-button"
+              onClick={props.onInputHandler}
             >
               Submit
               <i className="material-icons right">send</i>

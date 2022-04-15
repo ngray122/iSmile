@@ -56,7 +56,7 @@ const EditPost = (props) => {
     };
     reader.readAsDataURL(fileInput);
   };
-
+  // console.log("log for photo ->", photo);
   const onChangeHandler = (e) => {
     setFormInfo({
       ...formInfo,
@@ -79,15 +79,12 @@ const EditPost = (props) => {
       .catch((err) => console.log("error in submitting post request", err));
   };
 
-  // const handleChange = (e) => {
-  //   if (e.target.value.length === 0) {
-  //     [e.target.value] = "";
-  //   } else {
-  //     [e.target.value] = props.fileName;
-  //   }
-  // };
   const handleChange = (e) => {
     [e.target.value] = fileName.toString();
+  };
+  const onInputHandler = (e) => {
+    setFormInfo({ ...formInfo, photo: photo });
+    console.log("photo:photo ->", photo);
   };
 
   return (
@@ -109,6 +106,7 @@ const EditPost = (props) => {
         formInfo={formInfo}
         handleChange={handleChange}
         fileName={fileName}
+        onInputHandler={onInputHandler}
       />
     </Paper>
   );
