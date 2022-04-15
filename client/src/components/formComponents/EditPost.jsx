@@ -79,9 +79,10 @@ const EditPost = (props) => {
       })
       .catch((err) => console.log("error in submitting post request", err));
   };
-  // const handleChange = (e) => {
-  //   [e.target.value] = props.fileName;
-  // };
+
+  const handleChange = (e) => {
+    [e.target.value] = props.fileName;
+  };
   return (
     <Paper
       align="center"
@@ -99,7 +100,7 @@ const EditPost = (props) => {
         onChangeFileSelectHandler={onChangeFileSelectHandler}
         formInputError={formInputError}
         formInfo={formInfo}
-        // handleChange={handleChange}
+        handleChange={handleChange}
         fileName={fileName}
       />
     </Paper>
