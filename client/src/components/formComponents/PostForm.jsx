@@ -73,7 +73,7 @@ const PostForm = (props) => {
                 name="photo"
                 value=""
                 ref={props.hiddenFileInput}
-                onChange={props.handleClick}
+                onClick={props.handleClick}
 
                 // onSubmit={props.fileNameOnchange}
               />
@@ -83,7 +83,8 @@ const PostForm = (props) => {
                 className="file-path validate"
                 type="text"
                 placeholder="Upload Photo"
-                // onClick={props.handleChange}
+                onChange={props.handleChange}
+                value={props.fileName}
               />
             </div>
           </div>
