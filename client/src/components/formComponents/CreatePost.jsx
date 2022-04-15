@@ -15,11 +15,11 @@ const CreatePost = (props) => {
     text: "",
     url: "",
   });
+  let [fileName, setFileName] = useState({});
+  const hiddenFileInput = useRef(null);
 
   const onChangeFileSelectHandler = (e) => {
-    console.log("file handler clicked");
-    e.preventDefault();
-    const fileInput = e.target.files[0];
+    let fileInput = e.target.files[0];
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
@@ -28,9 +28,17 @@ const CreatePost = (props) => {
     };
     reader.readAsDataURL(fileInput);
   };
+  const handleClick = useCallback((e) => {
+    let fileInput = e.target.files[0];
+    let { name } = fileInput;
+    console.log("fclicked", File.name);
+    setFileName(fileInput.name);
+    console.log("fclicked", fileInput.name);
 
+    // return name;
+  }, []);
+  console.log(fileName);
   const onChangeHandler = (e) => {
-    console.log(e.target.value);
     setFormInfo({
       ...formInfo,
       [e.target.name]: e.target.value,
@@ -58,6 +66,11 @@ const CreatePost = (props) => {
     [formInfo, photo]
   );
 
+  // const handleChange = (e) => {
+  //   const fileUploaded = e.target.files[0];
+  //   console.log(fileUploaded);
+  //   props.onChangeFileSelectHandler(fileUploaded);
+  // };
   return (
     <Paper
       sx={{ maxWidth: "750px", p: "30px" }}
@@ -75,8 +88,11 @@ const CreatePost = (props) => {
         submitHandler={submitHandler}
         formInfo={formInfo}
         formInputError={formInputError}
+        handleClick={handleClick}
+        // fileNameOnchange={fileNameOnchange}
+        hiddenFileInput={hiddenFileInput}
+        // handleChange={handleChange}
       ></PostForm>
-      console.log(file)
     </Paper>
   );
 };

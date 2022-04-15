@@ -6,6 +6,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./form-component-styles.css";
 
 const PostForm = (props) => {
+  let { fileName } = File;
+  let fileInput;
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
       <Paper align="center" variant="outlined" mx="auto" p={1}>
@@ -70,6 +72,10 @@ const PostForm = (props) => {
                 id="photo"
                 name="photo"
                 value=""
+                ref={props.hiddenFileInput}
+                onChange={props.handleClick}
+
+                // onSubmit={props.fileNameOnchange}
               />
             </div>
             <div className="file-path-wrapper " htmlFor="photo">
@@ -77,6 +83,7 @@ const PostForm = (props) => {
                 className="file-path validate"
                 type="text"
                 placeholder="Upload Photo"
+                // onClick={props.handleChange}
               />
             </div>
           </div>
