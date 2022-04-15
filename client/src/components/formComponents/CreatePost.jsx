@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
@@ -16,11 +16,9 @@ const CreatePost = (props) => {
     url: "",
   });
   let [fileName, setFileName] = useState({});
-  const hiddenFileInput = useRef(null);
 
   const onChangeFileSelectHandler = (e) => {
     let fileInput = e.target.files[0];
-    console.log(fileInput);
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
@@ -31,7 +29,6 @@ const CreatePost = (props) => {
     reader.readAsDataURL(fileInput);
   };
 
-  console.log(fileName);
   const onChangeHandler = (e) => {
     setFormInfo({
       ...formInfo,
@@ -62,7 +59,6 @@ const CreatePost = (props) => {
 
   const handleChange = (e) => {
     [e.target.value] = props.fileName;
-    console.log(e.target.value);
   };
   return (
     <Paper
@@ -81,9 +77,6 @@ const CreatePost = (props) => {
         submitHandler={submitHandler}
         formInfo={formInfo}
         formInputError={formInputError}
-        // handleClick={handleClick}
-        // fileNameOnchange={fileNameOnchange}
-        hiddenFileInput={hiddenFileInput}
         handleChange={handleChange}
         fileName={fileName}
       ></PostForm>
