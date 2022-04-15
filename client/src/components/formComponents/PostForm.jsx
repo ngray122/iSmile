@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Paper from "@mui/material/Paper";
 import FormControl from "@mui/material/FormControl";
@@ -76,10 +76,11 @@ const PostForm = (props) => {
               <input
                 className="file-path validate"
                 type="text"
-                placeholder="Upload Photo"
+                placeholder={"Upload photo"}
                 onChange={props.handleChange}
                 value={props.fileName}
               />
+              {/* {console.log(typeof props.fileName)} */}
             </div>
           </div>
 

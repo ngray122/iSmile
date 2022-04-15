@@ -13,9 +13,9 @@ const EditPost = (props) => {
   let [formInputError, setFormInputError] = useState([]);
   let [registeredUser, setRegisteredUSer] = useState({});
   let [formInfo, setFormInfo] = useState({});
-  let [photo, setPhoto] = useState({});
+  let [photo, setPhoto] = useState("");
   let { id } = useParams();
-  let [fileName, setFileName] = useState({});
+  let [fileName, setFileName] = useState("");
 
   //
   useEffect(() => {
@@ -46,7 +46,6 @@ const EditPost = (props) => {
 
   const onChangeFileSelectHandler = (e) => {
     const fileInput = e.target.files[0];
-    // console.log(fileInput);
     const reader = new FileReader();
     let base64String;
 
@@ -88,7 +87,7 @@ const EditPost = (props) => {
   //   }
   // };
   const handleChange = (e) => {
-    [e.target.value] = props.fileName;
+    [e.target.value] = fileName.toString();
   };
 
   return (
