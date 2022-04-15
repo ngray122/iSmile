@@ -15,7 +15,7 @@ const CreatePost = (props) => {
     text: "",
     url: "",
   });
-  let [fileName, setFileName] = useState({});
+  let [fileName, setFileName] = useState("");
 
   const onChangeFileSelectHandler = (e) => {
     let fileInput = e.target.files[0];

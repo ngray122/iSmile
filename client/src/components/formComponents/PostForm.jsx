@@ -76,7 +76,7 @@ const PostForm = (props) => {
               <input
                 className="file-path validate"
                 type="text"
-                placeholder={"Upload photo"}
+                // placeholder={"Upload photo"}
                 onChange={props.handleChange}
                 value={props.fileName}
               />
