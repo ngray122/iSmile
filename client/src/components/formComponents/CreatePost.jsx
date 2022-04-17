@@ -15,15 +15,16 @@ const CreatePost = (props) => {
     text: "",
     url: "",
   });
+  let [fileName, setFileName] = useState("");
 
   const onChangeFileSelectHandler = (e) => {
-    e.preventDefault();
-    const fileInput = e.target.files[0];
+    let fileInput = e.target.files[0];
     const reader = new FileReader();
     let base64String;
     reader.onloadend = () => {
       base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
       setPhoto(base64String);
+      setFileName(fileInput.name);
     };
     reader.readAsDataURL(fileInput);
   };
@@ -56,6 +57,9 @@ const CreatePost = (props) => {
     [formInfo, photo]
   );
 
+  const handleChange = (e) => {
+    [e.target.value] = props.fileName;
+  };
   return (
     <Paper
       sx={{ maxWidth: "750px", p: "30px" }}
@@ -67,13 +71,14 @@ const CreatePost = (props) => {
       <Typography component="legend" variant="h6">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
-
       <PostForm
         onChangeHandler={onChangeHandler}
         onChangeFileSelectHandler={onChangeFileSelectHandler}
         submitHandler={submitHandler}
         formInfo={formInfo}
         formInputError={formInputError}
+        handleChange={handleChange}
+        fileName={fileName}
       ></PostForm>
     </Paper>
   );
