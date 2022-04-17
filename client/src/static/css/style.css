@@ -7,6 +7,15 @@
   margin: 20px;
   padding: 20px;
 }
+#form-link {
+  text-decoration: none;
+  color: black;
+}
+
+#form-button {
+  margin: 10px;
+  background-color: #b6ffce;
+}
 
 /* Login and Registration Forms */
 #login-form,
@@ -30,6 +39,13 @@
 /* label color */
 .row .input-field label {
   color: #b6ffce;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #ff8080;
+}
+.input-field .prefix {
+  color: #ff8080;
 }
 /* label focus color */
 .row .input-field input[type="text"]:focus + label {

@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import styles from "./form-component-styles.css";
+import styles from "../../static/css/style.css";
+
 const PostForm = (props) => {
   return (
     <form encType="multipart/form-data" onSubmit={props.submitHandler}>
