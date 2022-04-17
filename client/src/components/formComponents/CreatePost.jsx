@@ -4,6 +4,8 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
+import styles from "../../static/css/style.css";
+
 const CreatePost = (props) => {
   let history = useHistory();
   let [formInputError, setFormInputError] = useState({});

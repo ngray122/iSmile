@@ -48,45 +48,22 @@
   color: #ff8080;
 }
 /* label focus color */
-.row .input-field input[type="text"]:focus + label {
+.row .input-field input[type="text"]:focus + label,
+.row .input-field input[type="email"]:focus + label,
+.row .input-field input[type="password"]:focus + label  {
   color: #b6ffce;
 }
-.row .input-field input[type="email"]:focus + label {
-  color: #b6ffce;
-}
-.row .input-field input[type="password"]:focus + label {
-  color: #b6ffce;
-}
-/* Input label while selected */
-.row .input-field input[type="password"]:focus + label {
-  color: #b6ffce;
-}
-.row .input-field input[type="text"]:focus + label {
-  color: #b6ffce;
-}
-.row .input-field input[type="email"]:focus + label {
-  color: #b6ffce;
-}
+
+
 /* label underline focus color */
-.row .input-field input[type="text"]:focus {
+.row .input-field input[type="text"]:focus,
+.row .input-field input[type="email"]:focus,
+.row .input-field input[type="password"]:focus  {
   border-bottom: 1px solid #b6ffce;
   box-shadow: 0 1px 0 0 #b6ffce;
 }
-.row .input-field input[type="email"]:focus {
-  border-bottom: 1px solid #b6ffce;
-  box-shadow: 0 1px 0 0 #b6ffce;
-}
-.row .input-field input[type="password"]:focus {
-  border-bottom: 1px solid #b6ffce;
-  box-shadow: 0 1px 0 0 #b6ffce;
-}
-/* invalid color */
-.row .input-field input[type="email"].invalid,
-.row .input-field input[type="text"].invalid,
-.row .input-field input[type="password"].invalid {
-  border-bottom: 1px solid red(231, 13, 13);
-  box-shadow: 0 1px 0 0 red;
-}
+
+
 /* Auto Complete from browser */
 input:-webkit-autofill {
   -webkit-text-fill-color: #b6ffce;
@@ -145,4 +122,34 @@ a img {
   background-color: #6c5b7b;
   color: #ff8080;
   padding: 30px;
+}
+
+
+/* Post Form */
+  /* label color */
+
+  .input-field label {
+    color: #ff8080;
+  }
+  .input-field label:focus {
+    color: #ff8080;
+  }
+
+/* label focus color */
+#post-input input[type="text"]:focus + label, 
+#post-input input[type="url"]:focus + label,
+#post-input textarea[type="text"]:focus + label {
+  color: #ff8080;
+}
+
+/* label underline focus color */
+#post-input input[type="text"]:focus,
+#post-input input[type="url"]:focus,
+#post-input textarea[type="text"]:focus{
+  border-bottom: 1px solid #ff8080;
+  box-shadow: 0 1px 0 0 #ff8080;
+}
+.post-input {
+  color: #ff8080;
+
 }

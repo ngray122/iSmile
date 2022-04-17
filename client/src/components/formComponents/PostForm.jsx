@@ -5,9 +5,13 @@ import styles from "../../static/css/style.css";
 
 const PostForm = (props) => {
   return (
-    <form encType="multipart/form-data" onSubmit={props.submitHandler}>
+    <form
+      encType="multipart/form-data"
+      className="container"
+      onSubmit={props.submitHandler}
+    >
       {/* Form Starts */}
-      <div className="input-field" sx={{ p: "5px" }}>
+      <div className="input-field " id="post-input" sx={{ p: "5px" }}>
         {/* NAME INPUT */}
         <input
           id="name"
@@ -23,22 +27,23 @@ const PostForm = (props) => {
       </div>
 
       {/*  TEXT INPUT */}
-      <div className="input-field" sx={{ p: "5px" }}>
+      <div className="input-field" id="post-input" sx={{ p: "5px" }}>
         <textarea
           id="text"
+          type="text"
           value={props.formInfo.text}
           onChange={props.onChangeHandler}
           className="materialize-textarea"
           name="text"
         />
-        <label htmlFor="text">What would you like to say?</label>
+        <label htmlFor="text post-input">What would you like to say?</label>
         <span className="helper-text" data-error="wrong">
           {props.formInputError.text?.message}
         </span>
       </div>
 
       {/* URL INPUT */}
-      <div className="input-field" sx={{ p: "5px" }}>
+      <div className="input-field" id="post-input" sx={{ p: "5px" }}>
         <input
           id="url"
           value={props.formInfo.url}
@@ -46,7 +51,7 @@ const PostForm = (props) => {
           type="url"
           name="url"
         />
-        <label htmlFor="url">Add link - optional</label>
+        <label htmlFor="url post-input">Add link - optional</label>
         <span className="helper-text" data-error="wrong">
           {props.formInputError.url?.message}
         </span>

@@ -7,6 +7,7 @@ import {
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import PostForm from "./PostForm";
+import styles from "../../static/css/style.css";
 
 const EditPost = (props) => {
   let history = useHistory();
