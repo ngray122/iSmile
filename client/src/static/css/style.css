@@ -147,9 +147,14 @@ a img {
 #post-input input[type="url"]:focus,
 #post-input textarea[type="text"]:focus{
   border-bottom: 1px solid #ff8080;
-  box-shadow: 0 1px 0 0 #ff8080;
+  box-shadow: 0 .05px 0 0 #ff8080;
 }
-.post-input {
-  color: #ff8080;
 
+/* icon prefix focus color */
+
+.file-field .prefix {
+  color: #ff8080;
+}
+.btn-field:hover {
+  background-color:#b6ffce
 }

@@ -58,7 +58,7 @@ const PostForm = (props) => {
       </div>
       {/* IMAGE UPLOAD */}
       <div className="file-field" sx={{ p: "5px" }}>
-        <div className="btn">
+        <div className="btn btn-field ">
           <i className="material-icons large prefix">photo_camera</i>
           <input
             onChange={props.onChangeFileSelectHandler}
