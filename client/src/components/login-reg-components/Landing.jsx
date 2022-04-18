@@ -4,32 +4,14 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./login-reg-component-styles.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-// import Carousel from "./Carousel";
-const Landing = (props) => {
+import LandingCarousel from "./LandingCarousel";
+const Landing = () => {
   return (
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
         <div className="container col s12">
           <h2 className="carousel-header"> Header</h2>
-          {/* <Carousel /> */}
-
-          {/* <div className="carousel container" id="">
-            <a className="carousel-item" href="#one!">
-              <img src={green} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#two!">
-              <img src={chhese} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#three!">
-              <img src={stop} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#four!">
-              <img src={smile} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#five!">
-              <img href="#five!" className="carousel-img" src={chhese} />
-            </a>
-          </div> */}
+          <LandingCarousel />
         </div>
       </div>
       <div className="row container" id="login-reg-button-wrapper">
