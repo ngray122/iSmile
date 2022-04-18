@@ -63,13 +63,13 @@ const CreatePost = (props) => {
   };
   return (
     <Paper
-      sx={{ maxWidth: "750px", p: "30px" }}
-      // elevation={3}s
+      sx={{ maxWidth: "900px", p: "30px" }}
+      elevation={3}
       align="center"
       mx="auto"
       variant="outlined"
     >
-      <Typography component="legend" variant="h6">
+      <Typography component="legend" variant="h6" padding="10px">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
       <PostForm
@@ -80,7 +80,7 @@ const CreatePost = (props) => {
         formInputError={formInputError}
         handleChange={handleChange}
         fileName={fileName}
-      ></PostForm>
+      />
     </Paper>
   );
 };

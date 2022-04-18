@@ -93,11 +93,11 @@ const EditPost = (props) => {
     <Paper
       align="center"
       mx="auto"
-      // variant="outlined"
+      variant="outlined"
       elevation={3}
-      sx={{ p: "30px", maxWidth: "750px" }}
+      sx={{ p: "30px", maxWidth: "900px" }}
     >
-      <Typography component="legend" variant="h6">
+      <Typography component="legend" variant="h6" padding="10px">
         Edit your post
       </Typography>
       <PostForm

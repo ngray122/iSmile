@@ -145,3 +145,12 @@ a img {
 .btn-field, input, textarea{
   color: #6c5b7b;
 }
+
+#post-form-input{
+  padding:30px 60px 30px 60px;
+  margin:10px;
+}
+
+.btn-wrapper{
+  margin: 30px;
+}

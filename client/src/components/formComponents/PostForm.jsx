@@ -81,7 +81,7 @@ const PostForm = (props) => {
           <input
             className="file-path validate"
             type="text"
-            // placeholder={"Upload photo"}
+            placeholder={"Upload photo"}
             onChange={props.handleChange}
             value={props.fileName}
           />
@@ -95,7 +95,7 @@ const PostForm = (props) => {
 
       {/* Submit Button */}
 
-      <div>
+      <div className="btn-wrapper">
         <button
           className="btn waves-effect waves-light"
           type="submit"
