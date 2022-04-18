@@ -10,7 +10,7 @@ const Landing = () => {
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
         <div className="container col s12">
-          <h2 className="carousel-header"> Header</h2>
+          <h2 className="carousel-header"> iSmile</h2>
           <LandingCarousel />
         </div>
       </div>
