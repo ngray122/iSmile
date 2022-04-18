@@ -4,6 +4,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
 
 const PostForm = (props) => {
+  let hasActiveClass = props.active ? "active" : null;
+
   return (
     <form
       encType="multipart/form-data"
@@ -22,7 +24,7 @@ const PostForm = (props) => {
           type="text"
           name="name"
         />
-        <label htmlFor="name" className={props.active}>
+        <label htmlFor="name" className={hasActiveClass}>
           Title
         </label>
         <span className="helper-text" data-error="wrong" data-success="right">
@@ -40,7 +42,7 @@ const PostForm = (props) => {
           className="materialize-textarea"
           name="text"
         />
-        <label htmlFor="text post-input" className={props.active}>
+        <label htmlFor="text post-input" className={hasActiveClass}>
           What would you like to say?
         </label>
         <span className="helper-text" data-error="wrong">
@@ -57,7 +59,8 @@ const PostForm = (props) => {
           type="url"
           name="url"
         />
-        <label htmlFor="url post-input" className={props.active}>
+        {console.log(hasActiveClass)}
+        <label htmlFor="url post-input" className={hasActiveClass}>
           Add link - optional
         </label>
         <span className="helper-text" data-error="wrong">

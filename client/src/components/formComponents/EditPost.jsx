@@ -11,7 +11,6 @@ import styles from "../../static/css/style.css";
 
 const EditPost = (props) => {
   let history = useHistory();
-  let active;
   let [formInputError, setFormInputError] = useState([]);
   let [registeredUser, setRegisteredUSer] = useState({});
   let [formInfo, setFormInfo] = useState({});
@@ -109,7 +108,7 @@ const EditPost = (props) => {
         handleChange={handleChange}
         fileName={fileName}
         onInputHandler={onInputHandler}
-        active={active}
+        active={props.active}
       />
     </Paper>
   );
