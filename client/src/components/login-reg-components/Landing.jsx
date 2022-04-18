@@ -10,24 +10,6 @@ import chhese from "../../static/static-imgs/pexels-pixabay-208147.jpg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Landing = (props) => {
-  let history = useHistory();
-
-  let [registeredUser, setRegisteredUSer] = useState({});
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-  //     .then((res) => {
-  //       if (res.data) {
-  //         setRegisteredUSer(res.data);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       history.push("/");
-  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
-  //     });
-  // }, []);
-
   return (
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
