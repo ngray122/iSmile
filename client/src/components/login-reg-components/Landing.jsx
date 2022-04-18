@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./login-reg-component-styles.css";
 import smile from "../../static/static-imgs/pexels-juan-pablo-serrano-arenas-967016.jpg";
 import green from "../../static/static-imgs/pexels-pixabay-208147.jpg";
 import stop from "../../static/static-imgs/pexels-pixabay-264196.jpg";
 import chhese from "../../static/static-imgs/pexels-pixabay-208147.jpg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import styles from "../../static/css/style.css";
 
 const Landing = (props) => {
   let history = useHistory();

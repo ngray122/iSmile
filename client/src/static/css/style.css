@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+
+}
+/* Form Headers */
+#signIn-header,
+#registration-header,
+.hero-img-wrapper {
+  color: #ff8080;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+#form-link {
+  text-decoration: none;
+  color: black;
+}
+
+#form-button {
+  margin: 10px;
+  background-color: #b6ffce;
+}
+
+/* Login and Registration Forms */
+#login-form,
+#registration-form {
+  max-width: 400px;
+}
+
+/* Hero Image Wrapper */
+.hero-img-wrapper {
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Login and Registration Form Inputs */
+.reg-form-input,
+.login-form-input {
+  color: #b6ffce;
+}
+
+/* #### Registration Form input, label #### */
+/* label color */
+.row .input-field label {
+  color: #b6ffce;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #ff8080;
+}
+.input-field .prefix {
+  color: #ff8080;
+}
+/* label focus color */
+.row .input-field input[type="text"]:focus + label,
+.row .input-field input[type="email"]:focus + label,
+.row .input-field input[type="password"]:focus + label  {
+  color: #b6ffce;
+}
+
+
+/* label underline focus color */
+.row .input-field input[type="text"]:focus,
+.row .input-field input[type="email"]:focus,
+.row .input-field input[type="password"]:focus  {
+  border-bottom: 1px solid #b6ffce;
+  box-shadow: 0 1px 0 0 #b6ffce;
+}
+
+
+/* {{ #### Landing Page #### }} */
+
+#landing-row-wrapper {
+  margin-top: 2em;
+}
+
+/* Carousel */
+a .carousel-item {
+  height: 300px;
+  width: 650px;
+}
+
+#landing-carousel {
+  height: 800px;
+  perspective: 950px;
+  transform: translateY(-100px);
+}
+
+.carousel .carousel-item {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+a img {
+  width: 100%;
+  height: 300px;
+}
+
+.carousel-header {
+  color: #b6ffce;
+  text-align: center;
+}
+
+/* About Section */
+.card-about {
+  background-color: #6c5b7b;
+  color: #ff8080;
+  padding: 30px;
+}
+
+
+/* {{ #### Post Form #### }} */
+  /* label color */
+  .input-field label {
+    color: #ff8080;
+  }
+  .input-field label:focus {
+    color: #ff8080;
+  }
+
+/* label focus color */
+#post-input input[type="text"]:focus + label, 
+#post-input input[type="url"]:focus + label,
+#post-input textarea[type="text"]:focus + label {
+  color: #ff8080;
+}
+
+/* label underline focus color */
+#post-input input[type="text"]:focus,
+#post-input input[type="url"]:focus,
+#post-input textarea[type="text"]:focus{
+  border-bottom: 1px solid #ff8080;
+  box-shadow: 0 .05px 0 0 #ff8080;
+}
+
+/* icon prefix focus color */
+.btn-field:hover {
+  background-color:#ff8080
+}
+
+
+.btn-field, input, textarea{
+  color: #6c5b7b;
+}
+
+#post-form-input{
+  padding:30px 60px 30px 60px;
+  margin:10px;
+}
+
+.btn-wrapper{
+  margin: 30px;
+}

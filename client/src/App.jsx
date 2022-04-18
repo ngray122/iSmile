@@ -81,7 +81,7 @@ function App() {
                 <Profile></Profile>
               </Grid>
               <Grid item xs={12} sm={6} md={8}>
-                <EditPost></EditPost>
+                <EditPost active={true} />
               </Grid>
             </Grid>
           </Route>

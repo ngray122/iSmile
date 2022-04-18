@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-import "./login-reg-component-styles.css";
 import { HeroImg } from "./HeroImg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import styles from "../../static/css/style.css";
 
 const Login = () => {
   let [email, setEmail] = useState("");

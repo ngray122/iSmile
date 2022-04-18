@@ -7,6 +7,7 @@ import {
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import PostForm from "./PostForm";
+import styles from "../../static/css/style.css";
 
 const EditPost = (props) => {
   let history = useHistory();
@@ -91,11 +92,11 @@ const EditPost = (props) => {
     <Paper
       align="center"
       mx="auto"
-      // variant="outlined"
+      variant="outlined"
       elevation={3}
-      sx={{ p: "30px", maxWidth: "750px" }}
+      sx={{ p: "30px", maxWidth: "900px" }}
     >
-      <Typography component="legend" variant="h6">
+      <Typography component="legend" variant="h6" padding="10px">
         Edit your post
       </Typography>
       <PostForm
@@ -107,6 +108,7 @@ const EditPost = (props) => {
         handleChange={handleChange}
         fileName={fileName}
         onInputHandler={onInputHandler}
+        active={props.active}
       />
     </Paper>
   );
