@@ -7,7 +7,8 @@ const PostForm = (props) => {
   return (
     <form
       encType="multipart/form-data"
-      className="container"
+      className="container "
+      id="post-form-input"
       onSubmit={props.submitHandler}
     >
       {/* Form Starts */}
