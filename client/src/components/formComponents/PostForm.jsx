@@ -22,7 +22,9 @@ const PostForm = (props) => {
           type="text"
           name="name"
         />
-        <label htmlFor="name">Title</label>
+        <label htmlFor="name" className={props.active}>
+          Title
+        </label>
         <span className="helper-text" data-error="wrong" data-success="right">
           {props.formInputError.name?.message}
         </span>
@@ -38,7 +40,9 @@ const PostForm = (props) => {
           className="materialize-textarea"
           name="text"
         />
-        <label htmlFor="text post-input">What would you like to say?</label>
+        <label htmlFor="text post-input" className={props.active}>
+          What would you like to say?
+        </label>
         <span className="helper-text" data-error="wrong">
           {props.formInputError.text?.message}
         </span>
@@ -53,7 +57,9 @@ const PostForm = (props) => {
           type="url"
           name="url"
         />
-        <label htmlFor="url post-input">Add link - optional</label>
+        <label htmlFor="url post-input" className={props.active}>
+          Add link - optional
+        </label>
         <span className="helper-text" data-error="wrong">
           {props.formInputError.url?.message}
         </span>
