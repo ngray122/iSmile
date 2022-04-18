@@ -70,25 +70,6 @@
 }
 
 
-/* Auto Complete from browser */
-input:-webkit-autofill {
-  -webkit-text-fill-color: #b6ffce;
-  background-color: #6c5b7b;
-  -webkit-box-shadow: 0 0 0px 1000px #6c5b7b inset;
-  transition: #6c5b7b 5000s ease-in-out 0s;
-}
-input:-webkit-autofill:hover {
-  -webkit-text-fill-color: #b6ffce;
-  -webkit-box-shadow: 0 0 0px 1000px #6c5b7b inset;
-  transition: #6c5b7b 5000s ease-in-out 0s;
-}
-
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #b6ffce;
-  -webkit-box-shadow: 0 0 0px 1000px #6c5b7b inset;
-  transition: #6c5b7b 5000s ease-in-out 0s;
-}
-
 /* {{ #### Landing Page #### }} */
 
 #landing-row-wrapper {

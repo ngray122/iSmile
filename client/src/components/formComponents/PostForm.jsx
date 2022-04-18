@@ -10,6 +10,7 @@ const PostForm = (props) => {
       className="container "
       id="post-form-input"
       onSubmit={props.submitHandler}
+      autoComplete="off"
     >
       {/* Form Starts */}
       <div className="input-field " id="post-input" sx={{ p: "5px" }}>
