@@ -26,7 +26,7 @@ const PostForm = (props) => {
               data-error="wrong"
               data-success="right"
             >
-              {props.formInputError.name?.message}
+              {/* {props.formInputError.name?.message} */}
             </span>
           </div>
 

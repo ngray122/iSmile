@@ -61,7 +61,7 @@ const User = (props) => {
                 />
                 <label htmlFor="first-name-form">First Name</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.firstName?.message}
+                  {/* {formInputError.firstName?.message} */}
                 </span>
               </div>
             </div>
@@ -78,7 +78,7 @@ const User = (props) => {
                 />
                 <label htmlFor="last-name-form">Last Name</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.lastName?.message}
+                  {/* {formInputError.lastName?.message} */}
                 </span>
               </div>
             </div>
@@ -95,7 +95,7 @@ const User = (props) => {
                 />
                 <label htmlFor="email-reg-form">Email</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.email?.message}
+                  {/* {formInputError.email?.message} */}
                 </span>
               </div>
             </div>
@@ -114,7 +114,7 @@ const User = (props) => {
                 />
                 <label htmlFor="password-reg-form">Password</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.password?.message}
+                  {/* {formInputError.password?.message} */}
                 </span>
               </div>
             </div>
@@ -135,7 +135,7 @@ const User = (props) => {
                   Confirm Password
                 </label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.password?.message}
+                  {/* {formInputError.password?.message} */}
                 </span>
               </div>
             </div>

@@ -56,7 +56,7 @@ const Login = () => {
                 />
                 <label htmlFor="email">Email</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.email?.message}
+                  {/* {formInputError.email?.message} */}
                 </span>
               </div>
             </div>
@@ -75,7 +75,7 @@ const Login = () => {
                 />
                 <label htmlFor="password">Password</label>
                 <span className="helper-text" data-error="wrong">
-                  {formInputError.password?.message}
+                  {/* {formInputError.password?.message} */}
                 </span>
               </div>
             </div>

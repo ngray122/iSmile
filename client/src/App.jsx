@@ -16,6 +16,7 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import React from "react";
 
 function App() {
   const siteTheme = createTheme({

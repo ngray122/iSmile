@@ -8,13 +8,20 @@ import slide5 from "../../static/static-imgs/pexels-pixabay-264196.jpg";
 const LandingCarousel = () => {
   return (
     <Carousel>
-      <Carousel.Item style={{ width: 100, height: 100 }}>
-        <img className="d-block" src={slide1} alt="First slide" />
+      <Carousel.Item>
+        <img
+          className="d-block"
+          src={require("../../static/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg")}
+          // src={require(slide1)}
+          alt="First slide"
+          width={100}
+          height={100}
+        />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3 color={"black"}>First slide label</h3>
         </Carousel.Caption>
       </Carousel.Item>
-      {/* <Carousel.Item>
+      <Carousel.Item>
         <img className="d-block" src={slide2} alt="Second slide" />
 
         <Carousel.Caption>
@@ -27,7 +34,7 @@ const LandingCarousel = () => {
         <Carousel.Caption>
           <h3>Third slide label</h3>
         </Carousel.Caption>
-      </Carousel.Item>
+      </Carousel.Item>{" "}
       <Carousel.Item>
         <img className="d-block" src={slide4} alt="4th slide" />
 
@@ -41,7 +48,7 @@ const LandingCarousel = () => {
         <Carousel.Caption>
           <h3>Third slide label</h3>
         </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>{" "}
     </Carousel>
   );
 };
