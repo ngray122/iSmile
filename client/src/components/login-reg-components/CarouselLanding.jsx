@@ -1,4 +1,5 @@
 import React from "react";
+// import "bootstrap/dist/css/bootstrap.css";
 import { Carousel } from "react-bootstrap";
 
 import slide1 from "../../static/static-imgs/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg";
