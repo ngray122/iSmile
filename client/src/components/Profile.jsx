@@ -24,7 +24,7 @@ const Profile = () => {
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
-            Welcome {registeredUser.firstName}!
+            {/* Welcome {registeredUser.firstName}! */}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque

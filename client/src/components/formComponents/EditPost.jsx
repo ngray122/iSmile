@@ -12,26 +12,10 @@ import styles from "../../static/css/style.css";
 const EditPost = (props) => {
   let history = useHistory();
   let [formInputError, setFormInputError] = useState([]);
-  let [registeredUser, setRegisteredUSer] = useState({});
   let [formInfo, setFormInfo] = useState({});
   let [photo, setPhoto] = useState("");
   let { id } = useParams();
   let [fileName, setFileName] = useState("");
-
-  //
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          setRegisteredUSer(res.data);
-        }
-      })
-      .catch((err) => {
-        history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER", err);
-      });
-  }, []);
 
   useEffect(() => {
     axios
@@ -40,7 +24,6 @@ const EditPost = (props) => {
         setFormInfo(res.data.result);
       })
       .catch((err) => {
-        history.push("/");
         console.log("err with get one post in Edit", err);
       });
   }, []);
