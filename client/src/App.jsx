@@ -17,6 +17,7 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { UserContext } from "./components/UserContext";
+import { IsLoggedIn } from "./components/UserContext";
 
 function App() {
   const siteTheme = createTheme({
@@ -57,7 +58,7 @@ function App() {
           </Route>
 
           {/* Dashboard */}
-          <UserContext.Provider>
+          <UserContext.Provider value={IsLoggedIn}>
             <Route exact path="/dashboard">
               <RegisteredNavBar />
               <Dashboard />
