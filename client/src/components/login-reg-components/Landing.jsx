@@ -8,49 +8,16 @@ import stop from "../../static/static-imgs/pexels-pixabay-264196.jpg";
 import chhese from "../../static/static-imgs/pexels-pixabay-208147.jpg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
+import CarouselLanding from "./CarouselLanding";
 
 const Landing = (props) => {
-  let history = useHistory();
-
-  let [registeredUser, setRegisteredUSer] = useState({});
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-  //     .then((res) => {
-  //       if (res.data) {
-  //         setRegisteredUSer(res.data);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       history.push("/");
-  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
-  //     });
-  // }, []);
-
   return (
     <div className="container">
       <div className="row container" id="landing-row-wrapper">
         <div className="container col s12">
           <h2 className="carousel-header"> Header</h2>
 
-          <div className="carousel container" id="">
-            <a className="carousel-item" href="#one!">
-              <img src={green} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#two!">
-              <img src={chhese} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#three!">
-              <img src={stop} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#four!">
-              <img src={smile} className="carousel-img" />
-            </a>
-            <a className="carousel-item" href="#five!">
-              <img href="#five!" className="carousel-img" src={chhese} />
-            </a>
-          </div>
+          <CarouselLanding />
         </div>
       </div>
       <div className="row container" id="login-reg-button-wrapper">
