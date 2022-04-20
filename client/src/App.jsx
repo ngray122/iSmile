@@ -16,6 +16,7 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { UserContext } from "./components/UserContext";
 
 function App() {
   const siteTheme = createTheme({
@@ -56,35 +57,37 @@ function App() {
           </Route>
 
           {/* Dashboard */}
-          <Route exact path="/dashboard">
-            <RegisteredNavBar />
-            <Dashboard />
-          </Route>
+          <UserContext.Provider>
+            <Route exact path="/dashboard">
+              <RegisteredNavBar />
+              <Dashboard />
+            </Route>
 
-          {/* Create a New Post */}
-          <Route exact path="/posts/create">
-            <RegisteredNavBar />
-            <Grid container spacing={3} m={1} p={1}>
-              <Grid item xs={12} sm={6} md={4}>
-                <Profile />
+            {/* Create a New Post */}
+            <Route exact path="/posts/create">
+              <RegisteredNavBar />
+              <Grid container spacing={3} m={1} p={1}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <Profile />
+                </Grid>
+                <Grid item xs={12} sm={6} md={8}>
+                  <CreatePost />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={8}>
-                <CreatePost />
-              </Grid>
-            </Grid>
-          </Route>
+            </Route>
 
-          <Route exact path="/posts/edit/:id">
-            <RegisteredNavBar />
-            <Grid container spacing={3} m={1} p={1}>
-              <Grid item xs={12} sm={6} md={4}>
-                <Profile></Profile>
+            <Route exact path="/posts/edit/:id">
+              <RegisteredNavBar />
+              <Grid container spacing={3} m={1} p={1}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <Profile></Profile>
+                </Grid>
+                <Grid item xs={12} sm={6} md={8}>
+                  <EditPost active={true} />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={8}>
-                <EditPost active={true} />
-              </Grid>
-            </Grid>
-          </Route>
+            </Route>
+          </UserContext.Provider>
         </BrowserRouter>
       </Box>
     </ThemeProvider>
