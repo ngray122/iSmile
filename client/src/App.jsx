@@ -16,7 +16,7 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { UserContext } from "./components/UserContext";
+import { UserContext, UserContextProvider } from "./components/UserContext";
 
 function App() {
   const [registeredUser, setRegisteredUser] = useState("");
@@ -58,13 +58,13 @@ function App() {
           </Route>
 
           {/* Dashboard */}
-          <UserContext.Provider value={registeredUser}>
+          <UserContextProvider value={registeredUser}>
             {console.log("regUser -> ", registeredUser)}
             <Route exact path="/dashboard">
               <RegisteredNavBar />
-              <UserContext.Consumer>
-                <Dashboard />
-              </UserContext.Consumer>
+              {/* <UserContext.Consumer> */}
+              <Dashboard />
+              {/* </UserContext.Consumer> */}
             </Route>
             {/* Create a New Post */}
             <Route exact path="/posts/create">
@@ -90,7 +90,7 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-          </UserContext.Provider>
+          </UserContextProvider>
         </BrowserRouter>
       </Box>
     </ThemeProvider>

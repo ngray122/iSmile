@@ -59,7 +59,7 @@ const PostForm = (props) => {
           type="url"
           name="url"
         />
-        {console.log(hasActiveClass)}
+        {/* {console.log(hasActiveClass)} */}
         <label htmlFor="url post-input" className={hasActiveClass}>
           Add link - optional
         </label>
