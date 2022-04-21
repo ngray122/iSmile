@@ -10,8 +10,8 @@ const Login = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [formInputError, setFormInputError] = useState("");
-  const history = useHistory();
 
+  const history = useHistory();
   const login = (e) => {
     e.preventDefault();
     let formInputObj = { email, password };
