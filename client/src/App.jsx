@@ -8,7 +8,6 @@ import CreatePost from "./components/formComponents/CreatePost";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
-import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import RegisteredNavBar from "./components/RegisteredNavBar";
 import Login from "./components/login-reg-components/Login";
@@ -16,10 +15,11 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { UserContext } from "./components/UserContext";
-import { IsLoggedIn } from "./components/UserContext";
+import { useState } from "react";
+import { IsLoggedIn, UserContext } from "./components/UserContext";
 
 function App() {
+  // const [registeredUser, setRegisteredUser] = useState("");
   const siteTheme = createTheme({
     palette: {
       mode: "light",
@@ -59,6 +59,7 @@ function App() {
 
           {/* Dashboard */}
           <UserContext.Provider value={IsLoggedIn}>
+            {console.log(IsLoggedIn)}
             <Route exact path="/dashboard">
               <RegisteredNavBar />
               <Dashboard />

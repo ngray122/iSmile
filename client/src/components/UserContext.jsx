@@ -1,13 +1,11 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
-export const UserContext = createContext(null);
+export const UserContext = React.createContext(null);
 
 export const IsLoggedIn = () => {
-  let history = useHistory();
-
-  let [registeredUser, setRegisteredUSer] = useState({});
+  let [registeredUser, setRegisteredUser] = useState({});
 
   useEffect(() => {
     axios
@@ -15,11 +13,10 @@ export const IsLoggedIn = () => {
       .then((res) => {
         // console.log("RESULT ON DASH after login , => ", res);
         if (res.data) {
-          setRegisteredUSer(res.data);
+          setRegisteredUser(res.data);
         }
       })
       .catch((err) => {
-        history.push("/");
         console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
       });
   }, []);
