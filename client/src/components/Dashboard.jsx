@@ -9,7 +9,8 @@ import { UserContext } from "./UserContext";
 
 const Dashboard = () => {
   const registeredUser = useContext(UserContext);
-  console.log("registeredUser -> ", UserContext);
+  console.log("registeredUser in Dashboard->", registeredUser);
+  console.log("typeof registeredUser -> ", typeof registeredUser);
 
   return (
     <>
