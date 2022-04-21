@@ -62,9 +62,9 @@ function App() {
             {console.log("regUser -> ", registeredUser)}
             <Route exact path="/dashboard">
               <RegisteredNavBar />
-              {/* <UserContext.Consumer> */}
-              <Dashboard />
-              {/* </UserContext.Consumer> */}
+              <UserContext.Consumer>
+                <Dashboard />
+              </UserContext.Consumer>
             </Route>
             {/* Create a New Post */}
             <Route exact path="/posts/create">

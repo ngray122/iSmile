@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
-const useIsLoggedIn = () => {
-  let [registeredUser, setRegisteredUser] = useState("");
+const UserContext = React.createContext();
+const UserContextProvider = ({ children }) => {
+  let [registeredUser, setRegisteredUser] = useState(null);
+
   const history = useHistory();
   useEffect(() => {
     axios
@@ -19,7 +21,11 @@ const useIsLoggedIn = () => {
         console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
       });
   }, []);
+  return (
+    <UserContext.Provider value={registeredUser}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-export const UserContext = React.createContext(useIsLoggedIn);
-console.log(useIsLoggedIn);
+export { UserContext, UserContextProvider };
