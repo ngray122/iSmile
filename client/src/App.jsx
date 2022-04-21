@@ -16,10 +16,10 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { IsLoggedIn, UserContext } from "./components/UserContext";
+import { UserContext } from "./components/UserContext";
 
 function App() {
-  // const [registeredUser, setRegisteredUser] = useState("");
+  const [registeredUser, setRegisteredUser] = useState("");
   const siteTheme = createTheme({
     palette: {
       mode: "light",
@@ -58,13 +58,14 @@ function App() {
           </Route>
 
           {/* Dashboard */}
-          <UserContext.Provider value={IsLoggedIn}>
-            {console.log(IsLoggedIn)}
+          <UserContext.Provider value={registeredUser}>
+            {console.log("regUser -> ", registeredUser)}
             <Route exact path="/dashboard">
               <RegisteredNavBar />
+              {/* <UserContext.Consumer> */}
               <Dashboard />
+              {/* </UserContext.Consumer> */}
             </Route>
-
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
