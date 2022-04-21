@@ -18,7 +18,7 @@ const UserContextProvider = ({ children }) => {
       })
       .catch((err) => {
         history.push("/");
-        console.log("ERR WHEN GETTING LOGGED IN USER on dash", err);
+        console.log("ERR WHEN GETTING LOGGED IN USER", err);
       });
   }, []);
   return (
