@@ -44,28 +44,18 @@ function App() {
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             {/* Landing Page */}
-            <Route exact path="/">
-              <Landing />
-            </Route>
+            <Route exact path="/" component={Landing} />
 
             {/* Login */}
-            <Route exact path="/login">
-              <Login />
-            </Route>
+            <Route exact path="/login" component={Login} />
 
             {/* Register */}
-            <Route exact path="/register">
-              <Registration />
-            </Route>
+            <Route exact path="/register" component={Registration} />
 
             {/* Dashboard */}
             {console.log("regUser -> ", registeredUser)}
-            <Route exact path="/dashboard">
-              <RegisteredNavBar />
-              {/* <UserContext.Consumer> */}
-              <Dashboard />
-              {/* </UserContext.Consumer> */}
-            </Route>
+            <Route exact path="/dashboard" component={Dashboard} />
+
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
