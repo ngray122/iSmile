@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 
 const UserContext = React.createContext();
 const UserContextProvider = ({ children }) => {
   let [registeredUser, setRegisteredUser] = useState(null);
 
-  const history = useHistory();
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/user/getone", { withCredentials: true })
@@ -17,7 +15,6 @@ const UserContextProvider = ({ children }) => {
         }
       })
       .catch((err) => {
-        history.push("/");
         console.log("ERR WHEN GETTING LOGGED IN USER", err);
       });
   }, []);
