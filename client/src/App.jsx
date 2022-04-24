@@ -40,25 +40,25 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light" }}>
-        <BrowserRouter>
-          {/* Landing Page */}
-          <Route exact path="/">
-            <Landing />
-          </Route>
+      <UserContextProvider value={registeredUser}>
+        <Box className="App" sx={{ bgcolor: "primary.light" }}>
+          <BrowserRouter>
+            {/* Landing Page */}
+            <Route exact path="/">
+              <Landing />
+            </Route>
 
-          {/* Login */}
-          <Route exact path="/login">
-            <Login />
-          </Route>
+            {/* Login */}
+            <Route exact path="/login">
+              <Login />
+            </Route>
 
-          {/* Register */}
-          <Route exact path="/register">
-            <Registration />
-          </Route>
+            {/* Register */}
+            <Route exact path="/register">
+              <Registration />
+            </Route>
 
-          {/* Dashboard */}
-          <UserContextProvider value={registeredUser}>
+            {/* Dashboard */}
             {console.log("regUser -> ", registeredUser)}
             <Route exact path="/dashboard">
               <RegisteredNavBar />
@@ -90,9 +90,9 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-          </UserContextProvider>
-        </BrowserRouter>
-      </Box>
+          </BrowserRouter>
+        </Box>
+      </UserContextProvider>
     </ThemeProvider>
   );
 }
