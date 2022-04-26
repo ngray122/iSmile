@@ -48,7 +48,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <UserContextProvider value={(registeredUser, setRegisteredUser)}>
             <Route exact path="/register" component={Registration} />
-            <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />

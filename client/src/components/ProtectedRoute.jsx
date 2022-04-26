@@ -9,6 +9,7 @@ const ProtectedRoute = ({ children }) => {
   if (registeredUser == null) {
     return <Redirect to="/" />;
   }
+  console.log("children -> ", children);
   return [children];
 };
 export default ProtectedRoute;
