@@ -49,7 +49,8 @@ function App() {
 
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            <UserContext.Consumer>
+            <Route exact path="/dashboard" component={Dashboard} />
+            {/* <UserContext.Consumer>
               {(registeredUser) =>
                 !registeredUser ? (
                   <Redirect to="/" />
@@ -57,7 +58,7 @@ function App() {
                   <Route exact path="/dashboard" component={Dashboard} />
                 )
               }
-            </UserContext.Consumer>
+            </UserContext.Consumer> */}
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />

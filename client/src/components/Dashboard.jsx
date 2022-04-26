@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import PostWall from "./PostWall";
 import { UserContext } from "./UserContext";
 import RegisteredNavBar from "./RegisteredNavBar";
+import { Redirect } from "react-router-dom";
 
 const Dashboard = () => {
   const registeredUser = useContext(UserContext);
@@ -26,5 +27,7 @@ const Dashboard = () => {
       </Grid>
     </>
   );
+
+  <Redirect to="/" />;
 };
 export default Dashboard;

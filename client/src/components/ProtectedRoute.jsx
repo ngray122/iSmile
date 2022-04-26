@@ -21,7 +21,6 @@ const ProtectedRoute = ({ children }) => {
 //   <Route
 //     {...rest}
 //     render={(props) => {
-//       // If the user is authed render the component
 //       if (registeredUser) {
 //         return <Component {...rest} {...props} />;
 //       } else {

@@ -8,7 +8,7 @@ const UserContextProvider = ({ children }) => {
   const history = useHistory();
 
   useEffect(() => {
-    const loggedIn = () => {
+    const isLoggedIn = () => {
       axios
         .get("http://localhost:8000/api/user/getone", { withCredentials: true })
         .then((res) => {
@@ -21,7 +21,7 @@ const UserContextProvider = ({ children }) => {
           console.log("ERR WHEN GETTING LOGGED IN USER", err);
         });
     };
-    loggedIn();
+    isLoggedIn();
   }, []);
   // const logout = () => {
   //   axios
