@@ -4,10 +4,11 @@ import { UserContext } from "./UserContext";
 
 const ProtectedRoute = ({ children }) => {
   const registeredUser = useContext(UserContext);
+  console.log("regsiteredUser from  ProtectedRoute", registeredUser);
 
-  if (!registeredUser) {
-    return <Redirect to="/" replace />;
+  if (registeredUser == null) {
+    return <Redirect to="/" />;
   }
-  return children;
+  return [children];
 };
 export default ProtectedRoute;

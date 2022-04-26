@@ -41,13 +41,12 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <UserContextProvider value={(registeredUser, setRegisteredUser)}>
-        <Box className="App" sx={{ bgcolor: "primary.light" }}>
-          <BrowserRouter>
-            <Route exact path="/" component={Landing} />
+      <Box className="App" sx={{ bgcolor: "primary.light" }}>
+        <BrowserRouter>
+          <Route exact path="/" component={Landing} />
 
-            <Route exact path="/login" component={Login} />
-
+          <Route exact path="/login" component={Login} />
+          <UserContextProvider value={(registeredUser, setRegisteredUser)}>
             <Route exact path="/register" component={Registration} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} />
             {/* Create a New Post */}
@@ -74,9 +73,9 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-          </BrowserRouter>
-        </Box>
-      </UserContextProvider>
+          </UserContextProvider>
+        </BrowserRouter>
+      </Box>
     </ThemeProvider>
   );
 }
