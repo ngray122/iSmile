@@ -8,8 +8,8 @@ import { useHistory } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 const RegisteredNavBar = () => {
-  // const { logout } = useContext(UserContext);
-  let [registeredUser, setRegisteredUser] = useState(null);
+  const { registeredUser, setRegisteredUser } = useContext(UserContext);
+  // let [registeredUser, setRegisteredUser] = useState(null);
   const history = useHistory();
   const logout = () => {
     axios

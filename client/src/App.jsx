@@ -15,13 +15,14 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserContext, UserContextProvider } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
 function App() {
   const [registeredUser, setRegisteredUser] = useState("");
+  const isLoggedIn = useContext(UserContext);
   const siteTheme = createTheme({
     palette: {
       mode: "light",
@@ -42,15 +43,16 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <UserContextProvider value={registeredUser}>
+      <UserContextProvider value={(registeredUser, isLoggedIn)}>
+        {console.log(isLoggedIn)}
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
 
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            {/* <UserContext.Consumer>
+            {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+            <UserContext.Consumer>
               {(registeredUser) =>
                 !registeredUser ? (
                   <Redirect to="/" />
@@ -58,7 +60,7 @@ function App() {
                   <Route exact path="/dashboard" component={Dashboard} />
                 )
               }
-            </UserContext.Consumer> */}
+            </UserContext.Consumer>
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
