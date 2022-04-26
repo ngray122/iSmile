@@ -42,12 +42,12 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <Box className="App" sx={{ bgcolor: "primary.light" }}>
-        <BrowserRouter>
-          <Route exact path="/" component={Landing} />
+      <UserContextProvider value={registeredUser}>
+        <Box className="App" sx={{ bgcolor: "primary.light" }}>
+          <BrowserRouter>
+            <Route exact path="/" component={Landing} />
 
-          <Route exact path="/login" component={Login} />
-          <UserContextProvider value={registeredUser}>
+            <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
             <UserContext.Consumer>
               {(registeredUser) =>
@@ -82,9 +82,9 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-          </UserContextProvider>
-        </BrowserRouter>
-      </Box>
+          </BrowserRouter>
+        </Box>
+      </UserContextProvider>
     </ThemeProvider>
   );
 }
