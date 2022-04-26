@@ -8,12 +8,13 @@ import { useHistory } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 const RegisteredNavBar = () => {
-  const registeredUser = useContext(UserContext);
+  let [registeredUser, setRegisteredUser] = useState(null);
   const history = useHistory();
   const logout = () => {
     axios
       .get("http://localhost:8000/api/user/logout", { withCredentials: true })
       .then((res) => {
+        setRegisteredUser("");
         history.push("/");
       })
       .catch((err) => {
