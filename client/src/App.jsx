@@ -51,10 +51,10 @@ function App() {
             <Route exact path="/register" component={Registration} />
             <UserContext.Consumer>
               {(registeredUser) =>
-                registeredUser ? (
-                  <Route exact path="/dashboard" component={Dashboard} />
-                ) : (
+                !registeredUser ? (
                   <Redirect to="/" />
+                ) : (
+                  <Route exact path="/dashboard" component={Dashboard} />
                 )
               }
             </UserContext.Consumer>
