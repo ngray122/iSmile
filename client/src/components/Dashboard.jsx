@@ -11,7 +11,6 @@ import RegisteredNavBar from "./RegisteredNavBar";
 const Dashboard = () => {
   const registeredUser = useContext(UserContext);
   console.log("registeredUser in Dashboard->", registeredUser);
-  console.log("typeof registeredUser -> ", typeof registeredUser);
 
   return (
     <>
