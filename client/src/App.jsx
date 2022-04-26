@@ -16,8 +16,9 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-// import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { UserContext, UserContextProvider } from "./components/UserContext";
+import { Redirect } from "react-router-dom";
 
 function App() {
   const [registeredUser, setRegisteredUser] = useState("");
@@ -48,7 +49,15 @@ function App() {
           <Route exact path="/login" component={Login} />
           <UserContextProvider value={registeredUser}>
             <Route exact path="/register" component={Registration} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <UserContext.Consumer>
+              {(registeredUser) =>
+                registeredUser ? (
+                  <Route exact path="/dashboard" component={Dashboard} />
+                ) : (
+                  <Redirect to="/" />
+                )
+              }
+            </UserContext.Consumer>
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
