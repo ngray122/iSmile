@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const UserContext = React.createContext();
+const UserContext = React.createContext(null);
 const UserContextProvider = ({ children }) => {
-  let [registeredUser, setRegisteredUser] = useState(null);
+  let [registeredUser, setRegisteredUser] = useState(false);
 
   useEffect(() => {
-    const isLoggedIn = () => {
+    const loggedIn = () => {
       axios
         .get("http://localhost:8000/api/user/getone", { withCredentials: true })
         .then((res) => {
@@ -19,7 +19,7 @@ const UserContextProvider = ({ children }) => {
           console.log("ERR WHEN GETTING LOGGED IN USER", err);
         });
     };
-    isLoggedIn();
+    loggedIn();
   }, []);
   const logout = () => {
     axios
@@ -33,7 +33,7 @@ const UserContextProvider = ({ children }) => {
       });
   };
   return (
-    <UserContext.Provider value={registeredUser}>
+    <UserContext.Provider value={{ registeredUser, setRegisteredUser, logout }}>
       {children}
     </UserContext.Provider>
   );

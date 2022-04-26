@@ -16,7 +16,7 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import ProtectedRoute from "./components/ProtectedRoute";
+// import ProtectedRoute from "./components/ProtectedRoute";
 import { UserContext, UserContextProvider } from "./components/UserContext";
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/" component={Landing} />
 
           <Route exact path="/login" component={Login} />
-          <UserContextProvider value={(registeredUser, setRegisteredUser)}>
+          <UserContextProvider value={registeredUser}>
             <Route exact path="/register" component={Registration} />
             <Route exact path="/dashboard" component={Dashboard} />
             {/* Create a New Post */}
