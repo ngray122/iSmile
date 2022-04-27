@@ -26,7 +26,7 @@ const Login = () => {
           console.log("res.data.errors -> ", res.data.errors);
           setFormInputError(res.data.errors);
         } else {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setRegisteredUser(res.data.result);
           history.push("/dashboard");
         }
