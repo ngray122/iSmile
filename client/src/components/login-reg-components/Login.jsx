@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { UserContext } from "../UserContext";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { HeroImg } from "./HeroImg";
@@ -7,6 +8,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
 
 const Login = () => {
+  let { setRegisteredUser, registeredUser } = useContext(UserContext);
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [formInputError, setFormInputError] = useState("");
@@ -24,12 +26,14 @@ const Login = () => {
           console.log("res.data.errors -> ", res.data.errors);
           setFormInputError(res.data.errors);
         } else {
+          console.log(res.data.data);
+          setRegisteredUser(res.data.result);
           history.push("/dashboard");
         }
       })
       .catch((err) => console.log("ERROR WHEN LOGGING IN ===> ", err));
   };
-
+  console.log("regsiteredUser log in Login Componet", registeredUser);
   // console.log("Form input err log -> ", formInputError);
   return (
     <div className="container">

@@ -4,7 +4,7 @@ import axios from "axios";
 
 const UserContext = React.createContext(null);
 const UserContextProvider = ({ children }) => {
-  let [registeredUser, setRegisteredUser] = useState("false");
+  let [registeredUser, setRegisteredUser] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -37,9 +37,7 @@ const UserContextProvider = ({ children }) => {
   //     });
   // };
   return (
-    <UserContext.Provider
-      value={{ registeredUser, setRegisteredUser, isLoggedIn }}
-    >
+    <UserContext.Provider value={{ registeredUser, setRegisteredUser }}>
       {children}
     </UserContext.Provider>
   );

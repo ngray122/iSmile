@@ -21,8 +21,6 @@ import { UserContext, UserContextProvider } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
 function App() {
-  const [registeredUser, setRegisteredUser] = useState("");
-  const isLoggedIn = useContext(UserContext);
   const siteTheme = createTheme({
     palette: {
       mode: "light",
@@ -43,13 +41,13 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <UserContextProvider value={(registeredUser, isLoggedIn)}>
-        {console.log(isLoggedIn)}
+      <UserContextProvider>
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
 
             <Route exact path="/login" component={Login} />
+
             <Route exact path="/register" component={Registration} />
             {/* <Route exact path="/dashboard" component={Dashboard} /> */}
             <UserContext.Consumer>
