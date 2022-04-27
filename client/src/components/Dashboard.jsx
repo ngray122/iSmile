@@ -10,7 +10,7 @@ import RegisteredNavBar from "./RegisteredNavBar";
 import { Redirect } from "react-router-dom";
 
 const Dashboard = () => {
-  const { registeredUser } = useContext(UserContext);
+  const { registeredUser, setRegisteredUser } = useContext(UserContext);
   console.log("registeredUser inside Dashboard component->", registeredUser);
 
   return (

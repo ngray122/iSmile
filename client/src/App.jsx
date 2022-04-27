@@ -45,20 +45,17 @@ function App() {
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
-
             <Route exact path="/login" component={Login} />
-
             <Route exact path="/register" component={Registration} />
             {/* <Route exact path="/dashboard" component={Dashboard} /> */}
-            <UserContext.Consumer>
-              {(registeredUser) =>
-                !registeredUser ? (
-                  <Redirect to="/" />
-                ) : (
-                  <Route exact path="/dashboard" component={Dashboard} />
-                )
-              }
-            </UserContext.Consumer>
+            {/* <UserContext.Consumer>
+              {(registeredUser) => */}
+            {/* registeredUser ? ( */}
+            <Route exact path="/dashboard" component={Dashboard} />
+            ) : (
+            <Redirect to="/" />)
+            {/* }
+            </UserContext.Consumer> */}
             {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
@@ -71,7 +68,6 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-
             <Route exact path="/posts/edit/:id">
               <RegisteredNavBar />
               <Grid container spacing={3} m={1} p={1}>
