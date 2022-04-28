@@ -23,7 +23,6 @@ const Login = () => {
       })
       .then((res) => {
         if (res.data.errors) {
-          console.log("res.data.errors -> ", res.data.errors);
           setFormInputError(res.data.errors);
         } else {
           setRegisteredUser(res.data.result);
@@ -32,7 +31,6 @@ const Login = () => {
       })
       .catch((err) => console.log("ERROR WHEN LOGGING IN ===> ", err));
   };
-  console.log("regsiteredUser log in Login Componet", registeredUser);
   return (
     <div className="container">
       <div className="row container">
