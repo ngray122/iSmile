@@ -12,24 +12,6 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 
 const Profile = () => {
-  let history = useHistory();
-
-  let [registeredUser, setRegisteredUSer] = useState({});
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/getone", { withCredentials: true })
-  //     .then((res) => {
-  //       if (res.data) {
-  //         setRegisteredUSer(res.data);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       history.push("/");
-  //       console.log("ERR WHEN GETTING LOGGED IN USER", err);
-  //     });
-  // }, []);
-
   return (
     <Paper elevation={3} sx={{ p: "20px", bgcolor: "primary" }}>
       <Card>
@@ -42,7 +24,7 @@ const Profile = () => {
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
-            Welcome {registeredUser.firstName}!
+            {/* Welcome {registeredUser.firstName}! */}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque

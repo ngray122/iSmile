@@ -73,7 +73,8 @@ class UserController {
       .cookie("usertoken", userToken, process.env.SECRET_KEY, {
         httpOnly: true,
       })
-      .json({ msg: "success!" });
+      // if err with login change res.json below
+      .json({ result: user });
   };
 
   // GET ONE LOGGED IN USER

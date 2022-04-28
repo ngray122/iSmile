@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import axios from "axios";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 const RegisteredNavBar = () => {
+  const { registeredUser, setRegisteredUser } = useContext(UserContext);
+  // let [registeredUser, setRegisteredUser] = useState(null);
   const history = useHistory();
-
   const logout = () => {
     axios
       .get("http://localhost:8000/api/user/logout", { withCredentials: true })
       .then((res) => {
+        setRegisteredUser("");
         history.push("/");
       })
       .catch((err) => {
