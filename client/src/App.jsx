@@ -14,7 +14,7 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { UserContextProvider } from "./components/UserContext";
+import { UserContextProvider, UserContext } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
 function App() {
@@ -44,14 +44,11 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            {/* <UserContext.Consumer>
-              {(registeredUser) => */}
-            {/* registeredUser ? ( */}
-            ( <Route exact path="/dashboard" component={Dashboard} />
-            ) : (
-            <Redirect to="/" />)
-            {/* }
-            </UserContext.Consumer> */}
+            {/* <UserContext.Consumer> */}
+            <Route exact path="/dashboard" component={Dashboard} />
+
+            <Redirect to="/" />
+            {/* </UserContext.Consumer> */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
               <Grid container spacing={3} m={1} p={1}>
