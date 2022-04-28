@@ -27,7 +27,5 @@ const Dashboard = () => {
       </Grid>
     </>
   );
-
-  <Redirect to="/" />;
 };
 export default Dashboard;
