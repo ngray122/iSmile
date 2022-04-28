@@ -44,13 +44,14 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            {/* <UserContext.Consumer>*/}
-            registeredUser ? ( ({" "}
-            <Route exact path="/dashboard" component={Dashboard} />
+            {/* <UserContext.Consumer>
+              {(registeredUser) => */}
+            {/* registeredUser ? ( */}
+            ( <Route exact path="/dashboard" component={Dashboard} />
             ) : (
-            <Redirect to="/" />
-            ))
-            {/* </UserContext.Consumer>  */}
+            <Redirect to="/" />)
+            {/* }
+            </UserContext.Consumer> */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
               <Grid container spacing={3} m={1} p={1}>
