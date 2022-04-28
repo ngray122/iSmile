@@ -1,6 +1,5 @@
 import {
   BrowserRouter,
-  Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
 import EditPost from "./components/formComponents/EditPost";
@@ -15,9 +14,7 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import { useState, useContext } from "react";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { UserContext, UserContextProvider } from "./components/UserContext";
+import { UserContextProvider } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
 function App() {
@@ -56,7 +53,6 @@ function App() {
             <Redirect to="/" />)
             {/* }
             </UserContext.Consumer> */}
-            {/* Create a New Post */}
             <Route exact path="/posts/create">
               <RegisteredNavBar />
               <Grid container spacing={3} m={1} p={1}>
