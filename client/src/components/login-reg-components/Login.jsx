@@ -26,7 +26,6 @@ const Login = () => {
           console.log("res.data.errors -> ", res.data.errors);
           setFormInputError(res.data.errors);
         } else {
-          // console.log(res.data.data);
           setRegisteredUser(res.data.result);
           history.push("/dashboard");
         }
@@ -34,7 +33,6 @@ const Login = () => {
       .catch((err) => console.log("ERROR WHEN LOGGING IN ===> ", err));
   };
   console.log("regsiteredUser log in Login Componet", registeredUser);
-  // console.log("Form input err log -> ", formInputError);
   return (
     <div className="container">
       <div className="row container">
