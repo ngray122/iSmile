@@ -7,7 +7,7 @@ import RegisteredNavBar from "./RegisteredNavBar";
 
 const Dashboard = () => {
   const { registeredUser } = useContext(UserContext);
-
+  console.log("logged in user -> ", registeredUser);
   return (
     <>
       <RegisteredNavBar />

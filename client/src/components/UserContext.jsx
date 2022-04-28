@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, Redirect } from "react-router-dom";
 import axios from "axios";
 
 const UserContext = React.createContext(null);
 const UserContextProvider = ({ children }) => {
   let [registeredUser, setRegisteredUser] = useState("");
-  const history = useHistory();
 
   useEffect(() => {
     const isLoggedIn = () => {
@@ -23,19 +21,7 @@ const UserContextProvider = ({ children }) => {
     };
     isLoggedIn();
   }, []);
-  // const logout = () => {
-  //   axios
-  //     .get("http://localhost:8000/api/user/logout", { withCredentials: true })
-  //     .then((res) => {
-  //       setRegisteredUser(null);
-  //       history.push("/");
 
-  //       // <Redirect to="/" />;
-  //     })
-  //     .catch((err) => {
-  //       console.log("ERROR LOGGING OUT => ,", err);
-  //     });
-  // };
   return (
     <UserContext.Provider value={{ registeredUser, setRegisteredUser }}>
       {children}
