@@ -16,6 +16,7 @@ import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { AuthContextProvider, AuthContext } from "./components/AuthContext";
+import { UserContextProvider, UserContext } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
 function App() {
@@ -42,40 +43,36 @@ function App() {
       <AuthContextProvider>
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
-            {/* <Switch> */}
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            {/* </Switch> */}
             {/* <UserContext.Consumer> */}
-            <Switch>
-              <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
 
-              <Redirect to="/" />
-              {/* </UserContext.Consumer> */}
-              <Route exact path="/posts/create">
-                <RegisteredNavBar />
-                <Grid container spacing={3} m={1} p={1}>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Profile />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={8}>
-                    <CreatePost />
-                  </Grid>
+            <Redirect to="/" />
+            {/* </UserContext.Consumer> */}
+            <Route exact path="/posts/create">
+              <RegisteredNavBar />
+              <Grid container spacing={3} m={1} p={1}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <Profile />
                 </Grid>
-              </Route>
-              <Route exact path="/posts/edit/:id">
-                <RegisteredNavBar />
-                <Grid container spacing={3} m={1} p={1}>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Profile></Profile>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={8}>
-                    <EditPost active={true} />
-                  </Grid>
+                <Grid item xs={12} sm={6} md={8}>
+                  <CreatePost />
                 </Grid>
-              </Route>
-            </Switch>
+              </Grid>
+            </Route>
+            <Route exact path="/posts/edit/:id">
+              <RegisteredNavBar />
+              <Grid container spacing={3} m={1} p={1}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <Profile></Profile>
+                </Grid>
+                <Grid item xs={12} sm={6} md={8}>
+                  <EditPost active={true} />
+                </Grid>
+              </Grid>
+            </Route>
           </BrowserRouter>
         </Box>
       </AuthContextProvider>
