@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { UserContext } from "../UserContext";
+import { AuthContext } from "../AuthContext";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { HeroImg } from "./HeroImg";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
 
 const Login = () => {
-  let { setRegisteredUser, registeredUser } = useContext(UserContext);
+  let { setRegisteredUser, registeredUser } = useContext(AuthContext);
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [formInputError, setFormInputError] = useState("");
