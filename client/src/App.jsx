@@ -1,4 +1,5 @@
 import {
+  Switch,
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
@@ -38,12 +39,14 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <UserContextProvider>
-        <Box className="App" sx={{ bgcolor: "primary.light" }}>
-          <BrowserRouter>
+      <Box className="App" sx={{ bgcolor: "primary.light" }}>
+        <BrowserRouter>
+          <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
+          </Switch>
+          <UserContextProvider>
             {/* <UserContext.Consumer> */}
             <Route exact path="/dashboard" component={Dashboard} />
 
@@ -71,9 +74,9 @@ function App() {
                 </Grid>
               </Grid>
             </Route>
-          </BrowserRouter>
-        </Box>
-      </UserContextProvider>
+          </UserContextProvider>
+        </BrowserRouter>
+      </Box>
     </ThemeProvider>
   );
 }
