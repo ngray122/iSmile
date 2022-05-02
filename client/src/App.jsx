@@ -44,11 +44,8 @@ function App() {
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Registration} />
-            {/* <UserContext.Consumer> */}
             <Route exact path="/dashboard" component={Dashboard} />
-
             <Redirect to="/" />
-            {/* </UserContext.Consumer> */}
             <Route exact path="/posts/create" component={CreatePostWrapper} />
             <Route exact path="/posts/edit/:id" component={EditPostWrapper} />
           </BrowserRouter>
