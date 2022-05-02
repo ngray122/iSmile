@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
 import EditPost from "./components/formComponents/EditPost";
-import CreatePostWrapper from "./components/formComponents/CreatePost";
+import CreatePostWrapper from "./components/formComponents/CreatePostWrapper";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";

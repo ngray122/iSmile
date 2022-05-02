@@ -1,6 +1,7 @@
 import React from "react";
 import RegisteredNavBar from "./RegisteredNavBar";
 import Profile from "./components/Profile";
+import CreatePost from "./components/formComponents/CreatePost";
 
 const CreatePostWrapper = () => {
   return (
