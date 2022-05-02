@@ -5,10 +5,10 @@ import Box from "@mui/material/Box";
 import axios from "axios";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import { AuthContext } from "./AuthContext";
 
 const RegisteredNavBar = () => {
-  const { registeredUser, setRegisteredUser } = useContext(UserContext);
+  const { registeredUser, setRegisteredUser } = useContext(AuthContext);
   // let [registeredUser, setRegisteredUser] = useState(null);
   const history = useHistory();
   const logout = () => {

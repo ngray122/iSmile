@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
-import { UserContext } from "./UserContext";
+import { AuthContext } from "./AuthContext";
 import RegisteredNavBar from "./RegisteredNavBar";
 
 const Dashboard = () => {
-  const { registeredUser } = useContext(UserContext);
+  const { registeredUser } = useContext(AuthContext);
   console.log("logged in user -> ", registeredUser);
   return (
     <>

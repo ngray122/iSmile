@@ -1,4 +1,5 @@
 import {
+  Switch,
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
@@ -14,6 +15,7 @@ import Registration from "./components/login-reg-components/Registration";
 import Profile from "./components/Profile";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { AuthContextProvider, AuthContext } from "./components/AuthContext";
 import { UserContextProvider, UserContext } from "./components/UserContext";
 import { Redirect } from "react-router-dom";
 
@@ -38,7 +40,7 @@ function App() {
 
   return (
     <ThemeProvider theme={siteTheme}>
-      <UserContextProvider>
+      <AuthContextProvider>
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
@@ -73,7 +75,7 @@ function App() {
             </Route>
           </BrowserRouter>
         </Box>
-      </UserContextProvider>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }

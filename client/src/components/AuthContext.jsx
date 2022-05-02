@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const UserContext = React.createContext(null);
-const UserContextProvider = ({ children }) => {
+const AuthContext = React.createContext("");
+const AuthContextProvider = ({ children }) => {
   let [registeredUser, setRegisteredUser] = useState("");
 
   useEffect(() => {
@@ -16,17 +16,17 @@ const UserContextProvider = ({ children }) => {
           }
         })
         .catch((err) => {
-          console.log("ERR WHEN GETTING LOGGED IN USER", err);
+          // console.log("ERR WHEN GETTING LOGGED IN USER", err);
         });
     };
     isLoggedIn();
   }, []);
 
   return (
-    <UserContext.Provider value={{ registeredUser, setRegisteredUser }}>
+    <AuthContext.Provider value={{ registeredUser, setRegisteredUser }}>
       {children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
-export { UserContext, UserContextProvider };
+export { AuthContext, AuthContextProvider };
