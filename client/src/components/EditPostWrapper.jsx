@@ -8,11 +8,18 @@ const EditPostWrapper = () => {
   return (
     <>
       <RegisteredNavBar />
-      <Grid container spacing={3} m={2} p={1}>
-        <Grid item xs={0} sm={6} md={4}>
-          <Profile></Profile>
+      <Grid container spacing={3} m={2}>
+        <Grid item xs={12} sm={12} md={5}>
+          <Profile />
         </Grid>
-        <Grid item xs={12} sm={6} md={8}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={7}
+          display="flex"
+          justifyContent="center"
+        >
           <EditPost active={true} />
         </Grid>
       </Grid>
