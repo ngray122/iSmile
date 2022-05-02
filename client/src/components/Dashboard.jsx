@@ -12,7 +12,7 @@ const Dashboard = () => {
     <>
       <RegisteredNavBar />
 
-      <Grid container spacing={1} m={2}>
+      <Grid container spacing={3} m={2}>
         <Grid item xs={12} sm={12} md={5}>
           <Profile></Profile>
         </Grid>
@@ -21,11 +21,9 @@ const Dashboard = () => {
           xs={12}
           sm={12}
           md={7}
-          sx={{
-            display: "flex",
-            flexDirection: "column-reverse",
-            alignItems: "center",
-          }}
+          display="flex"
+          direction="column-reverse"
+          alignItems="center"
         >
           <PostWall />
         </Grid>
