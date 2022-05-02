@@ -12,11 +12,11 @@ const Dashboard = () => {
     <>
       <RegisteredNavBar />
 
-      <Grid container spacing={3} m={1} p={1}>
-        <Grid item xs={12} sm={6} md={4}>
+      <Grid container spacing={4} m={2} p={2}>
+        <Grid item xs={12} sm={6} md={5}>
           <Profile></Profile>
         </Grid>
-        <Grid item xs={12} sm={6} md={8}>
+        <Grid item xs={12} sm={6} md={7}>
           <PostWall />
         </Grid>
       </Grid>
