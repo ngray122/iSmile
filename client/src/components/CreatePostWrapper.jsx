@@ -1,7 +1,9 @@
 import React from "react";
 import RegisteredNavBar from "./RegisteredNavBar";
-import Profile from "./components/Profile";
-import CreatePost from "./components/formComponents/CreatePost";
+import Profile from "./Profile";
+import Grid from "@mui/material/Grid";
+
+import CreatePost from "./formComponents/CreatePost";
 
 const CreatePostWrapper = () => {
   return (
