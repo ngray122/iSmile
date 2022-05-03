@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import { makeStyles } from "@mui/material";
 import CreatePostWrapper from "./components/CreatePostWrapper";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
@@ -18,7 +17,7 @@ import { Redirect } from "react-router-dom";
 import EditPostWrapper from "./components/EditPostWrapper";
 
 function App() {
-  const siteTheme = createTheme({
+  const theme = createTheme({
     palette: {
       mode: "light",
       primary: {
@@ -34,10 +33,16 @@ function App() {
         contrastText: "#000000",
       },
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        md: 900,
+      },
+    },
   });
 
   return (
-    <ThemeProvider theme={siteTheme}>
+    <ThemeProvider theme={theme}>
       <AuthContextProvider>
         <Box className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
