@@ -9,7 +9,6 @@ import { AuthContext } from "./AuthContext";
 
 const RegisteredNavBar = () => {
   const { registeredUser, setRegisteredUser } = useContext(AuthContext);
-  // let [registeredUser, setRegisteredUser] = useState(null);
   const history = useHistory();
   const logout = () => {
     axios
@@ -24,7 +23,6 @@ const RegisteredNavBar = () => {
   };
 
   return (
-    //loggedIn ? loggedInNav() : notLoggedInNav()
     <Box
       position="static"
       fontFamily="Raleway sans-serif"
