@@ -62,13 +62,7 @@ const CreatePost = (props) => {
     [e.target.value] = props.fileName;
   };
   return (
-    <Paper
-      sx={{ maxWidth: "900px", p: "30px" }}
-      elevation={3}
-      align="center"
-      mx="auto"
-      variant="outlined"
-    >
+    <Paper sx={{ width: "900px" }} elevation={3} align="center" mx="auto">
       <Typography component="legend" variant="h6" padding="10px">
         What made you smile today, {registeredUser.firstName}?
       </Typography>
