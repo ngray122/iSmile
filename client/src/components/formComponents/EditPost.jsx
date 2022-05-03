@@ -72,7 +72,7 @@ const EditPost = (props) => {
   };
 
   return (
-    <Paper sx={{ width: "900px" }} elevation={3} align="center" mx="auto">
+    <Paper elevation={3} align="center" mx="auto">
       <Typography component="legend" variant="h6" padding="10px">
         Edit your post
       </Typography>
