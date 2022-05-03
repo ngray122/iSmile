@@ -3,7 +3,7 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-
+import { makeStyles } from "@mui/material";
 import CreatePostWrapper from "./components/CreatePostWrapper";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";

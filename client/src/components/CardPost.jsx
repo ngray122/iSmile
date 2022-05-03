@@ -38,7 +38,7 @@ const CardPost = () => {
     <>
       {allPosts.map((postObj, i) => {
         return (
-          <Card key={i} sx={{ maxWidth: 750, p: 2, mb: 3 }} elevation={3}>
+          <Card key={i} sx={{ p: 2, mb: 3 }} elevation={3}>
             <CardActionArea>
               <CardImg
                 p="10px"
