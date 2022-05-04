@@ -15,16 +15,26 @@ const CreatePostWrapper = () => {
       <RegisteredNavBar />
       <Grid container spacing={3} m={2}>
         {!matches ? (
-          <Grid item md={4}>
-            <Profile />
-          </Grid>
+          <>
+            <Grid item md={4}>
+              <Profile />
+            </Grid>
+            <Grid item md={8} display="flex" justifyContent="center">
+              <CreatePost />
+            </Grid>
+          </>
         ) : (
-          ""
+          <Grid
+            item
+            md={12}
+            xs={12}
+            sm={12}
+            display="flex"
+            justifyContent="center"
+          >
+            <CreatePost />
+          </Grid>
         )}
-
-        <Grid item md={8} display="flex" justifyContent="center">
-          <CreatePost />
-        </Grid>
       </Grid>
     </>
   );
