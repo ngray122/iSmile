@@ -13,7 +13,7 @@ const Dashboard = () => {
     <>
       {console.log("matches ->", matches)}
       <RegisteredNavBar />
-      <Grid container spacing={1} m={2}>
+      <Grid container spacing={3} m={2}>
         {/* {!matches ? <Grid item md={4} component={Profile} /> : ""} */}
         {!matches ? (
           <Grid item md={4}>
