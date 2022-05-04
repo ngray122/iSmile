@@ -14,9 +14,8 @@ const Dashboard = () => {
       {console.log("matches ->", matches)}
       <RegisteredNavBar />
       <Grid container spacing={1} m={2}>
-        <Grid item md={4}>
-          <Profile></Profile>
-        </Grid>
+        {!matches ? <Grid item md={4} component={Profile} /> : ""}
+
         <Grid
           item
           xs={12}
