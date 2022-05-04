@@ -14,11 +14,18 @@ const Dashboard = () => {
       {console.log("matches ->", matches)}
       <RegisteredNavBar />
       <Grid container spacing={1} m={2}>
-        {/* {!matches ? <Grid item xs={0} md={4} lg={4} component={Profile} /> : ""} */}
-        {/* <Grid item md={1} lg={4} component={Profile} /> */}
-        <Grid item md={4}>
+        {/* {!matches ? <Grid item md={4} component={Profile} /> : ""} */}
+        {!matches ? (
+          <Grid item md={4}>
+            <Profile />
+          </Grid>
+        ) : (
+          ""
+        )}
+        {/* <Grid item md={4}>
           <Profile />
-        </Grid>
+        </Grid> */}
+
         <Grid
           item
           md={8}
