@@ -36,7 +36,10 @@ function App() {
     breakpoints: {
       values: {
         xs: 0,
+        sm: 600,
         md: 900,
+        lg: 1200,
+        xl: 1536,
       },
     },
   });
@@ -44,7 +47,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthContextProvider>
-        <Box className="App" sx={{ bgcolor: "primary.light" }}>
+        <div className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
@@ -54,7 +57,7 @@ function App() {
             <Route exact path="/posts/create" component={CreatePostWrapper} />
             <Route exact path="/posts/edit/:id" component={EditPostWrapper} />
           </BrowserRouter>
-        </Box>
+        </div>
       </AuthContextProvider>
     </ThemeProvider>
   );
