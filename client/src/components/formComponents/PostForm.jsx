@@ -15,7 +15,7 @@ const PostForm = (props) => {
       autoComplete="off"
     >
       {/* Form Starts */}
-      <div className="input-field " id="post-input" sx={{ p: "5px" }}>
+      <div className="input-field " id="post-input">
         {/* NAME INPUT */}
         <input
           id="name"
@@ -33,7 +33,7 @@ const PostForm = (props) => {
       </div>
 
       {/*  TEXT INPUT */}
-      <div className="input-field" id="post-input" sx={{ p: "5px" }}>
+      <div className="input-field" id="post-input">
         <textarea
           id="text"
           type="text"

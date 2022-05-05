@@ -3,7 +3,6 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-
 import CreatePostWrapper from "./components/CreatePostWrapper";
 import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
@@ -18,7 +17,7 @@ import { Redirect } from "react-router-dom";
 import EditPostWrapper from "./components/EditPostWrapper";
 
 function App() {
-  const siteTheme = createTheme({
+  const theme = createTheme({
     palette: {
       mode: "light",
       primary: {
@@ -34,12 +33,21 @@ function App() {
         contrastText: "#000000",
       },
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 850,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
   });
 
   return (
-    <ThemeProvider theme={siteTheme}>
+    <ThemeProvider theme={theme}>
       <AuthContextProvider>
-        <Box className="App" sx={{ bgcolor: "primary.light" }}>
+        <div className="App" sx={{ bgcolor: "primary.light" }}>
           <BrowserRouter>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={Login} />
@@ -49,7 +57,7 @@ function App() {
             <Route exact path="/posts/create" component={CreatePostWrapper} />
             <Route exact path="/posts/edit/:id" component={EditPostWrapper} />
           </BrowserRouter>
-        </Box>
+        </div>
       </AuthContextProvider>
     </ThemeProvider>
   );

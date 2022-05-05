@@ -4,10 +4,10 @@ import {
   useHistory,
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
-import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import PostForm from "./PostForm";
 import styles from "../../static/css/style.css";
+import Paper from "@mui/material/Paper";
 
 const EditPost = (props) => {
   let history = useHistory();
@@ -72,13 +72,7 @@ const EditPost = (props) => {
   };
 
   return (
-    <Paper
-      align="center"
-      mx="auto"
-      variant="outlined"
-      elevation={3}
-      sx={{ p: "30px", maxWidth: "900px" }}
-    >
+    <Paper elevation={3} align="center" mx="auto">
       <Typography component="legend" variant="h6" padding="10px">
         Edit your post
       </Typography>
