@@ -20,9 +20,23 @@ const Landing = (props) => {
       {!matches ? (
         <>
           <div className="row container" id="landing-row-wrapper">
-            <div className="container col s12">
-              <h2 className="carousel-header"> Header</h2>
+            <h1 className="carousel-header"> iSmile</h1>
 
+            <div className="landing-button-wrapper">
+              <Link
+                to="/login"
+                className="waves-effect waves-light btn-large landing-btn z-depth-3"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="waves-effect waves-light btn-large landing-btn z-depth-3"
+              >
+                Sign Up
+              </Link>
+            </div>
+            <div className="container col s12">
               <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
                   <img src={green} className="carousel-img" />
@@ -42,14 +56,7 @@ const Landing = (props) => {
               </div>
             </div>
           </div>
-          <div className="row container" id="login-reg-button-wrapper">
-            <Link to="/login" className="waves-effect waves-light btn-large">
-              Sign In
-            </Link>
-            <Link to="/register" className="waves-effect waves-light btn-large">
-              Sign Up
-            </Link>
-          </div>
+
           <div className="row container " id="landing-row-wrapper">
             <div className="container col s4 ">
               <div className="row">
@@ -118,7 +125,7 @@ const Landing = (props) => {
         <>
           <div className="row container" id="landing-row-wrapper">
             <div className="container col s12">
-              <h2 className="carousel-header"> Header</h2>
+              <h1 className="carousel-header"> iSmile</h1>
 
               <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
@@ -139,14 +146,7 @@ const Landing = (props) => {
               </div>
             </div>
           </div>
-          <div className="row container" id="login-reg-button-wrapper">
-            <Link to="/login" className="waves-effect waves-light btn-large">
-              Sign In
-            </Link>
-            <Link to="/register" className="waves-effect waves-light btn-large">
-              Sign Up
-            </Link>
-          </div>
+
           <div className="row container " id="landing-row-wrapper">
             <div className="container col s4">
               <div className="row">
@@ -168,6 +168,20 @@ const Landing = (props) => {
                   </div>
                 </div>
               </div>{" "}
+            </div>
+            <div className="row container" id="login-reg-button-wrapper">
+              <Link
+                to="/login"
+                className="waves-effect waves-light btn-large  landing-btn"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="waves-effect waves-light btn-large  landing-btn"
+              >
+                Sign Up
+              </Link>
             </div>
           </div>
         </>

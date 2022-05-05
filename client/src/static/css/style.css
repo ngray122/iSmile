@@ -23,6 +23,26 @@
   background-color: #b6ffce;
 }
 
+.landing-button-wrapper {
+  display: flex;
+  align-content:flex-end;
+  justify-content: flex-end
+  
+}
+
+.landing-btn {
+  margin: 10px;
+  background-color: #ff8080;
+  border-radius: 30px;
+
+}
+
+.landing-btn:hover {
+  margin: 10px;
+  background-color: #b6ffce;
+  border-radius: 30px;
+
+}
 /* Login and Registration Forms */
 /* #login-form,
 #registration-form {
@@ -137,7 +157,8 @@ a img {
 
 /* icon prefix focus color */
 .btn-field:hover {
-  background-color:#ff8080
+  background-color:#ff8080;
+  color:#6c5b7b;
 }
 
 
