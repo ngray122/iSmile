@@ -1,15 +1,17 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useContext } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
 import styles from "../../static/css/style.css";
+import { AuthContext } from "../AuthContext";
 
 const CreatePost = (props) => {
+  let { registeredUser, setRegisteredUser } = useContext(AuthContext);
   let history = useHistory();
   let [formInputError, setFormInputError] = useState({});
-  let [registeredUser, setRegisteredUSer] = useState({});
+
   let [photo, setPhoto] = useState("");
   let [formInfo, setFormInfo] = useState({
     name: "",
@@ -62,9 +64,9 @@ const CreatePost = (props) => {
     [e.target.value] = props.fileName;
   };
   return (
-    <Paper elevation={3} align="center" mx="auto">
-      <Typography component="legend" variant="h6" padding="10px">
-        What made you smile today, {registeredUser.firstName}?
+    <Paper elevation={4} align="center" mx="auto">
+      <Typography component="legend" variant="subtitle1" mt="2em">
+        What made you smile today {registeredUser.firstName}?
       </Typography>
       <PostForm
         onChangeHandler={onChangeHandler}

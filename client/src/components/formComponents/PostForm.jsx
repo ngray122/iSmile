@@ -100,16 +100,15 @@ const PostForm = (props) => {
 
       <div className="btn-wrapper">
         <button
-          className="btn waves-effect waves-light"
+          className=" form-button btn waves-effect waves-light"
           type="submit"
           name="action"
-          id="form-button"
           onClick={props.onInputHandler}
         >
           Submit
           <i className="material-icons right">send</i>
         </button>
-        <button className="btn waves-effect waves-light" id="form-button">
+        <button className="btn waves-effect waves-light form-button">
           <Link id="form-link" to={"/dashboard"}>
             Cancel
           </Link>
