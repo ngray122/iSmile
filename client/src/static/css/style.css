@@ -18,7 +18,7 @@
   color: black;
 }
 
-#form-button {
+.form-button {
   margin: 10px;
   background-color: #b6ffce;
 }
@@ -30,13 +30,28 @@
   
 }
 
+.signin-btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
 .landing-btn {
   margin: 10px;
   background-color: #ff8080;
-  border-radius: 30px;
+  border-radius:50px;
 
 }
 
+ #login-button {
+  margin: 10px;
+  background-color: #b6ffce;
+
+} 
+/* #register-button {
+  color: b6ffce;
+
+}  */
 .landing-btn:hover {
   margin: 10px;
   background-color: #b6ffce;

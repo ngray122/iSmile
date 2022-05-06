@@ -20,8 +20,6 @@ const Landing = (props) => {
       {!matches ? (
         <>
           <div className="row container" id="landing-row-wrapper">
-            <h1 className="carousel-header"> iSmile</h1>
-
             <div className="landing-button-wrapper">
               <Link
                 to="/login"
@@ -36,6 +34,7 @@ const Landing = (props) => {
                 Sign Up
               </Link>
             </div>
+            <h1 className="carousel-header"> iSmile</h1>
             <div className="container col s12">
               <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">

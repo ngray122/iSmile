@@ -84,23 +84,23 @@ const Login = () => {
                   </span>
                 </div>
               </div>
-              <div>
+              <div className="signin-btn-wrapper">
                 <Button
-                  className="large btn waves-effect waves-light center "
+                  className=" large waves-effect waves-light center"
                   type="submit"
                   name="action"
-                  id="form-button"
+                  id="login-button"
                 >
                   {" "}
                   Login
                   <i className="material-icons right">send</i>
                 </Button>
-                <h4>Don't have an account yet?</h4>
+
                 <Link
                   to="/register"
-                  className="large btn waves-effect waves-light center "
+                  className="large btn waves-light center form-button"
                   name="action"
-                  id="form-button"
+                  // id=""
                 >
                   Click here to Register
                 </Link>
@@ -158,23 +158,22 @@ const Login = () => {
                 </span>
               </div>
             </div>
-            <div>
+            <div className="row container" id="login-reg-button-wrapper">
               <Button
-                className="large btn waves-effect waves-light center "
+                className="large waves-effect waves-light center"
                 type="submit"
                 name="action"
-                id="form-button"
+                id="login-button"
               >
                 {" "}
                 Login
                 <i className="material-icons right">send</i>
               </Button>
-              <h4>Don't have an account yet?</h4>
               <Link
                 to="/register"
-                className="large btn waves-effect waves-light center "
+                className="large btn waves-effect waves-light center form-button"
                 name="action"
-                id="form-button"
+                // id=""
               >
                 Click here to Register
               </Link>
