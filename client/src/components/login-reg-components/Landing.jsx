@@ -23,13 +23,13 @@ const Landing = (props) => {
             <div className="landing-button-wrapper">
               <Link
                 to="/login"
-                className="waves-effect waves-light btn-large landing-btn z-depth-3"
+                className="large btn waves-light center form-button"
               >
                 Sign In
               </Link>
               <Link
                 to="/register"
-                className="waves-effect waves-light btn-large landing-btn z-depth-3"
+                className="large btn waves-light center form-button"
               >
                 Sign Up
               </Link>

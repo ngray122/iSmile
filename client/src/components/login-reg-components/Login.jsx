@@ -100,7 +100,6 @@ const Login = () => {
                   to="/register"
                   className="large btn waves-light center form-button"
                   name="action"
-                  // id=""
                 >
                   Click here to Register
                 </Link>
