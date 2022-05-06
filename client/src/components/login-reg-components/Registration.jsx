@@ -269,21 +269,20 @@ const User = (props) => {
               </div>
             </div>
 
-            <div>
+            <div className="row container" id="login-reg-button-wrapper">
               <Button
-                className="btn waves-effect waves-light center"
+                className="large waves-effect waves-light center"
                 type="submit"
                 name="action"
-                id="form-button"
+                id="login-button"
               >
                 Register <i className="material-icons right">send</i>
               </Button>
-              <h6>Already have an account?</h6>
+
               <Link
                 to="/login"
-                className="large btn waves-effect waves-light center "
+                className="large btn waves-effect waves-light center form-button"
                 name="action"
-                id="form-button"
               >
                 Login
               </Link>
