@@ -66,13 +66,6 @@ const CardPost = () => {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Pin
-              </Button>
-
               <Link
                 to={`/posts/edit/${postObj._id}`}
                 sx={{ textDecoration: "none" }}
