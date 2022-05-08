@@ -193,3 +193,8 @@ a img {
 .btn-wrapper{
   margin: 30px;
 }
+
+#url-post {
+  color: #ff8080;
+  text-decoration: none;
+}
