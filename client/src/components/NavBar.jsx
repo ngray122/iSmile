@@ -6,7 +6,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
   return (
-    //loggedIn ? loggedInNav() : notLoggedInNav()
     <Box
       position="static"
       fontFamily="Raleway sans-serif"

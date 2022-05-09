@@ -38,54 +38,42 @@ const CardPost = () => {
     <>
       {allPosts.map((postObj, i) => {
         return (
-          <Card key={i} sx={{ p: 2, mb: 3 }} elevation={3}>
+          <Card key={i} sx={{ mb: 3, maxWidth: 700 }} elevation={3}>
             <CardActionArea>
               <CardImg
                 p="10px"
                 component="img"
                 height="400"
-                width="100%"
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
               />
-              <CardContent sx={{ bgcolor: "primary.light" }}>
-                <Typography gutterBottom variant="h5" component="div">
+              <CardContent className="card-content">
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  color="primary.light"
+                  fontWeight="450"
+                >
                   {postObj.name}
                 </Typography>
-                <CardText variant="body2" color="text.secondary">
-                  {postObj.text}
-                </CardText>
-                <a
-                  href={postObj.url}
-                  variant="body2"
-                  color="text.secondary"
-                  target="_blank"
+                <Typography
+                  sx={{ wordWrap: "break-word" }}
+                  variant="body1"
+                  color="primary.light"
+                  marginBottom="10px"
                 >
+                  {postObj.text}
+                </Typography>
+                <a href={postObj.url} id="url-post" target="_blank">
                   {postObj.url}
                 </a>
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Pin
-              </Button>
-
-              <Link
-                to={`/posts/edit/${postObj._id}`}
-                sx={{ textDecoration: "none" }}
-                textDecoration="none"
-              >
-                <Button
-                  size="small"
-                  color="primary"
-                  sx={{ textDecoration: "none" }}
-                  textDecoration="none"
-                >
+              <Link to={`/posts/edit/${postObj._id}`}>
+                <Button size="small" sx={{ textDecoration: "none" }}>
                   {" "}
-                  <i className="material-icons">edit</i>
+                  <i className="material-icons card-action-icon">edit</i>
                 </Button>
               </Link>
               <IconButton
@@ -94,7 +82,7 @@ const CardPost = () => {
                 color="primary"
                 aria-label="delete"
               >
-                <DeleteIcon />
+                <DeleteIcon className="card-action-icon" />
               </IconButton>
             </CardActions>
           </Card>

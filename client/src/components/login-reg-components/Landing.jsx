@@ -19,10 +19,23 @@ const Landing = (props) => {
     <div className="container">
       {!matches ? (
         <>
-          <div className="row container" id="landing-row-wrapper">
+          <div className="row " id="landing-row-wrapper">
+            <div className="landing-button-wrapper">
+              <h1 className="carousel-header"> iSmile</h1>
+              <Link
+                to="/login"
+                className="large btn waves-light center form-button"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="large btn waves-light center form-button"
+              >
+                Sign Up
+              </Link>
+            </div>
             <div className="container col s12">
-              <h2 className="carousel-header"> Header</h2>
-
               <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
                   <img src={green} className="carousel-img" />
@@ -42,15 +55,8 @@ const Landing = (props) => {
               </div>
             </div>
           </div>
-          <div className="row container" id="login-reg-button-wrapper">
-            <Link to="/login" className="waves-effect waves-light btn-large">
-              Sign In
-            </Link>
-            <Link to="/register" className="waves-effect waves-light btn-large">
-              Sign Up
-            </Link>
-          </div>
-          <div className="row container " id="landing-row-wrapper">
+
+          <div className="row container ">
             <div className="container col s4 ">
               <div className="row">
                 <div className="col s12 m7">
@@ -63,9 +69,11 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        Smiling can actually help us live longer. People who
+                        smile more often are generally happier and, since
+                        smiling decreases blood pressure and releases
+                        endorphins, it’s a great way to boost health and protect
+                        your golden years
                       </p>
                     </div>
                   </div>
@@ -82,9 +90,10 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        There are a few human gestures that cross language
+                        barriers around the world and smiling is one of them. No
+                        matter where you are on the globe, smiling is recognized
+                        as a universal display of happiness and good nature
                       </p>
                     </div>
                   </div>
@@ -103,9 +112,11 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        If you’re having a bad day, force yourself to smile.
+                        Research suggests the act of smiling can actually trick
+                        the brain into feeling happier. While smiling doesn’t
+                        fix all problems, it certainly has the power to make us
+                        feel just a little better at any given moment
                       </p>
                     </div>
                   </div>
@@ -116,11 +127,11 @@ const Landing = (props) => {
         </>
       ) : (
         <>
-          <div className="row container" id="landing-row-wrapper">
+          <div className="row container">
             <div className="container col s12">
-              <h2 className="carousel-header"> Header</h2>
+              <div className="carousel container">
+                <h1 className="carousel-header-rsp"> iSmile</h1>
 
-              <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
                   <img src={green} className="carousel-img" />
                 </a>
@@ -139,15 +150,8 @@ const Landing = (props) => {
               </div>
             </div>
           </div>
-          <div className="row container" id="login-reg-button-wrapper">
-            <Link to="/login" className="waves-effect waves-light btn-large">
-              Sign In
-            </Link>
-            <Link to="/register" className="waves-effect waves-light btn-large">
-              Sign Up
-            </Link>
-          </div>
-          <div className="row container " id="landing-row-wrapper">
+
+          <div className="row container ">
             <div className="container col s4">
               <div className="row">
                 <div className="col s12 m7">
@@ -160,14 +164,31 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        Smiling has many benefits, not the least of which is
+                        that smiling can actually help us live longer. People
+                        who smile more often are generally happier and, since
+                        smiling decreases blood pressure and releases
+                        endorphins, it’s a great way to boost health and protect
+                        your golden years
                       </p>
                     </div>
                   </div>
                 </div>
               </div>{" "}
+            </div>
+            <div className="row container" id="login-reg-button-wrapper">
+              <Link
+                to="/login"
+                className="large btn waves-light center form-button"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="large btn waves-light center form-button"
+              >
+                Sign Up
+              </Link>
             </div>
           </div>
         </>

@@ -17,12 +17,12 @@ const Dashboard = () => {
       <Grid container spacing={3} m={2}>
         {!matches ? (
           <>
-            <Grid item md={4}>
+            <Grid item md={5}>
               <Profile />
             </Grid>
             <Grid
               item
-              md={8}
+              md={6}
               display="flex"
               direction="column-reverse"
               alignItems="center"

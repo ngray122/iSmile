@@ -16,10 +16,10 @@ const CreatePostWrapper = () => {
       <Grid container spacing={3} m={2}>
         {!matches ? (
           <>
-            <Grid item md={4}>
+            <Grid item md={5}>
               <Profile />
             </Grid>
-            <Grid item md={8} display="flex" justifyContent="center">
+            <Grid item md={7} display="flex" justifyContent="center">
               <CreatePost />
             </Grid>
           </>
