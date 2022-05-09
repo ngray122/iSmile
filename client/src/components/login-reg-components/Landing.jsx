@@ -35,23 +35,6 @@ const Landing = (props) => {
             </div>
             <div className="container col s12">
               <LandingCarousel />
-              {/* <div className="carousel container" id="">
-                <a className="carousel-item" href="#one!">
-                  <img src={green} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#two!">
-                  <img src={chhese} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#three!">
-                  <img src={stop} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#four!">
-                  <img src={smile} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#five!">
-                  <img href="#five!" className="carousel-img" src={chhese} />
-                </a>
-              </div> */}
             </div>
           </div>
 
@@ -128,31 +111,14 @@ const Landing = (props) => {
         <>
           <div className="row container">
             <div className="container col s12">
-              <div className="carousel container">
-                <h1 className="carousel-header-rsp"> iSmile</h1>
-
-                <a className="carousel-item" href="#one!">
-                  <img src={green} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#two!">
-                  <img src={chhese} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#three!">
-                  <img src={stop} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#four!">
-                  <img src={smile} className="carousel-img" />
-                </a>
-                <a className="carousel-item" href="#five!">
-                  <img href="#five!" className="carousel-img" src={chhese} />
-                </a>
-              </div>
+              <h1 className="carousel-header-rsp"> iSmile</h1>
             </div>
           </div>
 
           <div className="row container ">
             <div className="container col s4">
               <div className="row">
+                <LandingCarousel />
                 <div className="col s12 m7">
                   <div className="card-about">
                     <div className="card-icon center">

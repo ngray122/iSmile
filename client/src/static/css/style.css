@@ -145,7 +145,10 @@ a img {
   text-align: center;
   font-size: 40px;
 }
+.carousel-container{
+  margin-top: 20px;
 
+}
 /* About Section */
 .card-about {
   background-color: #6c5b7b;
@@ -156,6 +159,7 @@ a img {
 
 /* {{ #### Post Form #### }} */
   /* label color */
+
   .input-field label {
     color: #ff8080;
   }
