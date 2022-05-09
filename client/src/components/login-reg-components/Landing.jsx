@@ -19,8 +19,9 @@ const Landing = (props) => {
     <div className="container">
       {!matches ? (
         <>
-          <div className="row container" id="landing-row-wrapper">
+          <div className="row " id="landing-row-wrapper">
             <div className="landing-button-wrapper">
+              <h1 className="carousel-header"> iSmile</h1>
               <Link
                 to="/login"
                 className="large btn waves-light center form-button"
@@ -34,7 +35,6 @@ const Landing = (props) => {
                 Sign Up
               </Link>
             </div>
-            <h1 className="carousel-header"> iSmile</h1>
             <div className="container col s12">
               <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
@@ -56,7 +56,7 @@ const Landing = (props) => {
             </div>
           </div>
 
-          <div className="row container " id="landing-row-wrapper">
+          <div className="row container ">
             <div className="container col s4 ">
               <div className="row">
                 <div className="col s12 m7">
@@ -113,11 +113,10 @@ const Landing = (props) => {
                     <div className="card-content center">
                       <p>
                         If you’re having a bad day, force yourself to smile.
-                        Research suggests that the act of smiling can actually
-                        trick the brain into feeling happier, no matter how bad
-                        the current situation may be. While smiling certainly
-                        doesn’t fix all problems, it certainly has the power to
-                        make us feel just a little better at any given moment
+                        Research suggests the act of smiling can actually trick
+                        the brain into feeling happier. While smiling doesn’t
+                        fix all problems, it certainly has the power to make us
+                        feel just a little better at any given moment
                       </p>
                     </div>
                   </div>
@@ -128,11 +127,11 @@ const Landing = (props) => {
         </>
       ) : (
         <>
-          <div className="row container" id="landing-row-wrapper">
+          <div className="row container">
             <div className="container col s12">
-              <h1 className="carousel-header"> iSmile</h1>
+              <div className="carousel container">
+                <h1 className="carousel-header-rsp"> iSmile</h1>
 
-              <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
                   <img src={green} className="carousel-img" />
                 </a>
@@ -152,7 +151,7 @@ const Landing = (props) => {
             </div>
           </div>
 
-          <div className="row container " id="landing-row-wrapper">
+          <div className="row container ">
             <div className="container col s4">
               <div className="row">
                 <div className="col s12 m7">

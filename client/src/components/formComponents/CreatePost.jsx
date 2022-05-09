@@ -66,7 +66,7 @@ const CreatePost = (props) => {
   return (
     <Paper elevation={4} align="center" mx="auto">
       <Typography component="legend" variant="subtitle1" mt="2em">
-        What made you smile today {registeredUser.firstName}?
+        What made you smile today?
       </Typography>
       <PostForm
         onChangeHandler={onChangeHandler}

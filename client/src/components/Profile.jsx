@@ -1,36 +1,32 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import Avatar from "@mui/material/Avatar";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Container, Typography } from "@mui/material";
+import { useContext } from "react";
+import { Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
+import { AuthContext } from "./AuthContext";
 
 const Profile = () => {
+  const { registeredUser, setRegisteredUser } = useContext(AuthContext);
+  console.log(registeredUser);
   return (
     <Paper elevation={3} sx={{ p: "20px", bgcolor: "primary" }}>
       <Card>
-        <CardMedia>
-          <Avatar
-            alt="Remy Sharp"
-            src="./client/img/duck.png"
-            sx={{ width: 75, height: 75 }}
-          />
-        </CardMedia>
         <CardContent>
-          <Typography gutterBottom variant="h6" component="div">
-            {/* Welcome {registeredUser.firstName}! */}
+          <Typography gutterBottom variant="h5" component="div">
+            Hi {registeredUser.firstName}!
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-            eveniet, et facere consequatur unde aspernatur aliquam voluptatibus
-            excepturi veniam debitis laudantium modi delectus, assumenda
-            corporis explicabo aperiam voluptatem soluta itaque.
+            What does a smile do for you? When we smile, it makes us feel good
+            and triggers positive thoughts about ourselves and others around us.
+            It signals to your brain that you are happy, which encourages it to
+            release hormones, including endorphins, serotonin and dopamine, that
+            increase your good feelings. By having all of these hormones running
+            through your body, it lifts your mood and helps you relax.
+          </Typography>
+          <Typography variant="subtitle">
+            Pass along your happiness and share what made you smile{" "}
+            {registeredUser.firstName}!
           </Typography>
         </CardContent>
       </Card>

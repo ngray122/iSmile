@@ -109,7 +109,7 @@
 /* {{ #### Landing Page #### }} */
 
 #landing-row-wrapper {
-  margin-top: 2em;
+  display: flex;
 }
 
 /* Carousel */
@@ -137,7 +137,13 @@ a img {
 
 .carousel-header {
   color: #ff8080;
+  flex-grow: 1;
+}
+.carousel-header-rsp {
+  color: #ff8080;
+  margin-top: 20px;
   text-align: center;
+  font-size: 40px;
 }
 
 /* About Section */
