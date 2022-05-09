@@ -71,14 +71,9 @@ const CardPost = () => {
             </CardActionArea>
             <CardActions>
               <Link to={`/posts/edit/${postObj._id}`}>
-                <Button
-                  size="small"
-                  color="primary"
-                  sx={{ textDecoration: "none" }}
-                  textDecoration="none"
-                >
+                <Button size="small" sx={{ textDecoration: "none" }}>
                   {" "}
-                  <i className="material-icons">edit</i>
+                  <i className="material-icons card-action-icon">edit</i>
                 </Button>
               </Link>
               <IconButton
@@ -87,7 +82,7 @@ const CardPost = () => {
                 color="primary"
                 aria-label="delete"
               >
-                <DeleteIcon color="#6c5b7b" />
+                <DeleteIcon className="card-action-icon" />
               </IconButton>
             </CardActions>
           </Card>
