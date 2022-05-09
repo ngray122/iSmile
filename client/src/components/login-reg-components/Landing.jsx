@@ -2,14 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import smile from "../../static/static-imgs/pexels-juan-pablo-serrano-arenas-967016.jpg";
-import green from "../../static/static-imgs/pexels-pixabay-208147.jpg";
-import stop from "../../static/static-imgs/pexels-pixabay-264196.jpg";
-import chhese from "../../static/static-imgs/pexels-pixabay-208147.jpg";
+
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import LandingCarousel from "./LandingCarousel";
 
 const Landing = (props) => {
   const theme = useTheme();
@@ -36,7 +34,8 @@ const Landing = (props) => {
               </Link>
             </div>
             <div className="container col s12">
-              <div className="carousel container" id="">
+              <LandingCarousel />
+              {/* <div className="carousel container" id="">
                 <a className="carousel-item" href="#one!">
                   <img src={green} className="carousel-img" />
                 </a>
@@ -52,7 +51,7 @@ const Landing = (props) => {
                 <a className="carousel-item" href="#five!">
                   <img href="#five!" className="carousel-img" src={chhese} />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 
