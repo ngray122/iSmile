@@ -59,30 +59,30 @@ function LandingCarousel() {
         easing="linear"
       >
         <div sx={{ marginTop: "30px" }}>
-          <img src={smile} style={{ width: 300, height: 300, margin: 5 }}></img>
+          <img src={smile} style={{ width: 400, height: 400, margin: 5 }}></img>
         </div>
         <div>
-          <img src={green} style={{ width: 300, height: 300, margin: 5 }}></img>
+          <img src={green} style={{ width: 400, height: 400, margin: 5 }}></img>
         </div>
         <div>
-          <img src={stop} style={{ width: 300, height: 300, margin: 5 }}></img>
+          <img src={stop} style={{ width: 400, height: 400, margin: 5 }}></img>
         </div>
         <div>
           <img
             src={cheese}
-            style={{ width: 300, height: 300, margin: 5 }}
+            style={{ width: 400, height: 400, margin: 5 }}
           ></img>
         </div>
         <div>
           <img
             src={flower}
-            style={{ width: 300, height: 300, margin: 5 }}
+            style={{ width: 400, height: 400, margin: 5 }}
           ></img>
         </div>
         <div>
           <img
             src={yellow}
-            style={{ width: 300, height: 300, margin: 5 }}
+            style={{ width: 400, height: 400, margin: 5 }}
           ></img>
         </div>
       </ReactSimplyCarousel>

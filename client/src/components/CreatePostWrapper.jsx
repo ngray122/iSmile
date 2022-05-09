@@ -13,15 +13,15 @@ const CreatePostWrapper = () => {
   return (
     <>
       <RegisteredNavBar />
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {!matches ? (
           <>
-            <Grid item md={5}>
+            <Grid item md={4}>
               <Profile />
             </Grid>
             <Grid
               item
-              md={7}
+              md={8}
               display="flex"
               justifyContent="center"
               marginTop={3}

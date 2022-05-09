@@ -44,7 +44,8 @@ const CardPost = () => {
               <CardImg
                 p="10px"
                 component="img"
-                height="400"
+                // height="400"
+                minWidth="100%"
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
               />
@@ -72,7 +73,10 @@ const CardPost = () => {
             </CardActionArea>
             <CardActions>
               <Link to={`/posts/edit/${postObj._id}`}>
-                <Button size="small" sx={{ textDecoration: "none" }}>
+                <Button
+                  size="small"
+                  sx={{ textDecoration: "none", color: "transparent" }}
+                >
                   {" "}
                   <i className="material-icons card-action-icon">edit</i>
                 </Button>

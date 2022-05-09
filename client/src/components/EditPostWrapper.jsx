@@ -12,7 +12,7 @@ const EditPostWrapper = () => {
   return (
     <>
       <RegisteredNavBar />
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {!matches ? (
           <>
             <Grid item md={4}>

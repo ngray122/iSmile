@@ -24,10 +24,7 @@ const Profile = () => {
             increase your good feelings. By having all of these hormones running
             through your body, it lifts your mood and helps you relax.
           </Typography>
-          <Typography variant="subtitle">
-            Pass along your happiness and share what made you smile{" "}
-            {registeredUser.firstName}!
-          </Typography>
+          <Typography variant="subtitle">Share your happiness!</Typography>
         </CardContent>
       </Card>
     </Paper>
