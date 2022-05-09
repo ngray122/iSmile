@@ -47,7 +47,7 @@ const CardPost = () => {
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}
               />
-              <CardContent>
+              <CardContent className="card-content">
                 <Typography
                   gutterBottom
                   variant="h5"

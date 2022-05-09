@@ -69,9 +69,11 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        Smiling can actually help us live longer. People who
+                        smile more often are generally happier and, since
+                        smiling decreases blood pressure and releases
+                        endorphins, it’s a great way to boost health and protect
+                        your golden years
                       </p>
                     </div>
                   </div>
@@ -88,9 +90,10 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        There are a few human gestures that cross language
+                        barriers around the world and smiling is one of them. No
+                        matter where you are on the globe, smiling is recognized
+                        as a universal display of happiness and good nature
                       </p>
                     </div>
                   </div>
@@ -109,9 +112,12 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        If you’re having a bad day, force yourself to smile.
+                        Research suggests that the act of smiling can actually
+                        trick the brain into feeling happier, no matter how bad
+                        the current situation may be. While smiling certainly
+                        doesn’t fix all problems, it certainly has the power to
+                        make us feel just a little better at any given moment
                       </p>
                     </div>
                   </div>
@@ -159,9 +165,12 @@ const Landing = (props) => {
                     </div>
                     <div className="card-content center">
                       <p>
-                        I am a very simple card. I am good at containing small
-                        bits of information. I am convenient because I require
-                        little markup to use effectively.
+                        Smiling has many benefits, not the least of which is
+                        that smiling can actually help us live longer. People
+                        who smile more often are generally happier and, since
+                        smiling decreases blood pressure and releases
+                        endorphins, it’s a great way to boost health and protect
+                        your golden years
                       </p>
                     </div>
                   </div>
@@ -171,13 +180,13 @@ const Landing = (props) => {
             <div className="row container" id="login-reg-button-wrapper">
               <Link
                 to="/login"
-                className="waves-effect waves-light btn-large  landing-btn"
+                className="large btn waves-light center form-button"
               >
                 Sign In
               </Link>
               <Link
                 to="/register"
-                className="waves-effect waves-light btn-large  landing-btn"
+                className="large btn waves-light center form-button"
               >
                 Sign Up
               </Link>

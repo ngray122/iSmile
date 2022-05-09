@@ -144,6 +144,7 @@ a img {
 .card-about {
   background-color: #6c5b7b;
   color: #ff8080;
+  margin:25px;
 }
 
 
@@ -202,6 +203,14 @@ a img {
 .card-action-icon {
   color: #6c5b7b;
   text-decoration: none;
+}
+.material-icons {
+  text-decoration:none;
+}
 
-
+.card-content:after {
+background-color: none;
+}
+.card-icon {
+  margin-bottom: 10px;
 }
