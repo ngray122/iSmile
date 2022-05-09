@@ -13,13 +13,19 @@ const CreatePostWrapper = () => {
   return (
     <>
       <RegisteredNavBar />
-      <Grid container spacing={3} m={2}>
+      <Grid container spacing={2}>
         {!matches ? (
           <>
-            <Grid item md={5}>
+            <Grid item md={4}>
               <Profile />
             </Grid>
-            <Grid item md={7} display="flex" justifyContent="center">
+            <Grid
+              item
+              md={8}
+              display="flex"
+              justifyContent="center"
+              marginTop={3}
+            >
               <CreatePost />
             </Grid>
           </>
@@ -29,6 +35,7 @@ const CreatePostWrapper = () => {
             md={12}
             xs={12}
             sm={12}
+            marginTop={3}
             display="flex"
             justifyContent="center"
           >

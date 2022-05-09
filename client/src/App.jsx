@@ -8,7 +8,6 @@ import Landing from "./components/login-reg-components/Landing";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import Dashboard from "./components/Dashboard";
-
 import Login from "./components/login-reg-components/Login";
 import Registration from "./components/login-reg-components/Registration";
 import Box from "@mui/material/Box";
