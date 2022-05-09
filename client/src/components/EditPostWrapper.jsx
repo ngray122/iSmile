@@ -12,7 +12,7 @@ const EditPostWrapper = () => {
   return (
     <>
       <RegisteredNavBar />
-      <Grid container spacing={3} m={2}>
+      <Grid container spacing={3}>
         {!matches ? (
           <>
             <Grid item md={4}>
@@ -30,6 +30,7 @@ const EditPostWrapper = () => {
             sm={12}
             display="flex"
             justifyContent="center"
+            marginTop={3}
           >
             <EditPost active={true} />
           </Grid>
