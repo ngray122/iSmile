@@ -10,7 +10,7 @@ const Profile = () => {
   const { registeredUser, setRegisteredUser } = useContext(AuthContext);
   console.log(registeredUser);
   return (
-    <Paper elevation={3} sx={{ p: "20px", bgcolor: "primary" }}>
+    <Paper elevation={3} sx={{ m: 3, p: "20px", bgcolor: "primary" }}>
       <Card>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

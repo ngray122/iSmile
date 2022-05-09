@@ -14,7 +14,7 @@ const Dashboard = () => {
     <>
       {console.log("matches ->", matches)}
       <RegisteredNavBar />
-      <Grid container spacing={3} m={2}>
+      <Grid container spacing={3}>
         {!matches ? (
           <>
             <Grid item md={5}>

@@ -7,7 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import { CardImg, CardText } from "reactstrap";
+import { CardImg } from "reactstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -15,6 +15,7 @@ const CardPost = () => {
   let [allPosts, setAllPosts] = useState([]);
   let [deleted, setDeleted] = useState(false);
 
+  // get all posts
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/posts/getall")
@@ -38,7 +39,7 @@ const CardPost = () => {
     <>
       {allPosts.map((postObj, i) => {
         return (
-          <Card key={i} sx={{ mb: 3, maxWidth: 700 }} elevation={3}>
+          <Card key={i} sx={{ m: 3, maxWidth: 700 }} elevation={3}>
             <CardActionArea>
               <CardImg
                 p="10px"
