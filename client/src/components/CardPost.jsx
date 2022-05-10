@@ -44,7 +44,6 @@ const CardPost = () => {
               <CardImg
                 p="10px"
                 component="img"
-                // height="400"
                 minWidth="100%"
                 alt="posted image"
                 src={`data:image/jpeg;base64,${postObj.photo}`}

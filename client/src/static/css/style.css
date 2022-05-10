@@ -49,21 +49,13 @@
   background-color: #b6ffce;
 
 } 
-/* #register-button {
-  color: b6ffce;
 
-}  */
 .landing-btn:hover {
   margin: 10px;
   background-color: #b6ffce;
   border-radius: 30px;
 
 }
-/* Login and Registration Forms */
-/* #login-form,
-#registration-form {
-  max-width: 400px;
-} */
 
 /* Hero Image Wrapper */
 .hero-img-wrapper {
