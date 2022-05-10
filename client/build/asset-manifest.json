@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d386c8c4.css",
+    "main.js": "/static/js/main.a08368ac.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/jacqueline-munguia-1pAwJiCD60c-unsplash.jpg": "/static/media/jacqueline-munguia-1pAwJiCD60c-unsplash.3c32dd9b66e6c2226228.jpg",
+    "static/media/pexels-pixabay-208147.jpg": "/static/media/pexels-pixabay-208147.fba61aa3eb771214c4c6.jpg",
+    "static/media/pexels-kat-smith-736842.jpg": "/static/media/pexels-kat-smith-736842.ee89cfc1e308695b01c7.jpg",
+    "static/media/pexels-pixabay-264196.jpg": "/static/media/pexels-pixabay-264196.db8b1ecead5274cab7aa.jpg",
+    "static/media/pexels-melissa-698899.jpg": "/static/media/pexels-melissa-698899.fb24fdf20ae35ef55141.jpg",
+    "static/media/pexels-juan-pablo-serrano-arenas-967016.jpg": "/static/media/pexels-juan-pablo-serrano-arenas-967016.647cf88315c1b39e280f.jpg",
+    "index.html": "/index.html",
+    "main.d386c8c4.css.map": "/static/css/main.d386c8c4.css.map",
+    "main.a08368ac.js.map": "/static/js/main.a08368ac.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d386c8c4.css",
+    "static/js/main.a08368ac.js"
+  ]
+}
