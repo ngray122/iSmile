@@ -5,9 +5,9 @@ import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { HeroImg } from "./HeroImg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import styles from "../../static/css/style.css";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import styles from "../../static/css/style.css";
 
 const Login = () => {
   const theme = useTheme();
@@ -60,7 +60,11 @@ const Login = () => {
                     value={email}
                   />
                   <label htmlFor="email">Email</label>
-                  <span className="helper-text" data-error="wrong">
+                  <span
+                    id="helper-text"
+                    className="helper-text"
+                    data-error="wrong"
+                  >
                     {formInputError.email?.message}
                   </span>
                 </div>
@@ -69,7 +73,6 @@ const Login = () => {
               <div className="row">
                 <div className="input-field col s6">
                   <i className="material-icons prefix">account_circle</i>
-
                   <input
                     className="login-form-input"
                     type="password"
@@ -79,7 +82,12 @@ const Login = () => {
                     input="password"
                   />
                   <label htmlFor="password">Password</label>
-                  <span className="helper-text" data-error="wrong">
+
+                  <span
+                    className="helper-text"
+                    data-error="wrong"
+                    id="helper-text"
+                  >
                     {formInputError.password?.message}
                   </span>
                 </div>
@@ -120,7 +128,7 @@ const Login = () => {
             id="login-form"
           >
             <div className="row">
-              <h4 id="signIn-header">Sign In</h4>
+              <h4 id="signIn-header-resp">Sign In</h4>
               <div className="input-field col s6">
                 <i className="material-icons prefix">email</i>
 
@@ -133,7 +141,7 @@ const Login = () => {
                   value={email}
                 />
                 <label htmlFor="email">Email</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.email?.message}
                 </span>
               </div>
@@ -152,7 +160,7 @@ const Login = () => {
                   input="password"
                 />
                 <label htmlFor="password">Password</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.password?.message}
                 </span>
               </div>

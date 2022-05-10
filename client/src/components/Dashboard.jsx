@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Profile from "./Profile";
 import PostWall from "./PostWall";
 import RegisteredNavBar from "./RegisteredNavBar";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 
 const Dashboard = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
-      {console.log("matches ->", matches)}
       <RegisteredNavBar />
       <Grid container spacing={3}>
         {!matches ? (

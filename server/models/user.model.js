@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
-// vailidates unique email
 const uniqueValidator = require("mongoose-unique-validator");
 require("mongoose-type-email");
 
-// to hash a password going to the db
 const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema(
@@ -39,7 +37,7 @@ const UserSchema = new mongoose.Schema(
 );
 
 UserSchema.virtual("verifyPassword")
-  // .get is a function that returns verifyPassword from form input
+
   .get(() => this.verifyPassword)
   .set((value) => (this.verifyPassword = value));
 

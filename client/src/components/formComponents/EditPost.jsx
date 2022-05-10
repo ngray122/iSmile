@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   useHistory,
@@ -40,7 +40,6 @@ const EditPost = (props) => {
     };
     reader.readAsDataURL(fileInput);
   };
-  // console.log("log for photo ->", photo);
   const onChangeHandler = (e) => {
     setFormInfo({
       ...formInfo,
@@ -73,8 +72,8 @@ const EditPost = (props) => {
 
   return (
     <Paper elevation={3} align="center" mx="auto">
-      <Typography component="legend" variant="h6" padding="10px">
-        Edit your post
+      <Typography component="legend" variant="subtitle1" mt="2em">
+        Edit or Cancel
       </Typography>
       <PostForm
         submitHandler={submitHandler}

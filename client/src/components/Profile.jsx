@@ -7,8 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import { AuthContext } from "./AuthContext";
 
 const Profile = () => {
-  const { registeredUser, setRegisteredUser } = useContext(AuthContext);
-  console.log(registeredUser);
+  const { registeredUser } = useContext(AuthContext);
   return (
     <Paper elevation={3} sx={{ m: 3, p: "20px", bgcolor: "primary" }}>
       <Card>

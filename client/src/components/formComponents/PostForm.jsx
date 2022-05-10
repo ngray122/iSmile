@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";
@@ -59,7 +59,6 @@ const PostForm = (props) => {
             type="url"
             name="url"
           />
-          {/* {console.log(hasActiveClass)} */}
           <label htmlFor="url post-input" className={hasActiveClass}>
             Add link - optional
           </label>
@@ -88,12 +87,14 @@ const PostForm = (props) => {
               onChange={props.handleChange}
               value={props.fileName}
             />
-            {/* {console.log(typeof props.fileName)} */}
           </div>
         </div>
 
         <span className="helper-text" data-error="wrong">
           {props.formInputError.photo?.message}
+        </span>
+        <span className="helper-text" data-error="wrong">
+          {props.formInputError.url?.message}
         </span>
 
         {/* Submit Button */}

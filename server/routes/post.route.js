@@ -27,37 +27,24 @@ let upload = multer({
   limits: { fieldSize: 25 * 1024 * 1024 },
 });
 
-// console.log(upload);
-
 module.exports = (app) => {
-  // ========>> IF HAVING TROUBLE WITH ROUTES:
-  //1. "/" at START of API call after the first  \\'// ,
-  //2. verify http, https
-  //3. server routes in server.js file <<========
-
-  //@route POST -- create new post
   app.post(
     "/api/posts/create",
     upload.single("photo"),
     PostController.createPost
   );
 
-  // @route GET -- get all posts
   app.get("/api/posts/getall", PostController.findAllPosts);
 
-  // @route GET -- get one post
   app.get("/api/posts/getone/:id", PostController.findOnePost);
 
-  // @route PUT -- edit post
   app.put(
     "/api/posts/edit/:id",
     upload.single("photo"),
     PostController.updatePost
   );
 
-  // @route DELETE -- delete post
   app.delete("/api/posts/delete/:id", PostController.deletePost);
 
-  //show all the posts belonging to id
   app.get("/api/posts/user/:userId", PostController.findPostFromUser);
 };

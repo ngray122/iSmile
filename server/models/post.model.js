@@ -18,9 +18,9 @@ const PostSchema = new mongoose.Schema(
     url: {
       type: String,
     },
-    // add mb upload requirement?
     photo: {
       type: String,
+      required: [true, "Photo cannot be left blank"],
     },
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
@@ -29,40 +29,5 @@ const PostSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-// PostSchema.virtual('verifyPassword')
-// // .get is a function that returns verifyPassword from form input
-//     .get(() => this.verifyPassword)
-//     .set(value => this.verifyPassword = value);
-
-// // middleware - between the FE and back
-// // .pre do this function BEFORE you send to db. (next)==>peform next step
-// PostSchema.pre('validate', function (next) {
-//     if (this.password !== this.verifyPassword) {
-//         this.invalidate('verifyPassword', 'Password must match confirm password');
-//     }
-//     // Perform the next step
-//     next();
-// });
-
-// PostSchema.pre('save', function (next) {
-//     bcrypt.hash(this.password, 10)
-//         .then(hash => {
-//             this.password = hash;
-//             next();
-//         })
-//         .catch(err => {
-//             console.log("PASSWORD HASH ERROR ===> ", err)
-//             next();
-//         });
-// });
-
-// PostSchema.methods.comparePassword = function(password) {
-//     return bcrypt.compareSync(password, this.hash_password);
-//   }
-
-// PostSchema.plugin(uniqueValidator, {
-//   message: "Email address is already in use, please choose another",
-// });
 
 module.exports.Post = mongoose.model("Post", PostSchema);
