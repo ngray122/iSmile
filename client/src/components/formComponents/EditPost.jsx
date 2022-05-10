@@ -73,8 +73,8 @@ const EditPost = (props) => {
 
   return (
     <Paper elevation={3} align="center" mx="auto">
-      <Typography component="legend" variant="h6" padding="10px">
-        Edit your post
+      <Typography component="legend" variant="subtitle1" mt="2em">
+        Edit or Cancel
       </Typography>
       <PostForm
         submitHandler={submitHandler}

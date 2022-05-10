@@ -4,6 +4,14 @@
   font-family: 'Roboto', sans-serif;
 
 }
+#signIn-header-resp,
+#registration-header-resp {
+  color: #ff8080;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+
+}
 /* Form Headers */
 #signIn-header,
 #registration-header,
@@ -18,7 +26,9 @@
   color: black;
 }
 
-
+#helper-text {
+  color: rgb(252, 255, 255);
+}
 .form-button {
   margin: 10px;
   background-color: #b6ffce;

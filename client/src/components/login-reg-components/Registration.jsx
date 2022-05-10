@@ -63,7 +63,8 @@ const User = (props) => {
                     type="text"
                   />
                   <label htmlFor="first-name-form">First Name</label>
-                  <span className="helper-text" data-error="wrong">
+
+                  <span className="helper-text" id="helper-text">
                     {formInputError.firstName?.message}
                   </span>
                 </div>
@@ -80,7 +81,7 @@ const User = (props) => {
                     onChange={(e) => setLastName(e.target.value)}
                   />
                   <label htmlFor="last-name-form">Last Name</label>
-                  <span className="helper-text" data-error="wrong">
+                  <span className="helper-text" id="helper-text">
                     {formInputError.lastName?.message}
                   </span>
                 </div>
@@ -97,7 +98,7 @@ const User = (props) => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <label htmlFor="email-reg-form">Email</label>
-                  <span className="helper-text" data-error="wrong">
+                  <span className="helper-text" id="helper-text">
                     {formInputError.email?.message}
                   </span>
                 </div>
@@ -116,7 +117,7 @@ const User = (props) => {
                     input="password"
                   />
                   <label htmlFor="password-reg-form">Password</label>
-                  <span className="helper-text" data-error="wrong">
+                  <span className="helper-text" id="helper-text">
                     {formInputError.password?.message}
                   </span>
                 </div>
@@ -137,7 +138,7 @@ const User = (props) => {
                   <label htmlFor="confirm-password-reg-form">
                     Confirm Password
                   </label>
-                  <span className="helper-text" data-error="wrong">
+                  <span className="helper-text" id="helper-text">
                     {formInputError.password?.message}
                   </span>
                 </div>
@@ -176,7 +177,7 @@ const User = (props) => {
             id="registration-form"
           >
             <div className="row">
-              <h4 id="registration-header">Register</h4>
+              <h4 id="registration-header-resp">Register</h4>
 
               <div className="input-field col s6">
                 <i className="material-icons prefix">account_circle</i>
@@ -188,7 +189,7 @@ const User = (props) => {
                   type="text"
                 />
                 <label htmlFor="first-name-form">First Name</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.firstName?.message}
                 </span>
               </div>
@@ -205,7 +206,7 @@ const User = (props) => {
                   onChange={(e) => setLastName(e.target.value)}
                 />
                 <label htmlFor="last-name-form">Last Name</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.lastName?.message}
                 </span>
               </div>
@@ -222,7 +223,7 @@ const User = (props) => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <label htmlFor="email-reg-form">Email</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.email?.message}
                 </span>
               </div>
@@ -241,7 +242,7 @@ const User = (props) => {
                   input="password"
                 />
                 <label htmlFor="password-reg-form">Password</label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.password?.message}
                 </span>
               </div>
@@ -262,7 +263,7 @@ const User = (props) => {
                 <label htmlFor="confirm-password-reg-form">
                   Confirm Password
                 </label>
-                <span className="helper-text" data-error="wrong">
+                <span className="helper-text" id="helper-text">
                   {formInputError.password?.message}
                 </span>
               </div>
