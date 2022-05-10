@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 
 const RegisteredNavBar = () => {
-  const { registeredUser, setRegisteredUser } = useContext(AuthContext);
+  const { setRegisteredUser } = useContext(AuthContext);
   const history = useHistory();
   const logout = () => {
     axios

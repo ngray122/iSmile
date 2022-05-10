@@ -1,7 +1,4 @@
 import React from "react";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "../../static/css/style.css";

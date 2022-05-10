@@ -15,9 +15,7 @@ const AuthContextProvider = ({ children }) => {
             setRegisteredUser(res.data);
           }
         })
-        .catch((err) => {
-          // console.log("ERR WHEN GETTING LOGGED IN USER", err);
-        });
+        .catch((err) => {});
     };
     isLoggedIn();
   }, []);

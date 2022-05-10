@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   useHistory,
@@ -40,7 +40,6 @@ const EditPost = (props) => {
     };
     reader.readAsDataURL(fileInput);
   };
-  // console.log("log for photo ->", photo);
   const onChangeHandler = (e) => {
     setFormInfo({
       ...formInfo,

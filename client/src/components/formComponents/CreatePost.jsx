@@ -1,14 +1,12 @@
-import React, { useCallback, useState, useContext } from "react";
+import React, { useCallback, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import PostForm from "./PostForm";
 import styles from "../../static/css/style.css";
-import { AuthContext } from "../AuthContext";
 
 const CreatePost = (props) => {
-  let { registeredUser, setRegisteredUser } = useContext(AuthContext);
   let history = useHistory();
   let [formInputError, setFormInputError] = useState({});
 

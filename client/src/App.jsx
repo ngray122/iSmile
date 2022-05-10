@@ -1,5 +1,4 @@
 import {
-  Switch,
   BrowserRouter,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
@@ -10,8 +9,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/login-reg-components/Login";
 import Registration from "./components/login-reg-components/Registration";
-import Box from "@mui/material/Box";
-import { AuthContextProvider, AuthContext } from "./components/AuthContext";
+import { AuthContextProvider } from "./components/AuthContext";
 import { Redirect } from "react-router-dom";
 import EditPostWrapper from "./components/EditPostWrapper";
 

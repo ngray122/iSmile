@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const jwt = require("jsonwebtoken");
-const secret = "imasecret";
+const secret = process.env.SECRET;
 bcrypt = require("bcrypt");
 const { User } = require("../models/user.model");
 

@@ -6,7 +6,6 @@ class UserController {
   registerUser = (req, res) => {
     User.find({ email: req.body.email })
       .then((userEmail) => {
-        // console.log("Res finding user =>> ", userEmail);
         if (userEmail.length === 0) {
           User.create(req.body)
             .then((user) => {
