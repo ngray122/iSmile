@@ -20,7 +20,8 @@ var path = require("path");
 require("dotenv/config");
 
 require("./server/config/config");
-
+require("./server/controllers/user.controller")(app);
+require("./server/controllers/post.controller")(app);
 require("./server/routes/user.route")(app);
 require("./server/routes/post.route")(app);
 
