@@ -1,4 +1,4 @@
-const PostController = require("../controllers/post.contoller");
+const PostController = require("./controllers/post.contoller");
 const multer = require("multer");
 const { v4: uuidv4 } = require("uuid");
 
