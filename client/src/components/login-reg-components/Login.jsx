@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     let formInputObj = { email, password };
     axios
-      .post("http://ismile.herokuapp/api/user/login", formInputObj, {
+      .post("https://ismile.herokuapp/api/user/login", formInputObj, {
         withCredentials: true,
       })
       .then((res) => {

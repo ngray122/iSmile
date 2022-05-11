@@ -8,7 +8,9 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const isLoggedIn = () => {
       axios
-        .get("http://localhost:8000/api/user/getone", { withCredentials: true })
+        .get("https://ismile.herokuapp/api/user/getone", {
+          withCredentials: true,
+        })
         .then((res) => {
           console.log("RESULT ON DASH after login , => ", res);
           if (res.data) {
