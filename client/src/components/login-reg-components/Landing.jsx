@@ -113,7 +113,7 @@ const Landing = (props) => {
           </div>
 
           <div className="row container ">
-            <div className="container col s4">
+            <div className="container col s12">
               <div className="row">
                 <LandingCarousel />
                 <div className="col s12 m7">
