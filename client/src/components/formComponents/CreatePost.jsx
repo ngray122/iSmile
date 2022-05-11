@@ -45,7 +45,7 @@ const CreatePost = (props) => {
         photo: photo,
       };
       axios
-        .post("http://localhost:8000/api/posts/create", formInfo)
+        .post("https://ismile.herokuapp.com/api/posts/create", formInfo)
         .then((res) => {
           if (res.data.error) {
             setFormInputError(res.data.error.errors);

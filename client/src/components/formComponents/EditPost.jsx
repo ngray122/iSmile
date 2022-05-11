@@ -51,7 +51,7 @@ const EditPost = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8000/api/posts/edit/${id}`, formInfo)
+      .put(`https://ismile.herokuapp.com/api/posts/edit/${id}`, formInfo)
       .then((res) => {
         if (res.data.error) {
           setFormInputError(res.data.error.errors);

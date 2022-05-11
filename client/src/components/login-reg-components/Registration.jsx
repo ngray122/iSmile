@@ -26,7 +26,7 @@ const User = (props) => {
     e.preventDefault();
     let formInputObj = { firstName, lastName, email, password, verifyPassword };
     axios
-      .post("http://localhost:8000/api/user/register", formInputObj, {
+      .post("https://ismile.herokuapp.com/api/user/register", formInputObj, {
         withCredentials: true,
       })
       .then((res) => {
