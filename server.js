@@ -23,7 +23,7 @@ require("./server/config/config");
 require("./server/routes/user.route")(app);
 require("./server/routes/post.route")(app);
 
-app.listen(process.env.PORT || 8000, () =>
+app.listen(process.env.PORT || 3000, () =>
   console.log(`Listening on port ${port}`)
 );
 
