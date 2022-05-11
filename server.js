@@ -26,6 +26,8 @@ require("./server/config/config");
 require("./server/routes/user.route")(app);
 require("./server/routes/post.route")(app);
 
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));
   app.get("*", (req, res) =>
@@ -34,4 +36,3 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.get("/", (req, res) => res.send("Please set to production"));
 }
-app.listen(port, () => console.log(`Listening on port ${port}`));
