@@ -34,7 +34,7 @@ npm install
 
 For this app, MongoDB cloud was utilized - you can use an alternate connection if you'd like
 
-local development: locate the config file in the config folder, which exports your db.uri connection.vIn config.js, `"your_database_here"` needs to be your mongo database name.
+local development: locate the config file in the config folder, which exports your `db.uri` connection. In config.js, `"your_database_here"` needs to be your mongo database name.
 
 ### Run
 
