@@ -30,26 +30,26 @@ cd client
 npm install
 ```
 
-### DB
+### Database
 
-In config.js, `"your_database_here"` needs to be your mongo database name.
+For this app, MongoDB cloud was utilized - you can use an alternate connection if you'd like
 
-`mongoose.connect()` is your cluster name in the Mongodb cloud.
-
-> Feel free to use an alternate database connection
+local development: locate the config file in the config folder, which exports your db.uri connection.vIn config.js, `"your_database_here"` needs to be your mongo database name.
 
 ### Run
 
 ```
-# front-end runs on port 3000
+## front-end runs on port 3000
+
 npm start
 
-# back-end runs on port 8000
+```
+
+On execution, your brower should open to localhost.3000
+
+```
+## back-end runs on port 8000
 npm run server.js
 ```
 
-## Things in progress :new:
-
-- Bookmark/pin favorite posts
-- External APIs
-- Like, Comment and Share
+On execution, you should see `Listening on port 8000`
