@@ -23,9 +23,7 @@ require("./server/config/config");
 require("./server/routes/user.route")(app);
 require("./server/routes/post.route")(app);
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`Listening on port ${port}`)
-);
+app.listen(8000, () => console.log(`Listening on port ${port}`));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));
