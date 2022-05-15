@@ -65,7 +65,12 @@ const CardPost = () => {
                 >
                   {postObj.text}
                 </Typography>
-                <a href={postObj.url} id="url-post" target="_blank">
+                <a
+                  href={postObj.url}
+                  id="url-post"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {postObj.url}
                 </a>
               </CardContent>
