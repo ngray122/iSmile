@@ -19,7 +19,7 @@ const EditPost = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/posts/getone/${id}`)
+      .get(`${process.env.ENDPOINT}/api/posts/getone/${id}`)
       .then((res) => {
         setFormInfo(res.data.result);
       })

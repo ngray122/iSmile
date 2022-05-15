@@ -18,7 +18,7 @@ const CardPost = () => {
   // get all posts
   useEffect(() => {
     axios
-      .get("https://ismile.herokuapp.com/api/posts/getall")
+      .get(`${process.env.ENDPOINT}api/posts/getall`)
       .then((res) => {
         setAllPosts(res.data.result);
       })
@@ -30,7 +30,7 @@ const CardPost = () => {
   //   Delete post
   const deletePost = (postId) => {
     axios
-      .delete(`https://ismile.herokuapp.com/api/posts/delete/${postId}`)
+      .delete(`${process.env.ENDPOINT}api/posts/delete/${postId}`)
       .then((res) => setDeleted(!deleted))
       .catch((err) => console.log("error in submitting delete request"));
   };

@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const PORT = process.env.PORT || 8000;
 require("dotenv").config();
 
 const cookieParser = require("cookie-parser");
@@ -23,7 +23,7 @@ require("./server/config/config");
 require("./server/routes/user.route")(app);
 require("./server/routes/post.route")(app);
 
-app.listen(8000, () => console.log(`Listening on port ${port}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/build")));

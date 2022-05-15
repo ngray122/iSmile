@@ -8,7 +8,7 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const isLoggedIn = () => {
       axios
-        .get("https://ismile.herokuapp.com/api/user/getone", {
+        .get(`${process.env.ENDPOINT}api/user/getone`, {
           withCredentials: true,
         })
         .then((res) => {

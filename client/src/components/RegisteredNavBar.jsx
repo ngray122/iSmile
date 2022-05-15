@@ -12,7 +12,7 @@ const RegisteredNavBar = () => {
   const history = useHistory();
   const logout = () => {
     axios
-      .get("https://ismile.herokuapp.com/api/user/logout", {
+      .get(`${process.env.ENDPOINT}api/user/logout`, {
         withCredentials: true,
       })
       .then((res) => {
